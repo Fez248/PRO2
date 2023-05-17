@@ -33,7 +33,7 @@ int Process::what_mem() const {
     return memo;
 }
 
-double Process::what_time() const {
+int Process::what_time() const {
     return time;
 }
 

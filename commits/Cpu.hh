@@ -19,11 +19,13 @@
 
 class Cpu {
     private:
-    int max_mem;
+    int ffree;
     int mema;
     map<int, Process> prl; //Map with, key -> id, value -> processes
     map<int, set<int>> es; //Free memory, map with, key -> empty space in front of a process, value -> A set with directions of memmory non consecutives with that space empty
     map<int, pair<int,int>> diro; //Occuped direction of memory with the id of the process and space needed for the process
+
+    int check_ffree(int direction, int tam, map<int, pair<int, int>>::iterator& it);
 
     public:
 
@@ -64,6 +66,8 @@ class Cpu {
     int what_mema() const;
 
     void write_cpu() const;
+
+    void compactar();
 };
 
 #endif

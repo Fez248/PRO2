@@ -83,6 +83,19 @@ void Cluster::at(int t) {
     for (clus::iterator it = conj.begin(); it != itf; ++it) it->second.advance(t);
 }
 
+bool Cluster::cmp(string x) {
+    clus::iterator it = conj.lower_bound(x);
+
+    if (it == conj.end() or it->first != x) return false;
+    it->second.compactar();
+    return true;
+}
+
+void Cluster::cmc() {
+    clus::iterator itf = conj.end();
+    for (clus::iterator it = conj.begin(); it != itf; ++it) it->second.compactar();
+}
+
 //void Cluster::at(int t) {
     
 //}
@@ -90,5 +103,3 @@ void Cluster::at(int t) {
 //CODE HELL
 Cluster::Cluster() {}
 void Cluster::mc() {}
-void Cluster::cmp() {}
-void Cluster::cmc() {}

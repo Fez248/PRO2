@@ -59,7 +59,7 @@ class Process {
         \pre <em>True</em>
         \post Returns delta
     */
-    double what_time() const;
+    int what_time() const;
 
     /**
         @brief Prints the process on the console

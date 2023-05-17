@@ -11,6 +11,7 @@ typedef map<int, pair<int,int>> naio;
 
 Cpu::Cpu(int n) {
     mema = n;
+    ffree = 0;
     es.emplace(n, set<int>{0});
 }
 
@@ -23,6 +24,8 @@ int Cpu::remove_process_cpu(int proc_id) {
     int a, b, new_tam, new_dir;
     a = new_tam = it->second.what_mem();
     b = new_dir = it->second.what_dir();
+
+    if (b < ffree) ffree = b;
 
     map<int, pair<int,int>>::iterator itf = diro.find(b);
 
@@ -89,46 +92,6 @@ int Cpu::remove_process_cpu(int proc_id) {
     return 100;
 }
 
-/*
-int Cpu::add_process_cpu(int identity, int memory, int time) {
-    mem::const_iterator it = prl.find(identity);
-
-    if (it != prl.end()) return 102;
-    if (memory > mema) return 103;
-
-    //Finds the key equal or greater to the memory needed to store the process and returns an iterator pointing to it
-    //Takes the first direction with that memory founded on the line before this one
-    //Deletes the direction of the memory where it has been stored from the map of free memory
-    dir::iterator it2 = es.lower_bound(memory); //es.upper_bound(memory - 1)
-    int direction = *it2->second.begin(); 
-    it2->second.erase(direction); 
-
-    //If the memory used is less than memory available in that direction that 
-    //means we need to relocate the memory that we haven't used on our free memory map
-    if (it2->first > memory) {
-        dir::iterator is = es.find(it2->first - memory);
-
-        if (is == es.end()) {
-            set<int> b;
-            b.insert(memory + direction);
-            es.insert(make_pair(it2->first - memory, b));
-        }
-        else is->second.insert(memory + direction);
-    }
-
-    //Inserts the process on the map of active processes of the cpu
-    Process a = Process(identity, memory, time, direction);
-    prl.insert(make_pair(identity, a));
-
-    diro.insert(make_pair(direction, make_pair(identity, memory)));
-
-    if (it2->second.empty()) es.erase(it2);
-    if (mema != memory) mema = (--es.end())->first;
-    else mema = 0;
-
-    return 100;
-} */
-
 int Cpu::what_mema() const {
     return mema;
 }
@@ -173,7 +136,13 @@ int Cpu::add_process_cpu(int identity, int memory, int time) {
 
     it2->second.erase(it2->second.begin()); //borra la dirección que vamos a usar
 
+    bool need_check = true;
+
     if (mem_ava > memory) { //si no hemos usado toda la memoria de la dirección que hemos cogido guardamos la sobrante
+        if (direction <= ffree) {
+            need_check = false;
+            ffree = memory + direction;
+        }
         es[mem_ava - memory].insert(memory + direction); //si existe ese tamaño simplemente añade la dirección, sinó la crea y lo añade
     }
 
@@ -183,5 +152,40 @@ int Cpu::add_process_cpu(int identity, int memory, int time) {
 
     if (it2->second.empty()) es.erase(it2); //por último, si el tamañao de memoria se ha quedado sin direcciones en el mapa de espacios libres lo borramos
 
+    if (need_check and direction <= ffree) {
+        naio::iterator itc = diro.upper_bound(direction);
+        if (itc == diro.end()) ffree = -1;
+        else ffree = check_ffree(itc->first, itc->second.second, itc);
+    }
+
     return 100;
+}
+
+int Cpu::check_ffree(int direction, int tam, naio::iterator& it) {
+    int aux = direction + tam;
+    ++it;
+    if (it == diro.end()) {
+        if (aux == mema) return -1;
+        else return aux;
+    }
+    else {
+        int newd = it->first;
+        int newt = it->second.second;
+
+        if (aux != newd) return aux;
+        else return check_ffree(newd, newt, it);
+    }
+}
+
+void Cpu::compactar() {
+    naio::iterator itf = diro.end();
+    for (naio::iterator it = diro.upper_bound(ffree); it != itf; ++it) {
+        int proc_id = it->second.first;
+        int mem = it->second.second;
+        mem::iterator it2 = prl.lower_bound(proc_id);
+        int time = it2->second.what_time();
+
+        remove_process_cpu(proc_id);
+        add_process_cpu(proc_id, mem, time);
+    }
 }

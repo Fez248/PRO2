@@ -112,7 +112,7 @@ class Cluster {
         \pre A cpu id
         \post If the cpu id doesn't exist it prints an error message, if not, it compacts it's memmory moving all the processes to the beggining of the memory
     */
-    void cmp();
+    bool cmp(string x);
 
     /**
         @brief Compacts all the cpus

@@ -125,9 +125,17 @@ int main() {
             clust.iec();
             cout << endl;
         }
-        else if (comand == "compactar_memoria_procesador" or comand == "cmp") clust.cmp();
-        else clust.cmc();
+        else if (comand == "compactar_memoria_procesador" or comand == "cmp") {
+            string x;
+            cin >> x;
 
+            cout << "#" << comand << " " << x << endl;
+            if(!clust.cmp(x)) cout << "error: no existe procesador" << endl;
+        }
+        else {
+            cout << "#" << comand << endl;
+            clust.cmc();
+        }
         cin >> comand;
     }
 }
