@@ -37,7 +37,17 @@ int main() {
             cout << "#" << comand << endl;
             clust.read();
         }
-        else if (comand == "modificar_cluster" or comand == "mc") clust.mc();
+        else if (comand == "modificar_cluster" or comand == "mc") {
+            string x;
+            cin >> x;
+
+            cout << "#" << comand << " " << x << endl;
+            int output = clust.mc(x);
+
+            if (output == 101) cout << "error: no existe procesador" << endl;
+            else if (output == 102) cout << "error: procesador con procesos" << endl;
+            else if (output == 103) cout << "error: procesador con auxiliares" << endl;
+        }
         else if (comand == "alta_prioridad" or comand == "ap") {
             string x;
             cin >> x;
@@ -66,7 +76,7 @@ int main() {
             if (output == 101) cout << "error: no existe prioridad" << endl;
             else if (output == 102) cout << "error: ya existe proceso" << endl;
         }
-        else if (comand == "alta_proceso_procesador" or comand == "app") { //SOLO PETA ESTA LETS GOOO
+        else if (comand == "alta_proceso_procesador" or comand == "app") {
             string x;
             int identity, memory, time;
             

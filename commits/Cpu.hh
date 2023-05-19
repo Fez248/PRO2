@@ -19,8 +19,8 @@
 
 class Cpu {
     private:
-    int ffree;
-    int mema;
+    int ffree, mema, max;
+    bool leaf = false;
     map<int, Process> prl; //Map with, key -> id, value -> processes
     map<int, set<int>> es; //Free memory, map with, key -> empty space in front of a process, value -> A set with directions of memmory non consecutives with that space empty
     map<int, pair<int,int>> diro; //Occuped direction of memory with the id of the process and space needed for the process
@@ -45,6 +45,10 @@ class Cpu {
     */
     Cpu(int n);
 
+    void is_leaf();
+
+    bool yn_leaf() const;
+
     int add_process_cpu(int identity, int memory, int time);
 
     /**
@@ -68,6 +72,8 @@ class Cpu {
     void write_cpu() const;
 
     void compactar();
+
+    bool active_processes() const;
 };
 
 #endif

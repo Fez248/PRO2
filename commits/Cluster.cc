@@ -26,22 +26,36 @@ void Cluster::write_bintree(const BinTree<string>& cluster) const {
     else cout << " ";
 }
 
-void Cluster::read_bintree(BinTree<string>& a) {
+bool Cluster::read_bintree(BinTree<string>& a) {
     string x;
     cin >> x;
 
     if (x != "*") {
         int n;
         cin >> n;
-        conj.insert(make_pair(x, Cpu(n)));
+        auto it = conj.insert(make_pair(x, Cpu(n)));
 
-        BinTree<string> left;
-        read_bintree(left);
-
-        BinTree<string> right;
-        read_bintree(right);
-
+        BinTree<string> left, right;
+        
+        if (read_bintree(left) and read_bintree(right)) it.first->second.is_leaf();
         a = BinTree<string>(x, left, right);
+
+        return false;
+    }
+    else return true;
+}
+
+void Cluster::reread(BinTree<string>& a, string p) {
+    if (!a.empty()) {
+        string x = cluster.value();
+        if (x != p) {
+            BinTree<string> left, right;
+
+            reread(left, p);
+            reread(right, p);
+            a = BinTree<string>(x, left, right);
+        }
+        else read_bintree(a);
     }
 }
 
@@ -96,10 +110,22 @@ void Cluster::cmc() {
     for (clus::iterator it = conj.begin(); it != itf; ++it) it->second.compactar();
 }
 
+int Cluster::mc(string x) {
+    clus::const_iterator it = conj.lower_bound(x);
+
+    if (it == conj.end() or it->first != x) return 101;
+    if (!it->second.active_processes()) return 102;
+    if (!it->second.yn_leaf()) return 103;
+
+    reread(cluster, x);
+    conj.erase(it);
+
+    return 100;
+}
+
 //void Cluster::at(int t) {
     
 //}
 
 //CODE HELL
 Cluster::Cluster() {}
-void Cluster::mc() {}

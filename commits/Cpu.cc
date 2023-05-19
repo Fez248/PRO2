@@ -10,9 +10,17 @@ typedef map<int, set<int>> dir;
 typedef map<int, pair<int,int>> naio;
 
 Cpu::Cpu(int n) {
-    mema = n;
+    mema = max = n;
     ffree = 0;
     es.emplace(n, set<int>{0});
+}
+
+void Cpu::is_leaf() {
+    leaf = true;
+}
+
+bool Cpu::yn_leaf() const {
+    return leaf;
 }
 
 int Cpu::remove_process_cpu(int proc_id) {
@@ -188,4 +196,8 @@ void Cpu::compactar() {
         remove_process_cpu(proc_id);
         add_process_cpu(proc_id, mem, time);
     }
+}
+
+bool Cpu::active_processes() const {
+    return diro.empty();
 }

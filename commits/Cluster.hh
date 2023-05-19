@@ -23,9 +23,11 @@ class Cluster {
     BinTree<string> cluster;
     map<string, Cpu> conj;
 
-    void read_bintree(BinTree<string>& cluster);
+    bool read_bintree(BinTree<string>& cluster);
 
     void write_bintree(const BinTree<string>& cluster) const;
+
+    void reread(BinTree<string>& a, string p);
 
     public:
 
@@ -56,7 +58,7 @@ class Cluster {
         \post If the cpu doesn't exist, if it has any active process or if it has auxiliar cpus it shows an error message, if not,
         the new cluster it's added where the cpu was
     */
-    void mc();
+    int mc(string x);
 
     /**
         @brief Reads a processor id and a process, if everything goes right, adds the process to that processor
