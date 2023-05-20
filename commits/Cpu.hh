@@ -78,7 +78,7 @@ class Cpu {
 
     bool active_processes() const;
 
-    int get_memory(int mem) const;
+    int get_memory(int mem, int identity) const;
 
     int space_left() const;
 };

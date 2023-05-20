@@ -48,15 +48,17 @@ bool Cluster::read_bintree(BinTree<string>& a) { //quizá el error está aquí
 
 void Cluster::reread(BinTree<string>& a, string p) {
     if (!a.empty()) {
-        string x = cluster.value();
-        if (x != p) {
+        string x = a.value();
+        if (x == p) read_bintree(a);
+        else {
             BinTree<string> left, right;
-
+            left = a.left();
+            right = a.right();
             reread(left, p);
             reread(right, p);
+
             a = BinTree<string>(x, left, right);
         }
-        else read_bintree(a);
     }
 }
 
@@ -118,30 +120,30 @@ int Cluster::mc(string x) {
     if (!it->second.active_processes()) return 102;
     if (!it->second.yn_leaf()) return 103;
 
-    BinTree<string> a;
-    reread(a, x);
-    cluster = a;
+    reread(cluster, x);
     conj.erase(it);
 
     return 100;
 }
 
 bool Cluster::recive_processes(Process a) {
-    int mem, no_space, free_space;
+    int mem, no_space, free_space, time, id;
+    time = a.what_time();
+    id = a.what_id();
     mem = a.what_mem();
     no_space = free_space = -1;
     clus::iterator ite = conj.end();
-    
-    find_best(mem, no_space, free_space, ite, cluster);
+    find_best(mem, no_space, free_space, id, ite, cluster);
 
     if (ite != conj.end()) {
-        ite->second.add_process_cpu(a.what_id(), a.what_mem(), a.what_time()); //check this line, maybe I can create another add function that takes a process as a parameter and doesn't check so many errors
+        ite->second.add_process_cpu(id, mem, time); //check this line, maybe I can create another add function that takes a process as a parameter and doesn't check so many errors
         return true;
     }
     else return false;
 }
 
-void Cluster::find_best(const int mem, int no_space, int free_space, clus::iterator ite, BinTree<string> can) {
+/**
+void Cluster::find_best(const int mem, int no_space, int free_space, clus::iterator& ite, BinTree<string> can) {
     if (!can.empty()) { //hacer los modos
         string it = can.value();
         clus::iterator it2 = conj.find(it);
@@ -224,6 +226,70 @@ void Cluster::find_best(const int mem, int no_space, int free_space, clus::itera
         find_best(mem, no_space, free_space, ite, can.right());
     }
 }
+
+**/
+
+void Cluster::find_best(const int mem, int no_space, int free_space, int identity, clus::iterator& ite, BinTree<string> can) {
+    if (!can.empty()) {
+        if (no_space == -1) {
+            string x = can.value();
+            clus::iterator it = conj.find(x);
+
+            if (it->second.get_memory(mem, identity) != -1) {
+                no_space = it->second.get_memory(mem, identity) - mem;
+                free_space = it->second.space_left();
+                ite = it;
+            }
+            else {
+                find_best(mem, no_space, free_space, identity, ite, can.left());
+                find_best(mem, no_space, free_space, identity, ite, can.right());
+            }
+        }
+        else {
+            if (!(can.left()).empty()) {
+                string x = (can.left()).value();
+                clus::iterator it = conj.find(x);
+                int aux = it->second.get_memory(mem, identity);
+
+                if (aux != -1) {
+                    int aux2 = it->second.space_left();
+                    if (aux - mem < no_space) {
+                        no_space = aux - mem;
+                        free_space = aux2;
+                        ite = it;
+                    }
+                    else if (aux - mem == no_space and aux2 > free_space) {
+                        no_space = aux - mem;
+                        free_space = aux2;
+                        ite = it;
+                    }
+                }
+            }
+
+            if (!(can.right()).empty()) {
+                string x = (can.right()).value();
+                clus::iterator it = conj.find(x);
+                int aux = it->second.get_memory(mem, identity);
+
+                if (aux != -1) {
+                    int aux2 = it->second.space_left();
+                    if (aux - mem < no_space) {
+                        no_space = aux - mem;
+                        free_space = aux2;
+                        ite = it;
+                    }
+                    else if (aux - mem == no_space and aux2 > free_space) {
+                        no_space = aux - mem;
+                        free_space = aux2;
+                        ite = it;
+                    }
+                }
+            }
+            find_best(mem, no_space, free_space, identity, ite, can.left());
+            find_best(mem, no_space, free_space, identity, ite, can.right());
+        }
+    }
+} 
 
 //CODE HELL
 Cluster::Cluster() {}

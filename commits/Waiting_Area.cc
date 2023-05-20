@@ -124,13 +124,14 @@ void Waiting_Area::epc(int n, Cluster& clust) {
             Process a = *it2;
 
             ++its;
-            it->second.erase(it2);
             
             if (clust.recive_processes(a)) {
                 ++i;
                 cat->second.first += 1;
+                it->second.erase(it2);
             }
             else {
+                it->second.erase(it2);
                 it->second.insert(it->second.end(), a);
                 cat->second.second += 1;
             }

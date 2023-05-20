@@ -29,7 +29,7 @@ class Cluster {
 
     void reread(BinTree<string>& a, string p);
 
-    void find_best(const int mem, int no_space, int free_space, map<string, Cpu>::iterator ite, BinTree<string> can);
+    void find_best(const int mem, int no_space, int free_space, int identity, map<string, Cpu>::iterator& ite, BinTree<string> can);
 
     public:
 

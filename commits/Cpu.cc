@@ -137,10 +137,11 @@ void Cpu::write_cpu() const {
 }
 
 int Cpu::add_process_cpu(int identity, int memory, int time) {
+
     map<int, Process>::const_iterator it = prl.lower_bound(identity); //quitar para la v2
 
     if (it != prl.end() and it->first == identity) return 102; //ya existe el proceso, quitar para la v2
-    
+
     map<int, set<int>>::iterator it2 = es.lower_bound(memory);
 
     if (it2 == es.end()) return 103; //no hay suficiente memoria, quitar para la v2
@@ -230,10 +231,13 @@ void Cpu::insert_set(int key, int value) {
     }
 }
 
-int Cpu::get_memory(int mem) const {
-    dir::const_iterator it = es.lower_bound(mem);
-    if (it == es.end()) return -1;
-    return it->first;
+int Cpu::get_memory(int mem, int identity) const {
+    dir::const_iterator it2 = es.lower_bound(mem);
+    map<int, Process>::const_iterator it = prl.lower_bound(identity); //quitar para la v2
+
+    if (it != prl.end() and it->first == identity) return -1;
+    if (it2 == es.end()) return -1;
+    return it2->first;
 }
 
 int Cpu::space_left() const {
