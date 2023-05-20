@@ -146,3 +146,69 @@ proc122
 2
 0 0
 #epc 100
+#ipc
+p1
+0 80 10 10
+p2
+p3
+proc1
+0 99 10 1
+proc11
+proc111
+proc112
+proc12
+0 99 10 10
+10 101 90 6
+proc122
+0 100 10 1
+10 80 5 5
+#iae
+111
+98 1000 20
+3 1
+1111
+1 0
+11111
+0 0
+2
+0 0
+#configurar_cluster
+#iec
+(sndr01  )
+#cc
+#iec
+(abc (zsda  ))
+#iae
+111
+98 1000 20
+3 1
+1111
+1 0
+11111
+0 0
+2
+0 0
+#cmp proc
+error: no existe procesador
+#compactar_memoria_procesador abc
+#ipro abc
+#app abc 40
+#app abc 30
+#app abc 10
+#app abc 20
+#app zsda 30
+#at 5
+#compactar_memoria_cluster
+#ipc
+abc
+0 10 50 5
+50 40 50 3
+zsda
+0 30 50 10
+#at 4
+#cmc
+#ipc
+abc
+0 10 50 1
+zsda
+0 30 50 6

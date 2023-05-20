@@ -116,13 +116,15 @@ void Waiting_Area::epc(int n, Cluster& clust) {
 
     while (i < n and it != itf) {
         category::iterator it2 = it->second.begin();
-        category::iterator it2f = it->second.end();
         siu::iterator cat = sera.find(it->first);
 
-        while (i < n and it2 != it2f) {
+        int tam, j;
+        tam = it->second.size();
+        j = 0;
+
+        while (i < n and j < tam) {
             category::iterator its = it2;
             Process a = *it2;
-
             ++its;
             
             if (clust.recive_processes(a)) {
@@ -136,6 +138,9 @@ void Waiting_Area::epc(int n, Cluster& clust) {
                 cat->second.second += 1;
             }
             it2 = its;
+            ++j;
         }
+
+        ++it;
     }
 }
