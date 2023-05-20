@@ -29,6 +29,8 @@ class Cluster {
 
     void reread(BinTree<string>& a, string p);
 
+    void find_best(const int mem, int no_space, int free_space, map<string, Cpu>::iterator ite, BinTree<string> can);
+
     public:
 
     /**
@@ -123,6 +125,8 @@ class Cluster {
         \post All the memmory moduls from all the cpus have been compacted
     */
     void cmc();
+
+    bool recive_processes(Process a);
 };
 
 #endif

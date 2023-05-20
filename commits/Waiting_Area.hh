@@ -6,6 +6,7 @@
 #define WAITING_AREA_HH
 
 #include "Process.hh"
+#include "Cluster.hh"
 
 #ifndef NO_DIAGRAM // So it doesn't appear on the diagram (aunque aún no lo he conseguido hacer xd)
 #include <list>
@@ -89,7 +90,7 @@ class Waiting_Area {
         \post Sends n processes to the cluster by priority and time they have been waiting, and they are send to the best spot (the cpu with most memmory left, the nearest one to the root and the one more to the left)
         if a process can not be send to the cluster it comes back as a new process to the waiting area
     */
-    void epc();
+    void epc(int n, Cluster& clust);
 
     /**
         @brief Reads a priority id and prints the processes waiting there

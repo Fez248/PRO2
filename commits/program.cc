@@ -100,7 +100,13 @@ int main() {
             if (output == 101) cout << "error: no existe procesador" << endl;
             else if (output == 102) cout << "error: no existe proceso" << endl;
         }
-        else if (comand == "enviar_procesos_cluster" or comand == "epc") wait.epc();
+        else if (comand == "enviar_procesos_cluster" or comand == "epc") {
+            int n;
+            cin >> n;
+
+            cout << "#" << comand << " " << n << endl;
+            wait.epc(n, clust);
+        }
         else if (comand == "avanzar_tiempo" or comand == "at") {
             int x;
             cin >> x;
@@ -142,7 +148,7 @@ int main() {
             cout << "#" << comand << " " << x << endl;
             if(!clust.cmp(x)) cout << "error: no existe procesador" << endl;
         }
-        else {
+        else if (comand == "compactar_memoria_cluster" or comand == "cmc") {
             cout << "#" << comand << endl;
             clust.cmc();
         }

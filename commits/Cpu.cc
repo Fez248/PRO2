@@ -27,11 +27,12 @@ int Cpu::remove_process_cpu(int proc_id) {
     map<int, Process>::const_iterator it = prl.find(proc_id);
 
     //Checks if the process exists
-    if (it == prl.end()) return 102;
+    if (it == prl.end()) return 102; //quitar para la v2
 
     int a, b, new_tam, new_dir;
     a = new_tam = it->second.what_mem();
     b = new_dir = it->second.what_dir();
+    max += a;
 
     if (b < ffree) ffree = b;
 
@@ -49,6 +50,7 @@ int Cpu::remove_process_cpu(int proc_id) {
             new_tam = new_tam + (b - c - d); //+d
             new_dir = c + d; //c
 
+            //pendiente de cambiar por update_set_and_erase()
             map<int, set<int>>::iterator ite = es.find(b - (c + d));
             ite->second.erase(c + d);
 
@@ -59,6 +61,7 @@ int Cpu::remove_process_cpu(int proc_id) {
         new_dir = 0;
         new_tam = new_tam + b;
         
+        //otro update_set_and_erase()
         map<int, set<int>>::iterator ite = es.find(b);
         ite->second.erase(0);
         if (ite->second.empty()) es.erase(ite);
@@ -71,6 +74,7 @@ int Cpu::remove_process_cpu(int proc_id) {
         if (a + b != e) {
             new_tam = new_tam + e - a - b; //f
 
+            //otro update set_and_erase()
             map<int, set<int>>::iterator ite = es.find(e - (a + b));
             ite->second.erase(a + b);
 
@@ -80,11 +84,13 @@ int Cpu::remove_process_cpu(int proc_id) {
     else if (a + b != mema) {
         new_tam = new_tam + (mema - a - b);
 
+        //otro update_set_and_erase()
         map<int, set<int>>::iterator ite = es.find(mema - a - b);
         ite->second.erase(a + b);
         if (ite->second.empty()) es.erase(ite);
     }
 
+    //cambiar por un insert_set()
     map<int, set<int>>::iterator aux = es.find(new_tam);
 
     if (aux != es.end()) aux->second.insert(new_dir);
@@ -93,6 +99,7 @@ int Cpu::remove_process_cpu(int proc_id) {
         z.insert(new_dir);
         es.insert(make_pair(new_tam, z));
     }
+    //hasta aquí
 
     diro.erase(b);
     prl.erase(proc_id);
@@ -130,15 +137,15 @@ void Cpu::write_cpu() const {
 }
 
 int Cpu::add_process_cpu(int identity, int memory, int time) {
-    map<int, Process>::const_iterator it = prl.lower_bound(identity);
+    map<int, Process>::const_iterator it = prl.lower_bound(identity); //quitar para la v2
 
-    if (it != prl.end() and it->first == identity) return 102; //ya existe el proceso
+    if (it != prl.end() and it->first == identity) return 102; //ya existe el proceso, quitar para la v2
     
     map<int, set<int>>::iterator it2 = es.lower_bound(memory);
-    //cout << memory << endl;
-    //cout << es.begin()->first << " " << *es.begin()->second.begin() << endl;
-    if (it2 == es.end()) return 103; //no hay suficiente memoria
 
+    if (it2 == es.end()) return 103; //no hay suficiente memoria, quitar para la v2
+
+    max -= memory;
     int direction = *(it2->second.begin()); //coge la dirección más baja del tamaño encontrado antes
     int mem_ava = it2->first;
 
@@ -187,17 +194,48 @@ int Cpu::check_ffree(int direction, int tam, naio::iterator& it) {
 
 void Cpu::compactar() {
     naio::iterator itf = diro.end();
-    for (naio::iterator it = diro.upper_bound(ffree); it != itf; ++it) {
+    naio::iterator it = diro.upper_bound(ffree);
+
+    while (it != itf) {
         int proc_id = it->second.first;
         int mem = it->second.second;
         mem::iterator it2 = prl.lower_bound(proc_id);
         int time = it2->second.what_time();
 
-        remove_process_cpu(proc_id);
+        ++it;
+        remove_process_cpu(proc_id); //no se si funciona pero aunque lo haga tengo que crear otras dos funciones que hagan lo mismo pero quitando algunas excepciones que no son necesarias
         add_process_cpu(proc_id, mem, time);
     }
 }
 
 bool Cpu::active_processes() const {
     return diro.empty();
+}
+
+void Cpu:: update_set_and_erase(int key, int diff) {
+    dir::iterator ite = es.find(diff);
+    ite->second.erase(key);
+
+    if (ite->second.empty()) es.erase(ite);
+}
+
+void Cpu::insert_set(int key, int value) {
+    dir::iterator ite = es.find(key);
+
+    if (ite != es.end()) ite->second.insert(value);
+    else {
+        set<int> z;
+        z.insert(value);
+        es.insert(make_pair(key, z));
+    }
+}
+
+int Cpu::get_memory(int mem) const {
+    dir::const_iterator it = es.lower_bound(mem);
+    if (it == es.end()) return -1;
+    return it->first;
+}
+
+int Cpu::space_left() const {
+    return max;
 }

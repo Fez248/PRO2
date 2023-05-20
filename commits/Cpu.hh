@@ -27,6 +27,9 @@ class Cpu {
 
     int check_ffree(int direction, int tam, map<int, pair<int, int>>::iterator& it);
 
+    void update_set_and_erase(int key, int diff);
+
+    void insert_set(int key, int value);
     public:
 
     /**
@@ -74,6 +77,10 @@ class Cpu {
     void compactar();
 
     bool active_processes() const;
+
+    int get_memory(int mem) const;
+
+    int space_left() const;
 };
 
 #endif

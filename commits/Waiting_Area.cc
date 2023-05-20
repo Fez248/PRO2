@@ -78,13 +78,6 @@ int Waiting_Area::ape(const string& x, int identity, int memory, int time) {
     return 100;
 } 
 
-void Waiting_Area::epc() {
-    int n;
-    cin >> n;
-
-    //Aún no se tiene que hacer
-}
-
 bool Waiting_Area::ipri(const string& x) const {
     area::const_iterator it = wa.find(x);
 
@@ -113,5 +106,35 @@ void Waiting_Area::iae() const {
 
         map<string, pair<int, int>>::const_iterator its = sera.find(name);
         cout << its->second.first << " " << its->second.second << endl;
+    }
+}
+
+void Waiting_Area::epc(int n, Cluster& clust) {
+    area::iterator it = wa.begin();
+    area::iterator itf = wa.end();
+    int i = 0;
+
+    while (i < n and it != itf) {
+        category::iterator it2 = it->second.begin();
+        category::iterator it2f = it->second.end();
+        siu::iterator cat = sera.find(it->first);
+
+        while (i < n and it2 != it2f) {
+            category::iterator its = it2;
+            Process a = *it2;
+
+            ++its;
+            it->second.erase(it2);
+            
+            if (clust.recive_processes(a)) {
+                ++i;
+                cat->second.first += 1;
+            }
+            else {
+                it->second.insert(it->second.end(), a);
+                cat->second.second += 1;
+            }
+            it2 = its;
+        }
     }
 }
