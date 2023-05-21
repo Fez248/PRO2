@@ -229,6 +229,7 @@ void Cluster::find_best(const int mem, int no_space, int free_space, clus::itera
 
 **/
 
+/** ultimo que medio funcionaba
 void Cluster::find_best(const int mem, int no_space, int free_space, int identity, clus::iterator& ite, BinTree<string> can) {
     if (!can.empty()) {
         if (no_space == -1) {
@@ -288,6 +289,41 @@ void Cluster::find_best(const int mem, int no_space, int free_space, int identit
             find_best(mem, no_space, free_space, identity, ite, can.left());
             find_best(mem, no_space, free_space, identity, ite, can.right());
         }
+    }
+} 
+*/
+
+void Cluster::find_best(const int mem, int no_space, int free_space, int identity, clus::iterator& ite, BinTree<string> can) {
+    if (!(can.left()).empty()) {
+        string x = (can.left()).value();
+        clus::iterator it = conj.find(x);
+        int aux = it->second.get_memory(mem, identity);
+
+        if (aux != -1) {
+            int aux2 = it->second.space_left();
+            if (no_space == -1 or aux - mem < no_space or (aux - mem == no_space and aux2 > free_space)) {
+                no_space = aux - mem;
+                free_space = aux2;
+                ite = it;
+            }
+        }
+        find_best(mem, no_space, free_space, identity, ite, can.left());
+    }
+
+    if (!(can.right()).empty()) {
+        string x = (can.right()).value();
+        clus::iterator it = conj.find(x);
+        int aux = it->second.get_memory(mem, identity);
+
+        if (aux != -1) {
+            int aux2 = it->second.space_left();
+            if (no_space == -1 or aux - mem < no_space or (aux - mem == no_space and aux2 > free_space)) {
+                no_space = aux - mem;
+                free_space = aux2;
+                ite = it;
+            }
+        }
+        find_best(mem, no_space, free_space, identity, ite, can.right());
     }
 } 
 
