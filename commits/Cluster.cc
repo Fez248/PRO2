@@ -83,8 +83,8 @@ int Cluster::bpp(const string& x, int identity) {
     clus::iterator it = conj.find(x);
 
     if (it == conj.end()) return 101;
-
-    return it->second.remove_process_cpu(identity);
+    int back = 0;
+    return it->second.remove_process_cpu(identity, back);
 }
 
 bool Cluster::ipro(const string& x) const {

@@ -30,6 +30,8 @@ class Cpu {
     void update_set_and_erase(int key, int diff);
 
     void insert_set(int key, int value);
+
+    void relocate(int proc_id, int mem, int time, int back);
     public:
 
     /**
@@ -60,7 +62,7 @@ class Cpu {
         \pre Initialized and proc_id > 0
         \post The process has been eliminated from the cpu
     */
-    int remove_process_cpu(int proc_id);
+    int remove_process_cpu(int proc_id, int& back);
 
     /**
         @brief Advances time to all the processes in delta unities

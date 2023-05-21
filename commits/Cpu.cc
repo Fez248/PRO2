@@ -27,7 +27,7 @@ bool Cpu::yn_leaf() const {
     return leaf;
 }
 
-int Cpu::remove_process_cpu(int proc_id) {
+int Cpu::remove_process_cpu(int proc_id, int& back) {
     map<int, Process>::const_iterator it = prl.find(proc_id);
 
     //Checks if the process exists
@@ -105,6 +105,7 @@ int Cpu::remove_process_cpu(int proc_id) {
     }
     //hasta aquí
 
+    back = new_tam;
     diro.erase(b);
     prl.erase(proc_id);
 
@@ -118,12 +119,13 @@ int Cpu::what_mema() const {
 void Cpu::advance(int delta) {
     mem::iterator it2 = prl.end();
     mem::iterator it = prl.begin();
+    int back = 0;
 
     while (it != it2) {
         if (!(it->second.reducing(delta))) {
             mem::iterator aux = it;
             ++aux;
-            remove_process_cpu(it->second.what_id());
+            remove_process_cpu(it->second.what_id(), back);
             it = aux;
         }
         else ++it;
@@ -180,7 +182,6 @@ int Cpu::add_process_cpu(int identity, int memory, int time) {
         }
         else ffree = check_ffree(itc->first, itc->second.second, itc);
     }
-
     return 100;
 }
 
@@ -203,16 +204,59 @@ int Cpu::check_ffree(int direction, int tam, naio::iterator& it) {
 void Cpu::compactar() {
     naio::iterator itf = diro.end();
     naio::iterator it = diro.upper_bound(ffree);
-
+    
     while (it != itf) {
         int proc_id = it->second.first;
         int mem = it->second.second;
+        int back = 0;
         mem::iterator it2 = prl.lower_bound(proc_id);
         int time = it2->second.what_time();
 
         ++it;
-        remove_process_cpu(proc_id); //no se si funciona pero aunque lo haga tengo que crear otras dos funciones que hagan lo mismo pero quitando algunas excepciones que no son necesarias
-        add_process_cpu(proc_id, mem, time);
+        remove_process_cpu(proc_id, back); //no se si funciona pero aunque lo haga tengo que crear otras dos funciones que hagan lo mismo pero quitando algunas excepciones que no son necesarias;
+        relocate(proc_id, mem, time, back);
+        //add_process_cpu(proc_id, mem, time);
+        dir::iterator pff = es.begin();
+        while (pff != es.end()) {
+            if (pff->second.empty()) {
+                dir::iterator aaa = pff;
+                ++pff;
+                es.erase(aaa);
+            }
+            else ++pff;
+        }
+    }
+}
+
+void Cpu::relocate(int proc_id, int mem, int time, int back) {
+    max -= mem;
+    int direction = ffree;
+    dir::iterator it2 = es.find(back);
+    it2->second.erase(ffree); //borra la dirección que vamos a usar
+
+    bool need_check = true;
+
+    if (back > mem) { //si no hemos usado toda la memoria de la dirección que hemos cogido guardamos la sobrante
+        if (direction == ffree) {
+            need_check = false;
+            ffree = mem + direction;
+        }
+        es[back - mem].insert(mem + direction); //si existe ese tamaño simplemente añade la dirección, sinó la crea y lo añade
+    }
+
+    Process p(proc_id, mem, time, direction);
+    prl.emplace(proc_id, p); //añadimos el proceso al mapa de procesos
+    diro.emplace(direction, make_pair(proc_id, mem)); //añadimos la dirección al mapa de direcciones ocupadas
+
+    if (it2->second.empty()) es.erase(it2); //por último, si el tamañao de memoria se ha quedado sin direcciones en el mapa de espacios libres lo borramos
+
+    if (need_check and direction == ffree) {
+        naio::iterator itc = diro.upper_bound(direction);
+        if (itc == diro.end()) {
+            if (direction + mem == mema) ffree = mema + 1;
+            else ffree = direction + mem;
+        }
+        else ffree = check_ffree(itc->first, itc->second.second, itc);
     }
 }
 
