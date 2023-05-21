@@ -110,8 +110,10 @@ bool Cluster::cmp(string x) {
 
 void Cluster::cmc() {
     clus::iterator itf = conj.end();
-    for (clus::iterator it = conj.begin(); it != itf; ++it) it->second.compactar();
-}
+    for (clus::iterator it = conj.begin(); it != itf; ++it) {
+        if (it->second.what_ffree() <= it->second.what_mema())it->second.compactar();
+    }
+}   
 
 int Cluster::mc(string x) {
     clus::const_iterator it = conj.lower_bound(x);
@@ -120,8 +122,8 @@ int Cluster::mc(string x) {
     if (!it->second.active_processes()) return 102;
     if (!it->second.yn_leaf()) return 103;
 
-    reread(cluster, x);
     conj.erase(it);
+    reread(cluster, x);
 
     return 100;
 }
@@ -132,8 +134,9 @@ bool Cluster::recive_processes(Process a) {
     id = a.what_id();
     mem = a.what_mem();
     no_space = free_space = -1;
+    bool first = true;
     clus::iterator ite = conj.end();
-    find_best(mem, no_space, free_space, id, ite, cluster);
+    find_best(mem, no_space, free_space, id, ite, cluster, first);
 
     if (ite != conj.end()) {
         ite->second.add_process_cpu(id, mem, time); //check this line, maybe I can create another add function that takes a process as a parameter and doesn't check so many errors
@@ -293,7 +296,22 @@ void Cluster::find_best(const int mem, int no_space, int free_space, int identit
 } 
 */
 
-void Cluster::find_best(const int mem, int no_space, int free_space, int identity, clus::iterator& ite, BinTree<string> can) {
+void Cluster::find_best(const int mem, int no_space, int free_space, int identity, clus::iterator& ite, BinTree<string> can, bool first) {
+    bool yl, yr;
+    yl = yr = false;
+    if (first and !can.empty()) {
+        string x = can.value();
+        clus::iterator it = conj.find(x);
+        int aux = it->second.get_memory(mem, identity);
+
+        if (aux != -1) {
+            int aux2 = it->second.space_left();
+            no_space = it->second.space_left() - mem;
+            free_space = aux2;
+            ite = it;
+        }
+        first = false;
+    }
     if (!(can.left()).empty()) {
         string x = (can.left()).value();
         clus::iterator it = conj.find(x);
@@ -307,7 +325,8 @@ void Cluster::find_best(const int mem, int no_space, int free_space, int identit
                 ite = it;
             }
         }
-        find_best(mem, no_space, free_space, identity, ite, can.left());
+
+        yl = true;
     }
 
     if (!(can.right()).empty()) {
@@ -323,8 +342,11 @@ void Cluster::find_best(const int mem, int no_space, int free_space, int identit
                 ite = it;
             }
         }
-        find_best(mem, no_space, free_space, identity, ite, can.right());
+
+        yr = true;
     }
+    if (yl) find_best(mem, no_space, free_space, identity, ite, can.left(), first);
+    if (yr) find_best(mem, no_space, free_space, identity, ite, can.right(), first);
 } 
 
 //CODE HELL

@@ -81,6 +81,8 @@ class Cpu {
     int get_memory(int mem, int identity) const;
 
     int space_left() const;
+
+    int what_ffree() const;
 };
 
 #endif

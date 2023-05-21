@@ -15,6 +15,10 @@ Cpu::Cpu(int n) {
     es.emplace(n, set<int>{0});
 }
 
+int Cpu::what_ffree() const {
+    return ffree;
+}
+
 void Cpu::is_leaf() {
     leaf = true;
 }
@@ -155,7 +159,7 @@ int Cpu::add_process_cpu(int identity, int memory, int time) {
     bool need_check = true;
 
     if (mem_ava > memory) { //si no hemos usado toda la memoria de la dirección que hemos cogido guardamos la sobrante
-        if (direction <= ffree) {
+        if (direction == ffree) {
             need_check = false;
             ffree = memory + direction;
         }
@@ -168,9 +172,12 @@ int Cpu::add_process_cpu(int identity, int memory, int time) {
 
     if (it2->second.empty()) es.erase(it2); //por último, si el tamañao de memoria se ha quedado sin direcciones en el mapa de espacios libres lo borramos
 
-    if (need_check and direction <= ffree) {
+    if (need_check and direction == ffree) {
         naio::iterator itc = diro.upper_bound(direction);
-        if (itc == diro.end()) ffree = -1;
+        if (itc == diro.end()) {
+            if (direction + memory == mema) ffree = mema + 1;
+            else ffree = direction + memory;
+        }
         else ffree = check_ffree(itc->first, itc->second.second, itc);
     }
 
@@ -181,7 +188,7 @@ int Cpu::check_ffree(int direction, int tam, naio::iterator& it) {
     int aux = direction + tam;
     ++it;
     if (it == diro.end()) {
-        if (aux == mema) return -1;
+        if (aux == mema) return mema + 1;
         else return aux;
     }
     else {
