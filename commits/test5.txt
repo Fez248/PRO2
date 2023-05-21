@@ -1,0 +1,86 @@
+proc1 1000
+proc2 1000
+* *
+proc3 1000
+* *
+1
+11
+iec
+app proc1 10 100 6
+app proc1 11 200 2
+app proc1 12 50 10
+app proc1 13 150 2
+app proc1 14 50 2
+app proc1 15 250 10
+ipc
+avanzar_tiempo 4
+ipc
+compactar_memoria_procesador proc4
+compactar_memoria_procesador proc2
+cmp proc1
+cmp proc1
+ipro proc1
+app proc1 16 601 3 
+app proc1 16 600 3
+ipro proc1
+app proc2 21 300 1
+app proc2 22 400 10
+app proc2 23 100 1
+ipro proc2
+at 1
+compactar_memoria_cluster
+ipc
+app proc2 24 601 9
+app proc2 24 600 9
+ipro proc2
+avanzar_tiempo 3
+ipro proc1
+cmp proc1
+ipro proc1
+app proc1 17 710 10
+app proc1 17 700 10
+ipc
+mc proc6
+proc10 100
+proc11 1000
+* *
+proc12 10
+* *
+mc proc1
+proc10 100
+proc11 1000
+* *
+proc12 10
+* *
+at 100
+mc proc1
+proc10 100
+proc11 1000
+* *
+proc12 10
+* *
+iec
+mc proc2
+proc10 100
+proc11 1000
+* *
+proc12 10
+* *
+iec
+ipc
+mc proc3
+proc30 100
+proc31 1000
+* *
+proc32 10
+* *
+iec
+ipc
+mc proc31
+proc33 100
+*
+proc31 100
+* *
+iec
+ipc
+fin

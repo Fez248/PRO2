@@ -31,15 +31,15 @@ error: no existe procesador
 #cmp proc1
 #ipro proc1
 0 10 100 2
-100 15 250 6
-350 12 50 6
+100 12 50 6
+150 15 250 6
 #app proc1 16
 error: no cabe proceso
 #app proc1 16
 #ipro proc1
 0 10 100 2
-100 15 250 6
-350 12 50 6
+100 12 50 6
+150 15 250 6
 400 16 600 3
 #app proc2 21
 #app proc2 22
@@ -53,8 +53,8 @@ error: no cabe proceso
 #ipc
 proc1
 0 10 100 1
-100 15 250 5
-350 12 50 5
+100 12 50 5
+150 15 250 5
 400 16 600 2
 proc2
 0 22 400 9
@@ -67,19 +67,19 @@ error: no cabe proceso
 400 24 600 9
 #avanzar_tiempo 3
 #ipro proc1
-100 15 250 2
-350 12 50 2
+100 12 50 2
+150 15 250 2
 #cmp proc1
 #ipro proc1
-0 15 250 2
-250 12 50 2
+0 12 50 2
+50 15 250 2
 #app proc1 17
 error: no cabe proceso
 #app proc1 17
 #ipc
 proc1
-0 15 250 2
-250 12 50 2
+0 12 50 2
+50 15 250 2
 300 17 700 10
 proc2
 0 22 400 6

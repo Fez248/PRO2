@@ -3,6 +3,7 @@
 #include "Waiting_Area.hh"
 #include "Process.hh"
 #include "Cluster.hh"
+#include <queue>
 using namespace std;
 
 typedef map<string, Cpu> clus;
@@ -134,9 +135,8 @@ bool Cluster::recive_processes(Process a) {
     id = a.what_id();
     mem = a.what_mem();
     no_space = free_space = -1;
-    bool first = true;
     clus::iterator ite = conj.end();
-    find_best(mem, no_space, free_space, id, ite, cluster, first);
+    find_best(mem, no_space, free_space, id, ite, cluster);
 
     if (ite != conj.end()) {
         ite->second.add_process_cpu(id, mem, time); //check this line, maybe I can create another add function that takes a process as a parameter and doesn't check so many errors
@@ -296,6 +296,7 @@ void Cluster::find_best(const int mem, int no_space, int free_space, int identit
 } 
 */
 
+/** NO TOCAR
 void Cluster::find_best(const int mem, int no_space, int free_space, int identity, clus::iterator& ite, BinTree<string> can, bool first) {
     bool yl, yr;
     yl = yr = false;
@@ -348,6 +349,37 @@ void Cluster::find_best(const int mem, int no_space, int free_space, int identit
     if (yl) find_best(mem, no_space, free_space, identity, ite, can.left(), first);
     if (yr) find_best(mem, no_space, free_space, identity, ite, can.right(), first);
 } 
+*/
+
+void Cluster::find_best(const int mem, int no_space, int free_space, int identity, clus::iterator& ite, BinTree<string> can) {
+    if (!can.empty()) {
+        queue<BinTree<string>> need_visit;
+        need_visit.push(can);
+
+        while (!need_visit.empty()) {
+            BinTree<string> ls, rs;
+            ls = need_visit.front().left();
+            rs = need_visit.front().right();
+            string x = need_visit.front().value();
+            need_visit.pop();
+
+            clus::iterator it = conj.find(x);
+            int aux = it->second.get_memory(mem, identity);
+
+            if (aux != -1) {
+                int aux2 = it->second.space_left();
+                if (no_space == -1 or aux - mem < no_space or (aux - mem == no_space and aux2 > free_space)) {
+                    no_space = aux - mem;
+                    free_space = aux2;
+                    ite = it;
+                }
+            }
+
+            if (!ls.empty()) need_visit.push(ls);
+            if (!rs.empty()) need_visit.push(rs);
+        }
+    }
+}
 
 //CODE HELL
 Cluster::Cluster() {}
