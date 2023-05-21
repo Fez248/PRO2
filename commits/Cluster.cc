@@ -105,7 +105,7 @@ bool Cluster::cmp(string x) {
     clus::iterator it = conj.lower_bound(x);
 
     if (it == conj.end() or it->first != x) return false;
-    it->second.compactar();
+    if (it->second.what_ffree() <= it->second.what_mema())it->second.compactar();
     return true;
 }
 
