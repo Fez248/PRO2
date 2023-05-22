@@ -10,7 +10,8 @@ using namespace std;
     @class Process
     @brief It represents a process
 
-    Each process has his proc_id, the memory it needs, his priority and the time needed to be executed
+    Each process has his proc_id, the memory it needs, his priority and the 
+    time needed to be executed
 */
 
 class Process {
@@ -27,15 +28,13 @@ class Process {
     */
     Process();
 
-    Process(int identity, int memmory, int delta, int direction);
-
     /**
-        @brief Reduces the time left of the process
+        @brief Secondary creator
 
-        \pre Initialized and t > 0
-        \post Reduces time in t unities, if delta == 0 it returns false, if not returns true
+        \pre <em>Identity, memory, delta and direction initialized</em>
+        \post A process with this information
     */
-    bool reducing(int t);
+    Process(int identity, int memmory, int delta, int direction);
 
     /**
         @brief Returns the id of the process
@@ -62,6 +61,14 @@ class Process {
     int what_time() const;
 
     /**
+        @brief Returns the memory direction where the process it's stored
+
+        \pre Initialized cpu direction
+        \post Returns the direction
+    */
+    int what_dir() const;
+
+    /**
         @brief Prints the process on the console
 
         \pre <em>True</em>
@@ -69,9 +76,22 @@ class Process {
     */
     void wr_process() const;
 
-    int what_dir() const;
+    /**
+        @brief Second way of printing the process on the console
 
+        \pre <em>True</em>
+        \post The process is printed
+    */
     void wr2_process() const;
+
+    /**
+        @brief Reduces the time left of the process
+
+        \pre Initialized and t > 0
+        \post Reduces time in t unities, if delta == 0 it returns false, if 
+        not returns true
+    */
+    bool reducing(int t);
 };
 
 #endif

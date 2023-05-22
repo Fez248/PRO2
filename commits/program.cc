@@ -18,8 +18,7 @@ int main() {
     /**
     This programm allows us to create a cluster (connected cpus) in a form of a binary tree. Each cpu 
     with his proccess and his memmory. We also have a waiting area where pending processes stay till they 
-    are sended to the cluster. All the errors that may occur are handled inside the functions in order to keep the main
-    pogram simple and readable.
+    are sended to the cluster.
     */
 
     Cluster clust;
@@ -31,7 +30,6 @@ int main() {
     string comand;
     cin >> comand;
 
-    //puedo sacar factor comun del cout << "#" << comand << endl; o sin el endl por si luego hay otra cosa
     while(comand != "fin") {
         if (comand == "configurar_cluster" or comand == "cc") {
             cout << "#" << comand << endl;

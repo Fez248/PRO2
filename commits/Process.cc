@@ -2,17 +2,6 @@
 #include "Process.hh"
 using namespace std;
 
-/*Process::Process() {
-    int proc_id, int mem;
-    double delta;
-
-    cin >> proc_id >> mem >> delta;
-    
-    ide = proc_id;
-    memo = mem;
-    time = delta;
-}*/
-
 Process::Process(int identity, int memory, int delta, int direction) {
     ide = identity;
     memo = memory;
@@ -43,10 +32,8 @@ void Process::wr_process() const {
 }
 
 void Process::wr2_process() const {
-    //posicion, nombre, memoria, tiempo
     cout << ide << " " << memo << " " << time << endl;
 }
-
 
 int Process::what_dir() const {
     return dir;

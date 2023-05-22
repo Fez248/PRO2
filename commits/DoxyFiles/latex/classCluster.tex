@@ -1,0 +1,595 @@
+\hypertarget{classCluster}{}\doxysection{Cluster Class Reference}
+\label{classCluster}\index{Cluster@{Cluster}}
+
+
+It represents a clsuter.  
+
+
+
+
+{\ttfamily \#include $<$Cluster.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCluster_aee7feb1d599d4c8fda6c3ee83e86ba81}{Cluster}} ()
+\begin{DoxyCompactList}\small\item\em Default creator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCluster_ab23ca36cc1d152f84f024856bd15946b}{search\+\_\+cpu}} (const string \&cpu\+\_\+id) const
+\begin{DoxyCompactList}\small\item\em Searchs for a specific cpu on the cluster. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCluster_a3461bf6425ed68be10136da7f065674c}{read}} ()
+\item 
+int \mbox{\hyperlink{classCluster_a67a07d7fa050cb54cdad5893f21d7d05}{mc}} (string x)
+\begin{DoxyCompactList}\small\item\em Modifies the cluster. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCluster_a9640e73a23961804c9ede181844b598a}{app}} (const string \&x, int identity, int memmory, int time)
+\begin{DoxyCompactList}\small\item\em Reads a processor id and a process, if everything goes right, adds the process to that processor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCluster_aced7cf64f11e80c668d164300f91d49a}{bpp}} (const string \&x, int identity)
+\begin{DoxyCompactList}\small\item\em It reads a process and the id of a cpu, if everything goes right it removes the process from the cpu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCluster_aa0ca0c66ba9d8ddcfb8ff9868b34ac3a}{at}} (int t)
+\begin{DoxyCompactList}\small\item\em Makes time pass by. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCluster_a2ee3faea667862eccfa83423987f3f5d}{ipro}} (const string \&x) const
+\begin{DoxyCompactList}\small\item\em Finds a cpu in the cluster and prints his processes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCluster_a4f957b2623758e3a37103197beaf257c}{ipc}} () const
+\begin{DoxyCompactList}\small\item\em Prints all the active processes from the cluster by increasing id order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCluster_ac43d39f3a287facd88d1b095e1096eaa}{iec}} () const
+\begin{DoxyCompactList}\small\item\em Prints the cluster structure. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCluster_ae632becdee8b3c212e2102e678aa5627}{cmp}} (string x)
+\begin{DoxyCompactList}\small\item\em Compacts the memmory of a cpu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCluster_a473788edb16c0d25dd52e24b4a2c3c61}{cmc}} ()
+\begin{DoxyCompactList}\small\item\em Compacts all the cpus. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCluster_a93fb7b595036497a78e75a54947ae551}{recive\+\_\+processes}} (\mbox{\hyperlink{classProcess}{Process}} a)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classCluster_a0f67ae08ed1bb763f431ba21c4292cc5}{read\+\_\+bintree}} (Bin\+Tree$<$ string $>$ \&\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}})
+\item 
+void \mbox{\hyperlink{classCluster_abf5680db313a34a21856e0221453d9c3}{write\+\_\+bintree}} (const Bin\+Tree$<$ string $>$ \&\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}}) const
+\item 
+void \mbox{\hyperlink{classCluster_a207680a453088ee7ee51bd05a5050a70}{reread}} (Bin\+Tree$<$ string $>$ \&a, string p)
+\item 
+void \mbox{\hyperlink{classCluster_aaba69a2ad950b8a0cc5611a62dbbef76}{find\+\_\+best}} (const int \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}, int no\+\_\+space, int free\+\_\+space, int identity, map$<$ string, \mbox{\hyperlink{classCpu}{Cpu}} $>$\+::iterator \&ite, Bin\+Tree$<$ string $>$ can)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Bin\+Tree$<$ string $>$ \mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}}
+\item 
+map$<$ string, \mbox{\hyperlink{classCpu}{Cpu}} $>$ \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+It represents a clsuter. 
+
+The cluster is a binary tree where his components are processors, cpus. It needs to have at least one cpu. 
+
+Definition at line 21 of file Cluster.\+hh.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCluster_aee7feb1d599d4c8fda6c3ee83e86ba81}\label{classCluster_aee7feb1d599d4c8fda6c3ee83e86ba81}} 
+\index{Cluster@{Cluster}!Cluster@{Cluster}}
+\index{Cluster@{Cluster}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{Cluster()}{Cluster()}}
+{\footnotesize\ttfamily Cluster\+::\+Cluster (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default creator. 
+
+\begin{DoxyPrecond}{Precondition}
+{\itshape True} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+An empty cluster 
+\end{DoxyPostcond}
+
+
+Definition at line 179 of file Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{179 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCluster_a9640e73a23961804c9ede181844b598a}\label{classCluster_a9640e73a23961804c9ede181844b598a}} 
+\index{Cluster@{Cluster}!app@{app}}
+\index{app@{app}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{app()}{app()}}
+{\footnotesize\ttfamily int Cluster\+::app (\begin{DoxyParamCaption}\item[{const string \&}]{x,  }\item[{int}]{identity,  }\item[{int}]{memmory,  }\item[{int}]{time }\end{DoxyParamCaption})}
+
+
+
+Reads a processor id and a process, if everything goes right, adds the process to that processor. 
+
+\begin{DoxyPrecond}{Precondition}
+A cpu id and a process 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+If the cpu doesn\textquotesingle{}t exist or if it already has a process with that id or the is no space left it shows an error message, if not, it adds the process to the cpu 
+\end{DoxyPostcond}
+
+
+Definition at line 75 of file Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{75                                                                     \{}
+\DoxyCodeLine{76     clus::iterator it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.find(x);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end()) \textcolor{keywordflow}{return} 101;}
+\DoxyCodeLine{79     \textcolor{keywordflow}{return} it-\/>second.add\_process\_cpu(identity, memory, time);}
+\DoxyCodeLine{80 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_aa0ca0c66ba9d8ddcfb8ff9868b34ac3a}\label{classCluster_aa0ca0c66ba9d8ddcfb8ff9868b34ac3a}} 
+\index{Cluster@{Cluster}!at@{at}}
+\index{at@{at}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily void Cluster\+::at (\begin{DoxyParamCaption}\item[{int}]{t }\end{DoxyParamCaption})}
+
+
+
+Makes time pass by. 
+
+\begin{DoxyPrecond}{Precondition}
+A number t $>$= 0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The time has been advanced in t unities 
+\end{DoxyPostcond}
+
+
+Definition at line 98 of file Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{98                       \{}
+\DoxyCodeLine{99     clus::iterator itf = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end();}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     \textcolor{keywordflow}{for} (clus::iterator it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.begin(); it != itf; ++it) it-\/>second.advance(t);}
+\DoxyCodeLine{102 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_aced7cf64f11e80c668d164300f91d49a}\label{classCluster_aced7cf64f11e80c668d164300f91d49a}} 
+\index{Cluster@{Cluster}!bpp@{bpp}}
+\index{bpp@{bpp}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{bpp()}{bpp()}}
+{\footnotesize\ttfamily int Cluster\+::bpp (\begin{DoxyParamCaption}\item[{const string \&}]{x,  }\item[{int}]{identity }\end{DoxyParamCaption})}
+
+
+
+It reads a process and the id of a cpu, if everything goes right it removes the process from the cpu. 
+
+\begin{DoxyPrecond}{Precondition}
+A process and a cpu id 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+If the cpu doesn\textquotesingle{}t exist or if the process doesn\textquotesingle{}t exist neither it shows an error message, if not, it removes the process from the cpu 
+\end{DoxyPostcond}
+
+
+Definition at line 82 of file Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{82                                               \{}
+\DoxyCodeLine{83     clus::iterator it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.find(x);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end()) \textcolor{keywordflow}{return} 101;}
+\DoxyCodeLine{86     \textcolor{keywordtype}{int} back = 0;}
+\DoxyCodeLine{87     \textcolor{keywordflow}{return} it-\/>second.remove\_process\_cpu(identity, back);}
+\DoxyCodeLine{88 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_a473788edb16c0d25dd52e24b4a2c3c61}\label{classCluster_a473788edb16c0d25dd52e24b4a2c3c61}} 
+\index{Cluster@{Cluster}!cmc@{cmc}}
+\index{cmc@{cmc}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{cmc()}{cmc()}}
+{\footnotesize\ttfamily void Cluster\+::cmc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Compacts all the cpus. 
+
+\begin{DoxyPrecond}{Precondition}
+{\itshape True} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+All the memmory moduls from all the cpus have been compacted 
+\end{DoxyPostcond}
+
+
+Definition at line 112 of file Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{112                   \{}
+\DoxyCodeLine{113     clus::iterator itf = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end();}
+\DoxyCodeLine{114     \textcolor{keywordflow}{for} (clus::iterator it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.begin(); it != itf; ++it) \{}
+\DoxyCodeLine{115         \textcolor{keywordflow}{if} (it-\/>second.what\_ffree() <= it-\/>second.what\_mema())it-\/>second.compactar();}
+\DoxyCodeLine{116     \}}
+\DoxyCodeLine{117 \}   }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_ae632becdee8b3c212e2102e678aa5627}\label{classCluster_ae632becdee8b3c212e2102e678aa5627}} 
+\index{Cluster@{Cluster}!cmp@{cmp}}
+\index{cmp@{cmp}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{cmp()}{cmp()}}
+{\footnotesize\ttfamily bool Cluster\+::cmp (\begin{DoxyParamCaption}\item[{string}]{x }\end{DoxyParamCaption})}
+
+
+
+Compacts the memmory of a cpu. 
+
+\begin{DoxyPrecond}{Precondition}
+A cpu id 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+If the cpu id doesn\textquotesingle{}t exist it prints an error message, if not, it compacts it\textquotesingle{}s memmory moving all the processes to the beggining of the memory 
+\end{DoxyPostcond}
+
+
+Definition at line 104 of file Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{104                           \{}
+\DoxyCodeLine{105     clus::iterator it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.lower\_bound(x);}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end() or it-\/>first != x) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{108     \textcolor{keywordflow}{if} (it-\/>second.what\_ffree() <= it-\/>second.what\_mema())it-\/>second.compactar();}
+\DoxyCodeLine{109     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{110 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_aaba69a2ad950b8a0cc5611a62dbbef76}\label{classCluster_aaba69a2ad950b8a0cc5611a62dbbef76}} 
+\index{Cluster@{Cluster}!find\_best@{find\_best}}
+\index{find\_best@{find\_best}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{find\_best()}{find\_best()}}
+{\footnotesize\ttfamily void Cluster\+::find\+\_\+best (\begin{DoxyParamCaption}\item[{const int}]{mem,  }\item[{int}]{no\+\_\+space,  }\item[{int}]{free\+\_\+space,  }\item[{int}]{identity,  }\item[{map$<$ string, \mbox{\hyperlink{classCpu}{Cpu}} $>$\+::iterator \&}]{ite,  }\item[{Bin\+Tree$<$ string $>$}]{can }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 148 of file Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{148                                                                                                                          \{}
+\DoxyCodeLine{149     \textcolor{keywordflow}{if} (!can.empty()) \{}
+\DoxyCodeLine{150         queue<BinTree<string>> need\_visit;}
+\DoxyCodeLine{151         need\_visit.push(can);}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153         \textcolor{keywordflow}{while} (!need\_visit.empty()) \{}
+\DoxyCodeLine{154             BinTree<string> ls, rs;}
+\DoxyCodeLine{155             ls = need\_visit.front().left();}
+\DoxyCodeLine{156             rs = need\_visit.front().right();}
+\DoxyCodeLine{157             \textcolor{keywordtype}{string} x = need\_visit.front().value();}
+\DoxyCodeLine{158             need\_visit.pop();}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160             clus::iterator it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.find(x);}
+\DoxyCodeLine{161             \textcolor{keywordtype}{int} aux = it-\/>second.get\_memory(\mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}, identity);}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163             \textcolor{keywordflow}{if} (aux != -\/1) \{}
+\DoxyCodeLine{164                 \textcolor{keywordtype}{int} aux2 = it-\/>second.space\_left();}
+\DoxyCodeLine{165                 \textcolor{keywordflow}{if} (no\_space == -\/1 or aux -\/ \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}} < no\_space or (aux -\/ \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}} == no\_space and aux2 > free\_space)) \{}
+\DoxyCodeLine{166                     no\_space = aux -\/ \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}};}
+\DoxyCodeLine{167                     free\_space = aux2;}
+\DoxyCodeLine{168                     ite = it;}
+\DoxyCodeLine{169                 \}}
+\DoxyCodeLine{170             \}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172             \textcolor{keywordflow}{if} (!ls.empty()) need\_visit.push(ls);}
+\DoxyCodeLine{173             \textcolor{keywordflow}{if} (!rs.empty()) need\_visit.push(rs);}
+\DoxyCodeLine{174         \}}
+\DoxyCodeLine{175     \}}
+\DoxyCodeLine{176 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_ac43d39f3a287facd88d1b095e1096eaa}\label{classCluster_ac43d39f3a287facd88d1b095e1096eaa}} 
+\index{Cluster@{Cluster}!iec@{iec}}
+\index{iec@{iec}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{iec()}{iec()}}
+{\footnotesize\ttfamily void Cluster\+::iec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Prints the cluster structure. 
+
+\begin{DoxyPrecond}{Precondition}
+{\itshape True} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The cluster has been printed 
+\end{DoxyPostcond}
+
+
+Definition at line 16 of file Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16                         \{}
+\DoxyCodeLine{17     \mbox{\hyperlink{classCluster_abf5680db313a34a21856e0221453d9c3}{write\_bintree}}(\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}});}
+\DoxyCodeLine{18 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_a4f957b2623758e3a37103197beaf257c}\label{classCluster_a4f957b2623758e3a37103197beaf257c}} 
+\index{Cluster@{Cluster}!ipc@{ipc}}
+\index{ipc@{ipc}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{ipc()}{ipc()}}
+{\footnotesize\ttfamily void Cluster\+::ipc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Prints all the active processes from the cluster by increasing id order. 
+
+\begin{DoxyPrecond}{Precondition}
+{\itshape True} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+All the processes have been printed 
+\end{DoxyPostcond}
+
+
+Definition at line 66 of file Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{66                         \{}
+\DoxyCodeLine{67     clus::const\_iterator it2 = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end();}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{keywordflow}{for} (clus::const\_iterator it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.begin(); it != it2; ++it) \{}
+\DoxyCodeLine{70         cout << it-\/>first << endl;}
+\DoxyCodeLine{71         it-\/>second.write\_cpu();}
+\DoxyCodeLine{72     \}}
+\DoxyCodeLine{73 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_a2ee3faea667862eccfa83423987f3f5d}\label{classCluster_a2ee3faea667862eccfa83423987f3f5d}} 
+\index{Cluster@{Cluster}!ipro@{ipro}}
+\index{ipro@{ipro}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{ipro()}{ipro()}}
+{\footnotesize\ttfamily bool Cluster\+::ipro (\begin{DoxyParamCaption}\item[{const string \&}]{x }\end{DoxyParamCaption}) const}
+
+
+
+Finds a cpu in the cluster and prints his processes. 
+
+\begin{DoxyPrecond}{Precondition}
+A cpu id ready to be read at the console 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+If the cpu doesn\textquotesingle{}t exist it shows an error message, if not, it prints his processes with their information 
+\end{DoxyPostcond}
+
+
+Definition at line 90 of file Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{90                                         \{}
+\DoxyCodeLine{91     clus::const\_iterator it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.find(x);}
+\DoxyCodeLine{92     }
+\DoxyCodeLine{93     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end()) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{94     it-\/>second.write\_cpu();}
+\DoxyCodeLine{95     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{96 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_a67a07d7fa050cb54cdad5893f21d7d05}\label{classCluster_a67a07d7fa050cb54cdad5893f21d7d05}} 
+\index{Cluster@{Cluster}!mc@{mc}}
+\index{mc@{mc}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{mc()}{mc()}}
+{\footnotesize\ttfamily int Cluster\+::mc (\begin{DoxyParamCaption}\item[{string}]{x }\end{DoxyParamCaption})}
+
+
+
+Modifies the cluster. 
+
+\begin{DoxyPrecond}{Precondition}
+An id of a cpu of the existing cluster and a new cluster 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+If the cpu doesn\textquotesingle{}t exist, if it has any active process or if it has auxiliar cpus it shows an error message, if not, the new cluster it\textquotesingle{}s added where the cpu was 
+\end{DoxyPostcond}
+
+
+Definition at line 119 of file Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{119                         \{}
+\DoxyCodeLine{120     clus::const\_iterator it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.lower\_bound(x);}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end() or it-\/>first != x) \textcolor{keywordflow}{return} 101;}
+\DoxyCodeLine{123     \textcolor{keywordflow}{if} (!it-\/>second.active\_processes()) \textcolor{keywordflow}{return} 102;}
+\DoxyCodeLine{124     \textcolor{keywordflow}{if} (!it-\/>second.yn\_leaf()) \textcolor{keywordflow}{return} 103;}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126     \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.erase(it);}
+\DoxyCodeLine{127     \mbox{\hyperlink{classCluster_a207680a453088ee7ee51bd05a5050a70}{reread}}(\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}}, x);}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \textcolor{keywordflow}{return} 100;}
+\DoxyCodeLine{130 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_a3461bf6425ed68be10136da7f065674c}\label{classCluster_a3461bf6425ed68be10136da7f065674c}} 
+\index{Cluster@{Cluster}!read@{read}}
+\index{read@{read}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void Cluster\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11                    \{}
+\DoxyCodeLine{12     \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.clear();}
+\DoxyCodeLine{13     \mbox{\hyperlink{classCluster_a0f67ae08ed1bb763f431ba21c4292cc5}{read\_bintree}}(\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}});}
+\DoxyCodeLine{14 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_a0f67ae08ed1bb763f431ba21c4292cc5}\label{classCluster_a0f67ae08ed1bb763f431ba21c4292cc5}} 
+\index{Cluster@{Cluster}!read\_bintree@{read\_bintree}}
+\index{read\_bintree@{read\_bintree}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{read\_bintree()}{read\_bintree()}}
+{\footnotesize\ttfamily bool Cluster\+::read\+\_\+bintree (\begin{DoxyParamCaption}\item[{Bin\+Tree$<$ string $>$ \&}]{cluster }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 30 of file Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30                                              \{ \textcolor{comment}{//quizá el error está aquí}}
+\DoxyCodeLine{31     \textcolor{keywordtype}{string} x;}
+\DoxyCodeLine{32     cin >> x;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keywordflow}{if} (x != \textcolor{stringliteral}{"*"}) \{}
+\DoxyCodeLine{35         \textcolor{keywordtype}{int} n;}
+\DoxyCodeLine{36         cin >> n;}
+\DoxyCodeLine{37         \textcolor{keyword}{auto} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.insert(make\_pair(x, \mbox{\hyperlink{classCpu}{Cpu}}(n)));}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39         BinTree<string> left, right;}
+\DoxyCodeLine{40         \textcolor{keywordtype}{bool} left\_check = \mbox{\hyperlink{classCluster_a0f67ae08ed1bb763f431ba21c4292cc5}{read\_bintree}}(left);}
+\DoxyCodeLine{41         \textcolor{keywordtype}{bool} right\_check = \mbox{\hyperlink{classCluster_a0f67ae08ed1bb763f431ba21c4292cc5}{read\_bintree}}(right);    }
+\DoxyCodeLine{42         \textcolor{keywordflow}{if} (left\_check and right\_check) it.first-\/>second.is\_leaf();}
+\DoxyCodeLine{43         a = BinTree<string>(x, left, right);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{46     \}}
+\DoxyCodeLine{47     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{48 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_a93fb7b595036497a78e75a54947ae551}\label{classCluster_a93fb7b595036497a78e75a54947ae551}} 
+\index{Cluster@{Cluster}!recive\_processes@{recive\_processes}}
+\index{recive\_processes@{recive\_processes}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{recive\_processes()}{recive\_processes()}}
+{\footnotesize\ttfamily bool Cluster\+::recive\+\_\+processes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classProcess}{Process}}}]{a }\end{DoxyParamCaption})}
+
+
+
+Definition at line 132 of file Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{132                                         \{}
+\DoxyCodeLine{133     \textcolor{keywordtype}{int} \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}, no\_space, free\_space, time, id;}
+\DoxyCodeLine{134     time = a.\mbox{\hyperlink{classProcess_a35de003f1633c047d70e29265d505b52}{what\_time}}();}
+\DoxyCodeLine{135     \textcolor{keywordtype}{id} = a.\mbox{\hyperlink{classProcess_a1c83a78bf269ff88e0ce1b929eee325c}{what\_id}}();}
+\DoxyCodeLine{136     \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}} = a.\mbox{\hyperlink{classProcess_a829698b52b61409c211979e86c808065}{what\_mem}}();}
+\DoxyCodeLine{137     no\_space = free\_space = -\/1;}
+\DoxyCodeLine{138     clus::iterator ite = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end();}
+\DoxyCodeLine{139     \mbox{\hyperlink{classCluster_aaba69a2ad950b8a0cc5611a62dbbef76}{find\_best}}(\mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}, no\_space, free\_space, \textcolor{keywordtype}{id}, ite, \mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}});}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141     \textcolor{keywordflow}{if} (ite != \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end()) \{}
+\DoxyCodeLine{142         ite-\/>second.add\_process\_cpu(\textcolor{keywordtype}{id}, \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}, time); \textcolor{comment}{//check this line, maybe I can create another add function that takes a process as a parameter and doesn't check so many errors}}
+\DoxyCodeLine{143         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{144     \}}
+\DoxyCodeLine{145     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{146 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_a207680a453088ee7ee51bd05a5050a70}\label{classCluster_a207680a453088ee7ee51bd05a5050a70}} 
+\index{Cluster@{Cluster}!reread@{reread}}
+\index{reread@{reread}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{reread()}{reread()}}
+{\footnotesize\ttfamily void Cluster\+::reread (\begin{DoxyParamCaption}\item[{Bin\+Tree$<$ string $>$ \&}]{a,  }\item[{string}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 50 of file Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50                                                  \{}
+\DoxyCodeLine{51     \textcolor{keywordflow}{if} (!a.empty()) \{}
+\DoxyCodeLine{52         \textcolor{keywordtype}{string} x = a.value();}
+\DoxyCodeLine{53         \textcolor{keywordflow}{if} (x == p) \mbox{\hyperlink{classCluster_a0f67ae08ed1bb763f431ba21c4292cc5}{read\_bintree}}(a);}
+\DoxyCodeLine{54         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{55             BinTree<string> left, right;}
+\DoxyCodeLine{56             left = a.left();}
+\DoxyCodeLine{57             right = a.right();}
+\DoxyCodeLine{58             \mbox{\hyperlink{classCluster_a207680a453088ee7ee51bd05a5050a70}{reread}}(left, p);}
+\DoxyCodeLine{59             \mbox{\hyperlink{classCluster_a207680a453088ee7ee51bd05a5050a70}{reread}}(right, p);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61             a = BinTree<string>(x, left, right);}
+\DoxyCodeLine{62         \}}
+\DoxyCodeLine{63     \}}
+\DoxyCodeLine{64 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_ab23ca36cc1d152f84f024856bd15946b}\label{classCluster_ab23ca36cc1d152f84f024856bd15946b}} 
+\index{Cluster@{Cluster}!search\_cpu@{search\_cpu}}
+\index{search\_cpu@{search\_cpu}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{search\_cpu()}{search\_cpu()}}
+{\footnotesize\ttfamily bool Cluster\+::search\+\_\+cpu (\begin{DoxyParamCaption}\item[{const string \&}]{cpu\+\_\+id }\end{DoxyParamCaption}) const}
+
+
+
+Searchs for a specific cpu on the cluster. 
+
+\begin{DoxyPrecond}{Precondition}
+Initialized cpu\+\_\+id 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Returns true if the cpu exists and false if not 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classCluster_abf5680db313a34a21856e0221453d9c3}\label{classCluster_abf5680db313a34a21856e0221453d9c3}} 
+\index{Cluster@{Cluster}!write\_bintree@{write\_bintree}}
+\index{write\_bintree@{write\_bintree}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{write\_bintree()}{write\_bintree()}}
+{\footnotesize\ttfamily void Cluster\+::write\+\_\+bintree (\begin{DoxyParamCaption}\item[{const Bin\+Tree$<$ string $>$ \&}]{cluster }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 20 of file Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20                                                                 \{}
+\DoxyCodeLine{21     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}}.empty()) \{}
+\DoxyCodeLine{22         cout << \textcolor{stringliteral}{"("} << \mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}}.value();}
+\DoxyCodeLine{23         \mbox{\hyperlink{classCluster_abf5680db313a34a21856e0221453d9c3}{write\_bintree}}(\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}}.left());}
+\DoxyCodeLine{24         \mbox{\hyperlink{classCluster_abf5680db313a34a21856e0221453d9c3}{write\_bintree}}(\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}}.right());}
+\DoxyCodeLine{25         cout << \textcolor{stringliteral}{")"};}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27     \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{28 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCluster_a371e399702db6ab3ea1eb21acd625408}\label{classCluster_a371e399702db6ab3ea1eb21acd625408}} 
+\index{Cluster@{Cluster}!cluster@{cluster}}
+\index{cluster@{cluster}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{cluster}{cluster}}
+{\footnotesize\ttfamily Bin\+Tree$<$string$>$ Cluster\+::cluster\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 23 of file Cluster.\+hh.
+
+\mbox{\Hypertarget{classCluster_aea7f1c755c1fb744008e344a3692dafb}\label{classCluster_aea7f1c755c1fb744008e344a3692dafb}} 
+\index{Cluster@{Cluster}!conj@{conj}}
+\index{conj@{conj}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{conj}{conj}}
+{\footnotesize\ttfamily map$<$string, \mbox{\hyperlink{classCpu}{Cpu}}$>$ Cluster\+::conj\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 24 of file Cluster.\+hh.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Cluster_8hh}{Cluster.\+hh}}\item 
+\mbox{\hyperlink{Cluster_8cc}{Cluster.\+cc}}\end{DoxyCompactItemize}

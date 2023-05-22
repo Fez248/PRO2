@@ -23,12 +23,45 @@ class Cluster {
     BinTree<string> cluster;
     map<string, Cpu> conj;
 
+    /**
+        @brief Reads a cluster and sets the leaf value of the processors.
+
+        \pre The new cluster ready to be read on the console.
+        \post Returns true if the node that it's reading it's empty.
+    */
     bool read_bintree(BinTree<string>& cluster);
 
+    /**
+        @brief Prints the cluster.
+
+        \pre <em>True</em>.
+        \post The cluster has been printed.
+    */
     void write_bintree(const BinTree<string>& cluster) const;
 
+    /**
+        @brief Modifies the cluster from a node p, if the node it's reading 
+        it is not p it continues reading, when p is found it calls
+        read_bintree() and the new cluster is inserted in its' position.
+
+        \pre The new cluster ready to be read on the console, a initialized
+        and garanteed that p exists, it doesn't have processes and it's
+        a leaf of the tree and p initialized.
+        \post The new cluster a contains the old cluster and the new one in
+        the position of p.
+    */
     void reread(BinTree<string>& a, string p);
 
+    /**
+        @brief Finds the best cpu to insert the process with memory = mem
+        and id = identity,
+
+        \pre The new cluster ready to be read on the console, a initialized
+        and garanteed that p exists, it doesn't have processes and it's
+        a leaf of the tree and p initialized.
+        \post The new cluster a contains the old cluster and the new one in
+        the position of p.
+    */
     void find_best(const int mem, int no_space, int free_space, int identity, map<string, Cpu>::iterator& ite, BinTree<string> can);
 
     public:
@@ -128,62 +161,5 @@ class Cluster {
 
     bool recive_processes(Process a);
 };
-
-/**
-void Cluster::find_best(const int mem, int no_space, int free_space, int identity, clus::iterator& ite, BinTree<string> can) {
-    if (!can.empty()) {
-        string x = can.value();
-        clus::iterator it = conj.find(x);
-        if (no_space == -1 and it->second.get_memory(mem, identity != -1)) {
-            no_space = it->second.get_memory(mem, identity) - mem;
-            free_space = it->second.space_left();
-            ite = it;
-        }
-        else {
-            if (!(can.left()).empty()) {
-                string x = (can.left()).value();
-                clus::iterator it = conj.find(x);
-                int aux = it->second.get_memory(mem, identity);
-
-                if (aux != -1) {
-                    int aux2 = it->second.space_left();
-                    if (no_space == -1 or aux - mem < no_space) {
-                        no_space = aux - mem;
-                        free_space = aux2;
-                        ite = it;
-                    }
-                    else if (aux - mem == no_space and aux2 > free_space) {
-                        no_space = aux - mem;
-                        free_space = aux2;
-                        ite = it;
-                    }
-                }
-            }
-
-            if (!(can.right()).empty()) {
-                string x = (can.right()).value();
-                clus::iterator it = conj.find(x);
-                int aux = it->second.get_memory(mem, identity);
-
-                if (aux != -1) {
-                    int aux2 = it->second.space_left();
-                    if (no_space == -1 or aux - mem < no_space) {
-                        no_space = aux - mem;
-                        free_space = aux2;
-                        ite = it;
-                    }
-                    else if (aux - mem == no_space and aux2 > free_space) {
-                        no_space = aux - mem;
-                        free_space = aux2;
-                        ite = it;
-                    }
-                }
-            }
-        }
-        find_best(mem, no_space, free_space, identity, ite, can.left());
-        find_best(mem, no_space, free_space, identity, ite, can.right());
-    }
-} 
-*/
 
 #endif

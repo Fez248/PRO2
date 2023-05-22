@@ -1,0 +1,344 @@
+\hypertarget{classProcess}{}\doxysection{Process Class Reference}
+\label{classProcess}\index{Process@{Process}}
+
+
+It represents a process.  
+
+
+
+
+{\ttfamily \#include $<$Process.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classProcess_a9f4553eac74c657bb451f390c17d6bea}{Process}} ()
+\begin{DoxyCompactList}\small\item\em Default creator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classProcess_a5711384fd578d025137787ade588bfc2}{Process}} (int identity, int memmory, int delta, int direction)
+\begin{DoxyCompactList}\small\item\em Secondary creator. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classProcess_a1c83a78bf269ff88e0ce1b929eee325c}{what\+\_\+id}} () const
+\begin{DoxyCompactList}\small\item\em Returns the id of the process. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classProcess_a829698b52b61409c211979e86c808065}{what\+\_\+mem}} () const
+\begin{DoxyCompactList}\small\item\em Returns the memory needed for the process. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classProcess_a35de003f1633c047d70e29265d505b52}{what\+\_\+time}} () const
+\begin{DoxyCompactList}\small\item\em Returns the time left of the process. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classProcess_a7f67272ff6d2946d8e0ab89e8763ca36}{what\+\_\+dir}} () const
+\begin{DoxyCompactList}\small\item\em Returns the memory direction where the process it\textquotesingle{}s stored. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProcess_a70e7cccbb3ab17890baba2c8e4ad1b47}{wr\+\_\+process}} () const
+\begin{DoxyCompactList}\small\item\em Prints the process on the console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProcess_ade0eeec0a4b9cab02b9d677d555112d3}{wr2\+\_\+process}} () const
+\begin{DoxyCompactList}\small\item\em Second way of printing the process on the console. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classProcess_af0ca6bf3dbf44f361e6283b633a737b0}{reducing}} (int t)
+\begin{DoxyCompactList}\small\item\em Reduces the time left of the process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classProcess_a859e26edf3265d40a42666d160b4a9c4}{dir}}
+\item 
+int \mbox{\hyperlink{classProcess_acf8bf6874670e4d11819528caf093aa7}{ide}}
+\item 
+int \mbox{\hyperlink{classProcess_a21d2c162c236aa09d88f91bd025ce44b}{memo}}
+\item 
+int \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+It represents a process. 
+
+Each process has his proc\+\_\+id, the memory it needs, his priority and the time needed to be executed 
+
+Definition at line 16 of file Process.\+hh.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classProcess_a9f4553eac74c657bb451f390c17d6bea}\label{classProcess_a9f4553eac74c657bb451f390c17d6bea}} 
+\index{Process@{Process}!Process@{Process}}
+\index{Process@{Process}!Process@{Process}}
+\doxysubsubsection{\texorpdfstring{Process()}{Process()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Process\+::\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default creator. 
+
+\begin{DoxyPrecond}{Precondition}
+{\itshape True} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+A process 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classProcess_a5711384fd578d025137787ade588bfc2}\label{classProcess_a5711384fd578d025137787ade588bfc2}} 
+\index{Process@{Process}!Process@{Process}}
+\index{Process@{Process}!Process@{Process}}
+\doxysubsubsection{\texorpdfstring{Process()}{Process()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Process\+::\+Process (\begin{DoxyParamCaption}\item[{int}]{identity,  }\item[{int}]{memmory,  }\item[{int}]{delta,  }\item[{int}]{direction }\end{DoxyParamCaption})}
+
+
+
+Secondary creator. 
+
+\begin{DoxyPrecond}{Precondition}
+{\itshape Identity, memory, delta and direction initialized} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+A process with this information 
+\end{DoxyPostcond}
+
+
+Definition at line 5 of file Process.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5                                                                    \{}
+\DoxyCodeLine{6     \mbox{\hyperlink{classProcess_acf8bf6874670e4d11819528caf093aa7}{ide}} = identity;}
+\DoxyCodeLine{7     \mbox{\hyperlink{classProcess_a21d2c162c236aa09d88f91bd025ce44b}{memo}} = memory;}
+\DoxyCodeLine{8     \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}} = delta;}
+\DoxyCodeLine{9     \mbox{\hyperlink{Cpu_8cc_ade369179a3e9f2fd3703f28d81647de1}{dir}} = direction;}
+\DoxyCodeLine{10 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classProcess_af0ca6bf3dbf44f361e6283b633a737b0}\label{classProcess_af0ca6bf3dbf44f361e6283b633a737b0}} 
+\index{Process@{Process}!reducing@{reducing}}
+\index{reducing@{reducing}!Process@{Process}}
+\doxysubsubsection{\texorpdfstring{reducing()}{reducing()}}
+{\footnotesize\ttfamily bool Process\+::reducing (\begin{DoxyParamCaption}\item[{int}]{t }\end{DoxyParamCaption})}
+
+
+
+Reduces the time left of the process. 
+
+\begin{DoxyPrecond}{Precondition}
+Initialized and t $>$ 0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Reduces time in t unities, if delta == 0 it returns false, if not returns true 
+\end{DoxyPostcond}
+
+
+Definition at line 12 of file Process.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12                             \{}
+\DoxyCodeLine{13     \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}} = \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}} -\/ t;}
+\DoxyCodeLine{14     \textcolor{keywordflow}{return} \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}} > 0;}
+\DoxyCodeLine{15 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProcess_a7f67272ff6d2946d8e0ab89e8763ca36}\label{classProcess_a7f67272ff6d2946d8e0ab89e8763ca36}} 
+\index{Process@{Process}!what\_dir@{what\_dir}}
+\index{what\_dir@{what\_dir}!Process@{Process}}
+\doxysubsubsection{\texorpdfstring{what\_dir()}{what\_dir()}}
+{\footnotesize\ttfamily int Process\+::what\+\_\+dir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the memory direction where the process it\textquotesingle{}s stored. 
+
+\begin{DoxyPrecond}{Precondition}
+Initialized cpu direction 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Returns the direction 
+\end{DoxyPostcond}
+
+
+Definition at line 38 of file Process.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{38                             \{}
+\DoxyCodeLine{39     \textcolor{keywordflow}{return} \mbox{\hyperlink{classProcess_a859e26edf3265d40a42666d160b4a9c4}{dir}};}
+\DoxyCodeLine{40 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProcess_a1c83a78bf269ff88e0ce1b929eee325c}\label{classProcess_a1c83a78bf269ff88e0ce1b929eee325c}} 
+\index{Process@{Process}!what\_id@{what\_id}}
+\index{what\_id@{what\_id}!Process@{Process}}
+\doxysubsubsection{\texorpdfstring{what\_id()}{what\_id()}}
+{\footnotesize\ttfamily int Process\+::what\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the id of the process. 
+
+\begin{DoxyPrecond}{Precondition}
+{\itshape True} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Returns proc\+\_\+id 
+\end{DoxyPostcond}
+
+
+Definition at line 17 of file Process.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17                            \{}
+\DoxyCodeLine{18     \textcolor{keywordflow}{return} \mbox{\hyperlink{classProcess_acf8bf6874670e4d11819528caf093aa7}{ide}};}
+\DoxyCodeLine{19 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProcess_a829698b52b61409c211979e86c808065}\label{classProcess_a829698b52b61409c211979e86c808065}} 
+\index{Process@{Process}!what\_mem@{what\_mem}}
+\index{what\_mem@{what\_mem}!Process@{Process}}
+\doxysubsubsection{\texorpdfstring{what\_mem()}{what\_mem()}}
+{\footnotesize\ttfamily int Process\+::what\+\_\+mem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the memory needed for the process. 
+
+\begin{DoxyPrecond}{Precondition}
+{\itshape True} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Returns mem 
+\end{DoxyPostcond}
+
+
+Definition at line 21 of file Process.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21                             \{}
+\DoxyCodeLine{22     \textcolor{keywordflow}{return} \mbox{\hyperlink{classProcess_a21d2c162c236aa09d88f91bd025ce44b}{memo}};}
+\DoxyCodeLine{23 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProcess_a35de003f1633c047d70e29265d505b52}\label{classProcess_a35de003f1633c047d70e29265d505b52}} 
+\index{Process@{Process}!what\_time@{what\_time}}
+\index{what\_time@{what\_time}!Process@{Process}}
+\doxysubsubsection{\texorpdfstring{what\_time()}{what\_time()}}
+{\footnotesize\ttfamily int Process\+::what\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the time left of the process. 
+
+\begin{DoxyPrecond}{Precondition}
+{\itshape True} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Returns delta 
+\end{DoxyPostcond}
+
+
+Definition at line 25 of file Process.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25                              \{}
+\DoxyCodeLine{26     \textcolor{keywordflow}{return} \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}};}
+\DoxyCodeLine{27 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProcess_ade0eeec0a4b9cab02b9d677d555112d3}\label{classProcess_ade0eeec0a4b9cab02b9d677d555112d3}} 
+\index{Process@{Process}!wr2\_process@{wr2\_process}}
+\index{wr2\_process@{wr2\_process}!Process@{Process}}
+\doxysubsubsection{\texorpdfstring{wr2\_process()}{wr2\_process()}}
+{\footnotesize\ttfamily void Process\+::wr2\+\_\+process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Second way of printing the process on the console. 
+
+\begin{DoxyPrecond}{Precondition}
+{\itshape True} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The process is printed 
+\end{DoxyPostcond}
+
+
+Definition at line 34 of file Process.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{34                                 \{}
+\DoxyCodeLine{35     cout << \mbox{\hyperlink{classProcess_acf8bf6874670e4d11819528caf093aa7}{ide}} << \textcolor{stringliteral}{" "} << \mbox{\hyperlink{classProcess_a21d2c162c236aa09d88f91bd025ce44b}{memo}} << \textcolor{stringliteral}{" "} << \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}} << endl;}
+\DoxyCodeLine{36 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classProcess_a70e7cccbb3ab17890baba2c8e4ad1b47}\label{classProcess_a70e7cccbb3ab17890baba2c8e4ad1b47}} 
+\index{Process@{Process}!wr\_process@{wr\_process}}
+\index{wr\_process@{wr\_process}!Process@{Process}}
+\doxysubsubsection{\texorpdfstring{wr\_process()}{wr\_process()}}
+{\footnotesize\ttfamily void Process\+::wr\+\_\+process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Prints the process on the console. 
+
+\begin{DoxyPrecond}{Precondition}
+{\itshape True} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The process is printed 
+\end{DoxyPostcond}
+
+
+Definition at line 29 of file Process.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29                                \{}
+\DoxyCodeLine{30     \textcolor{comment}{//posicion, nombre, memoria, tiempo}}
+\DoxyCodeLine{31     cout << \mbox{\hyperlink{Cpu_8cc_ade369179a3e9f2fd3703f28d81647de1}{dir}} << \textcolor{stringliteral}{" "} << \mbox{\hyperlink{classProcess_acf8bf6874670e4d11819528caf093aa7}{ide}} << \textcolor{stringliteral}{" "} << \mbox{\hyperlink{classProcess_a21d2c162c236aa09d88f91bd025ce44b}{memo}} << \textcolor{stringliteral}{" "} << \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}} << endl;}
+\DoxyCodeLine{32 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classProcess_a859e26edf3265d40a42666d160b4a9c4}\label{classProcess_a859e26edf3265d40a42666d160b4a9c4}} 
+\index{Process@{Process}!dir@{dir}}
+\index{dir@{dir}!Process@{Process}}
+\doxysubsubsection{\texorpdfstring{dir}{dir}}
+{\footnotesize\ttfamily int Process\+::dir\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 18 of file Process.\+hh.
+
+\mbox{\Hypertarget{classProcess_acf8bf6874670e4d11819528caf093aa7}\label{classProcess_acf8bf6874670e4d11819528caf093aa7}} 
+\index{Process@{Process}!ide@{ide}}
+\index{ide@{ide}!Process@{Process}}
+\doxysubsubsection{\texorpdfstring{ide}{ide}}
+{\footnotesize\ttfamily int Process\+::ide\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 18 of file Process.\+hh.
+
+\mbox{\Hypertarget{classProcess_a21d2c162c236aa09d88f91bd025ce44b}\label{classProcess_a21d2c162c236aa09d88f91bd025ce44b}} 
+\index{Process@{Process}!memo@{memo}}
+\index{memo@{memo}!Process@{Process}}
+\doxysubsubsection{\texorpdfstring{memo}{memo}}
+{\footnotesize\ttfamily int Process\+::memo\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 18 of file Process.\+hh.
+
+\mbox{\Hypertarget{classProcess_afbcaed5d0540706f919d1d96adb5c61d}\label{classProcess_afbcaed5d0540706f919d1d96adb5c61d}} 
+\index{Process@{Process}!time@{time}}
+\index{time@{time}!Process@{Process}}
+\doxysubsubsection{\texorpdfstring{time}{time}}
+{\footnotesize\ttfamily int Process\+::time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 18 of file Process.\+hh.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Process_8hh}{Process.\+hh}}\item 
+\mbox{\hyperlink{Process_8cc}{Process.\+cc}}\end{DoxyCompactItemize}

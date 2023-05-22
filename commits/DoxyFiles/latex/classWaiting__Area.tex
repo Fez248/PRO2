@@ -1,0 +1,451 @@
+\hypertarget{classWaiting__Area}{}\doxysection{Waiting\+\_\+\+Area Class Reference}
+\label{classWaiting__Area}\index{Waiting\_Area@{Waiting\_Area}}
+
+
+It represents a waiting area.  
+
+
+
+
+{\ttfamily \#include $<$Waiting\+\_\+\+Area.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWaiting__Area_a316e80ed61881489ee75f761f1f21207}{Waiting\+\_\+\+Area}} ()
+\begin{DoxyCompactList}\small\item\em Default creator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiting__Area_a24b85583b8fdaf665819caa877853ebf}{add\+\_\+process}} (const string \&prio, const \mbox{\hyperlink{classProcess}{Process}} \&a)
+\begin{DoxyCompactList}\small\item\em Adds a process to the waiting area. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiting__Area_ae61dd48170f29a4a16cb599cc1bed250}{read\+\_\+waiting\+\_\+area}} ()
+\begin{DoxyCompactList}\small\item\em Used to initialize the Waiting Area. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWaiting__Area_ac934b910ba1348f2cccda5e38e664aff}{ap}} (const string \&x)
+\begin{DoxyCompactList}\small\item\em Reads a priority identificator and if everything it\textquotesingle{}s correct it adds the priority to the waiting area. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWaiting__Area_a4cadefb192f4184ca984e2d33786edca}{bp}} (const string \&x)
+\begin{DoxyCompactList}\small\item\em Reads a priority identificator and if everything it\textquotesingle{}s correct it removes this priority from the waiting area. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWaiting__Area_a4c791e71342b16fe06ed31e0f7a297e8}{ape}} (const string \&x, int identity, int memory, int time)
+\begin{DoxyCompactList}\small\item\em Reads the values of a procces and a priority id and if everything goes right, adds the proccess to the waiting area with that priority id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiting__Area_ae35218147d2e213a038ea8469b502396}{epc}} (int n, \mbox{\hyperlink{classCluster}{Cluster}} \&clust)
+\begin{DoxyCompactList}\small\item\em Reads a positive number, n and tries to send n waiting processes to the cluster by priority and by the time they have been waiting. They are send to the best spot, if a process can not be send to the cluster it comes back as a new process to the waiting area. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWaiting__Area_a02cbd45ad12d9ac33f1302687a1e63f9}{ipri}} (const string \&x) const
+\begin{DoxyCompactList}\small\item\em Reads a priority id and prints all the pending processes, the number of processes sended to the cluster and rejections. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiting__Area_a1d293edfdf732b8c08c384a92247f29e}{iae}} () const
+\begin{DoxyCompactList}\small\item\em Prints all the priorities with their processes, number of processes sended and rejections. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classWaiting__Area_a22f3c475077f426d20e32e3d35a36c62}{search\+\_\+process}} (area\+::const\+\_\+iterator it, int proc\+\_\+id) const
+\begin{DoxyCompactList}\small\item\em Search for a process with a specific priority in the waiting area. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ string, list$<$ \mbox{\hyperlink{classProcess}{Process}} $>$ $>$ \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}
+\item 
+map$<$ string, pair$<$ int, int $>$ $>$ \mbox{\hyperlink{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}{sera}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+It represents a waiting area. 
+
+Here we store the processes waiting to be sended to the cluster sorted by tehir priority. 
+
+Definition at line 26 of file Waiting\+\_\+\+Area.\+hh.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWaiting__Area_a316e80ed61881489ee75f761f1f21207}\label{classWaiting__Area_a316e80ed61881489ee75f761f1f21207}} 
+\index{Waiting\_Area@{Waiting\_Area}!Waiting\_Area@{Waiting\_Area}}
+\index{Waiting\_Area@{Waiting\_Area}!Waiting\_Area@{Waiting\_Area}}
+\doxysubsubsection{\texorpdfstring{Waiting\_Area()}{Waiting\_Area()}}
+{\footnotesize\ttfamily Waiting\+\_\+\+Area\+::\+Waiting\+\_\+\+Area (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default creator. 
+
+\begin{DoxyPrecond}{Precondition}
+{\itshape True}. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+An empty waiting area. 
+\end{DoxyPostcond}
+
+
+Definition at line 12 of file Waiting\+\_\+\+Area.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWaiting__Area_a24b85583b8fdaf665819caa877853ebf}\label{classWaiting__Area_a24b85583b8fdaf665819caa877853ebf}} 
+\index{Waiting\_Area@{Waiting\_Area}!add\_process@{add\_process}}
+\index{add\_process@{add\_process}!Waiting\_Area@{Waiting\_Area}}
+\doxysubsubsection{\texorpdfstring{add\_process()}{add\_process()}}
+{\footnotesize\ttfamily void Waiting\+\_\+\+Area\+::add\+\_\+process (\begin{DoxyParamCaption}\item[{const string \&}]{prio,  }\item[{const \mbox{\hyperlink{classProcess}{Process}} \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Adds a process to the waiting area. 
+
+\begin{DoxyPrecond}{Precondition}
+Both prio and a initialized. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Adds the process to the waiting area. 
+\end{DoxyPostcond}
+
+
+Definition at line 39 of file Waiting\+\_\+\+Area.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{39                                                                    \{}
+\DoxyCodeLine{40     area::iterator it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.find(prio);}
+\DoxyCodeLine{41     category::iterator it2 = it-\/>second.end();}
+\DoxyCodeLine{42     it-\/>second.insert(it2, a);}
+\DoxyCodeLine{43 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWaiting__Area_ac934b910ba1348f2cccda5e38e664aff}\label{classWaiting__Area_ac934b910ba1348f2cccda5e38e664aff}} 
+\index{Waiting\_Area@{Waiting\_Area}!ap@{ap}}
+\index{ap@{ap}!Waiting\_Area@{Waiting\_Area}}
+\doxysubsubsection{\texorpdfstring{ap()}{ap()}}
+{\footnotesize\ttfamily bool Waiting\+\_\+\+Area\+::ap (\begin{DoxyParamCaption}\item[{const string \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Reads a priority identificator and if everything it\textquotesingle{}s correct it adds the priority to the waiting area. 
+
+\begin{DoxyPrecond}{Precondition}
+A priority identificator. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+If the identificator already exists it returns false, if not, it adds the priority to the waiting area without pending processes and returns true. 
+\end{DoxyPostcond}
+
+
+Definition at line 47 of file Waiting\+\_\+\+Area.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{47                                      \{}
+\DoxyCodeLine{48     area::iterator it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.find(x);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.end()) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \mbox{\hyperlink{Waiting__Area_8cc_a7831dd7f5c9c7fbf18ecd697e397b507}{category}} a;}
+\DoxyCodeLine{53     \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.insert(make\_pair(x, a));}
+\DoxyCodeLine{54     \mbox{\hyperlink{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}{sera}}.insert(make\_pair(x, make\_pair(0, 0)));}
+\DoxyCodeLine{55     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{56 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWaiting__Area_a4c791e71342b16fe06ed31e0f7a297e8}\label{classWaiting__Area_a4c791e71342b16fe06ed31e0f7a297e8}} 
+\index{Waiting\_Area@{Waiting\_Area}!ape@{ape}}
+\index{ape@{ape}!Waiting\_Area@{Waiting\_Area}}
+\doxysubsubsection{\texorpdfstring{ape()}{ape()}}
+{\footnotesize\ttfamily int Waiting\+\_\+\+Area\+::ape (\begin{DoxyParamCaption}\item[{const string \&}]{x,  }\item[{int}]{identity,  }\item[{int}]{memory,  }\item[{int}]{time }\end{DoxyParamCaption})}
+
+
+
+Reads the values of a procces and a priority id and if everything goes right, adds the proccess to the waiting area with that priority id. 
+
+\begin{DoxyPrecond}{Precondition}
+A process and a pirority identificator ready to be read. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+If the id priority doesn\textquotesingle{}t exist returns 101, if a process with that id and priority already exists it returns 102, if not it adds the process and returns 100. 
+\end{DoxyPostcond}
+
+
+Definition at line 69 of file Waiting\+\_\+\+Area.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{69                                                                          \{}
+\DoxyCodeLine{70     \mbox{\hyperlink{classProcess}{Process}} a = \mbox{\hyperlink{classProcess}{Process}}(identity, memory, time, 0);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     area::iterator it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.find(x);}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.end()) \textcolor{keywordflow}{return} 101;}
+\DoxyCodeLine{75     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classWaiting__Area_a22f3c475077f426d20e32e3d35a36c62}{search\_process}}(it, identity)) \textcolor{keywordflow}{return} 102;}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \mbox{\hyperlink{classWaiting__Area_a24b85583b8fdaf665819caa877853ebf}{add\_process}}(x, a);}
+\DoxyCodeLine{78     \textcolor{keywordflow}{return} 100;}
+\DoxyCodeLine{79 \} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWaiting__Area_a4cadefb192f4184ca984e2d33786edca}\label{classWaiting__Area_a4cadefb192f4184ca984e2d33786edca}} 
+\index{Waiting\_Area@{Waiting\_Area}!bp@{bp}}
+\index{bp@{bp}!Waiting\_Area@{Waiting\_Area}}
+\doxysubsubsection{\texorpdfstring{bp()}{bp()}}
+{\footnotesize\ttfamily int Waiting\+\_\+\+Area\+::bp (\begin{DoxyParamCaption}\item[{const string \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Reads a priority identificator and if everything it\textquotesingle{}s correct it removes this priority from the waiting area. 
+
+\begin{DoxyPrecond}{Precondition}
+A priority identificator. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+If the identificator doesn\textquotesingle{}t exist returns 101, if it has pending processes it returns 102, if not, it removes this priority from the waiting area and returns 100. 
+\end{DoxyPostcond}
+
+
+Definition at line 58 of file Waiting\+\_\+\+Area.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{58                                     \{}
+\DoxyCodeLine{59     area::iterator it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.find(x);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.end()) \textcolor{keywordflow}{return} 101;}
+\DoxyCodeLine{62     \textcolor{keywordflow}{if} (!(it-\/>second.empty())) \textcolor{keywordflow}{return} 102;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \mbox{\hyperlink{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}{sera}}.erase(x);}
+\DoxyCodeLine{65     \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.erase(it);}
+\DoxyCodeLine{66     \textcolor{keywordflow}{return} 100;}
+\DoxyCodeLine{67 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWaiting__Area_ae35218147d2e213a038ea8469b502396}\label{classWaiting__Area_ae35218147d2e213a038ea8469b502396}} 
+\index{Waiting\_Area@{Waiting\_Area}!epc@{epc}}
+\index{epc@{epc}!Waiting\_Area@{Waiting\_Area}}
+\doxysubsubsection{\texorpdfstring{epc()}{epc()}}
+{\footnotesize\ttfamily void Waiting\+\_\+\+Area\+::epc (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{\mbox{\hyperlink{classCluster}{Cluster}} \&}]{clust }\end{DoxyParamCaption})}
+
+
+
+Reads a positive number, n and tries to send n waiting processes to the cluster by priority and by the time they have been waiting. They are send to the best spot, if a process can not be send to the cluster it comes back as a new process to the waiting area. 
+
+\begin{DoxyPrecond}{Precondition}
+A number n ready to be read in the console. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+If the process it\textquotesingle{}s sended it increments the number of sended processes of the priority by one, if not it increments the number of rejected ones. 
+\end{DoxyPostcond}
+
+
+Definition at line 112 of file Waiting\+\_\+\+Area.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{112                                             \{}
+\DoxyCodeLine{113     area::iterator it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.begin();}
+\DoxyCodeLine{114     area::iterator itf = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.end();}
+\DoxyCodeLine{115     \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     \textcolor{keywordflow}{while} (i < n and it != itf) \{}
+\DoxyCodeLine{118         category::iterator it2 = it-\/>second.begin();}
+\DoxyCodeLine{119         siu::iterator cat = \mbox{\hyperlink{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}{sera}}.find(it-\/>first);}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121         \textcolor{keywordtype}{int} tam, j;}
+\DoxyCodeLine{122         tam = it-\/>second.size();}
+\DoxyCodeLine{123         j = 0;}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125         \textcolor{keywordflow}{while} (i < n and j < tam) \{}
+\DoxyCodeLine{126             category::iterator its = it2;}
+\DoxyCodeLine{127             \mbox{\hyperlink{classProcess}{Process}} a = *it2;}
+\DoxyCodeLine{128             ++its;}
+\DoxyCodeLine{129             }
+\DoxyCodeLine{130             \textcolor{keywordflow}{if} (clust.\mbox{\hyperlink{classCluster_a93fb7b595036497a78e75a54947ae551}{recive\_processes}}(a)) \{}
+\DoxyCodeLine{131                 ++i;}
+\DoxyCodeLine{132                 cat-\/>second.first += 1;}
+\DoxyCodeLine{133                 it-\/>second.erase(it2);}
+\DoxyCodeLine{134             \}}
+\DoxyCodeLine{135             \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{136                 it-\/>second.erase(it2);}
+\DoxyCodeLine{137                 it-\/>second.insert(it-\/>second.end(), a);}
+\DoxyCodeLine{138                 cat-\/>second.second += 1;}
+\DoxyCodeLine{139             \}}
+\DoxyCodeLine{140             it2 = its;}
+\DoxyCodeLine{141             ++j;}
+\DoxyCodeLine{142         \}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144         ++it;}
+\DoxyCodeLine{145     \}}
+\DoxyCodeLine{146 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWaiting__Area_a1d293edfdf732b8c08c384a92247f29e}\label{classWaiting__Area_a1d293edfdf732b8c08c384a92247f29e}} 
+\index{Waiting\_Area@{Waiting\_Area}!iae@{iae}}
+\index{iae@{iae}!Waiting\_Area@{Waiting\_Area}}
+\doxysubsubsection{\texorpdfstring{iae()}{iae()}}
+{\footnotesize\ttfamily void Waiting\+\_\+\+Area\+::iae (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Prints all the priorities with their processes, number of processes sended and rejections. 
+
+\begin{DoxyPrecond}{Precondition}
+{\itshape True} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+All the processes have been printed on the console and for each priority the number of processes send and rejections. 
+\end{DoxyPostcond}
+
+
+Definition at line 97 of file Waiting\+\_\+\+Area.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{97                              \{}
+\DoxyCodeLine{98     area::const\_iterator it2 = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.end();}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     \textcolor{keywordflow}{for} (area::const\_iterator it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.begin(); it != it2; ++it) \{}
+\DoxyCodeLine{101         \textcolor{keywordtype}{string} name = it-\/>first;}
+\DoxyCodeLine{102         cout << name << endl;}
+\DoxyCodeLine{103         category::const\_iterator itf2 = it-\/>second.end();}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105         \textcolor{keywordflow}{for} (category::const\_iterator itf = it-\/>second.begin(); itf != itf2; ++itf) itf-\/>wr2\_process();}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107         map<string, pair<int, int>>::const\_iterator its = \mbox{\hyperlink{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}{sera}}.find(name);}
+\DoxyCodeLine{108         cout << its-\/>second.first << \textcolor{stringliteral}{" "} << its-\/>second.second << endl;}
+\DoxyCodeLine{109     \}}
+\DoxyCodeLine{110 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWaiting__Area_a02cbd45ad12d9ac33f1302687a1e63f9}\label{classWaiting__Area_a02cbd45ad12d9ac33f1302687a1e63f9}} 
+\index{Waiting\_Area@{Waiting\_Area}!ipri@{ipri}}
+\index{ipri@{ipri}!Waiting\_Area@{Waiting\_Area}}
+\doxysubsubsection{\texorpdfstring{ipri()}{ipri()}}
+{\footnotesize\ttfamily bool Waiting\+\_\+\+Area\+::ipri (\begin{DoxyParamCaption}\item[{const string \&}]{x }\end{DoxyParamCaption}) const}
+
+
+
+Reads a priority id and prints all the pending processes, the number of processes sended to the cluster and rejections. 
+
+\begin{DoxyPrecond}{Precondition}
+A priority id ready to be read at the console. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+If the priority id doesn\textquotesingle{}t exist it returns false, if not, returns true. 
+\end{DoxyPostcond}
+
+
+Definition at line 81 of file Waiting\+\_\+\+Area.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{81                                              \{}
+\DoxyCodeLine{82     area::const\_iterator it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.find(x);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.end()) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{85     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{86         \textcolor{keywordflow}{for}(category::const\_iterator it2 = it-\/>second.begin(); it2 != it-\/>second.end(); ++it2) \{}
+\DoxyCodeLine{87             it2-\/>wr2\_process();}
+\DoxyCodeLine{88         \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90         siu::const\_iterator ita = \mbox{\hyperlink{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}{sera}}.find(x);}
+\DoxyCodeLine{91         cout << ita-\/>second.first << \textcolor{stringliteral}{" "} << ita-\/>second.second << endl;}
+\DoxyCodeLine{92     \}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{95 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWaiting__Area_ae61dd48170f29a4a16cb599cc1bed250}\label{classWaiting__Area_ae61dd48170f29a4a16cb599cc1bed250}} 
+\index{Waiting\_Area@{Waiting\_Area}!read\_waiting\_area@{read\_waiting\_area}}
+\index{read\_waiting\_area@{read\_waiting\_area}!Waiting\_Area@{Waiting\_Area}}
+\doxysubsubsection{\texorpdfstring{read\_waiting\_area()}{read\_waiting\_area()}}
+{\footnotesize\ttfamily void Waiting\+\_\+\+Area\+::read\+\_\+waiting\+\_\+area (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Used to initialize the Waiting Area. 
+
+\begin{DoxyPrecond}{Precondition}
+A number n indicating the number of priorities and all their information on the console. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Waiting Area initialized. 
+\end{DoxyPostcond}
+
+
+Definition at line 24 of file Waiting\+\_\+\+Area.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{24                                      \{}
+\DoxyCodeLine{25     \textcolor{keywordtype}{int} n;}
+\DoxyCodeLine{26     cin >> n;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i) \{}
+\DoxyCodeLine{29         \textcolor{keywordtype}{string} prio;}
+\DoxyCodeLine{30         list<Process> a;}
+\DoxyCodeLine{31         pair<int, int> b(0, 0);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         cin >> prio;}
+\DoxyCodeLine{34         \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.insert(make\_pair(prio, a));}
+\DoxyCodeLine{35         \mbox{\hyperlink{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}{sera}}.insert(make\_pair(prio, b));}
+\DoxyCodeLine{36     \}   }
+\DoxyCodeLine{37 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classWaiting__Area_a22f3c475077f426d20e32e3d35a36c62}\label{classWaiting__Area_a22f3c475077f426d20e32e3d35a36c62}} 
+\index{Waiting\_Area@{Waiting\_Area}!search\_process@{search\_process}}
+\index{search\_process@{search\_process}!Waiting\_Area@{Waiting\_Area}}
+\doxysubsubsection{\texorpdfstring{search\_process()}{search\_process()}}
+{\footnotesize\ttfamily bool Waiting\+\_\+\+Area\+::search\+\_\+process (\begin{DoxyParamCaption}\item[{area\+::const\+\_\+iterator}]{it,  }\item[{int}]{proc\+\_\+id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Search for a process with a specific priority in the waiting area. 
+
+\begin{DoxyPrecond}{Precondition}
+Both proc\+\_\+prio and proc\+\_\+id initialized, proc\+\_\+id $>$ 0. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Returns true if the process exists and false if not. 
+\end{DoxyPostcond}
+
+
+Definition at line 14 of file Waiting\+\_\+\+Area.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14                                                                           \{}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \textcolor{keywordflow}{for} (category::const\_iterator it2 = it-\/>second.begin(); it2 != it-\/>second.end(); ++it2) \{}
+\DoxyCodeLine{17         \textcolor{keywordflow}{if} (it2-\/>what\_id() == proc\_id) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{18     \}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{21 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}\label{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}} 
+\index{Waiting\_Area@{Waiting\_Area}!sera@{sera}}
+\index{sera@{sera}!Waiting\_Area@{Waiting\_Area}}
+\doxysubsubsection{\texorpdfstring{sera}{sera}}
+{\footnotesize\ttfamily map$<$string, pair$<$int, int$>$ $>$ Waiting\+\_\+\+Area\+::sera\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 29 of file Waiting\+\_\+\+Area.\+hh.
+
+\mbox{\Hypertarget{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}\label{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}} 
+\index{Waiting\_Area@{Waiting\_Area}!wa@{wa}}
+\index{wa@{wa}!Waiting\_Area@{Waiting\_Area}}
+\doxysubsubsection{\texorpdfstring{wa}{wa}}
+{\footnotesize\ttfamily map$<$string, list$<$\mbox{\hyperlink{classProcess}{Process}}$>$ $>$ Waiting\+\_\+\+Area\+::wa\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 28 of file Waiting\+\_\+\+Area.\+hh.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Waiting__Area_8hh}{Waiting\+\_\+\+Area.\+hh}}\item 
+\mbox{\hyperlink{Waiting__Area_8cc}{Waiting\+\_\+\+Area.\+cc}}\end{DoxyCompactItemize}
