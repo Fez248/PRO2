@@ -7,6 +7,8 @@
 using namespace std;
 
 typedef map<string, Cpu> clus;
+typedef const BinTree<string>& ord;
+typedef clus::iterator& cit;
 
 void Cluster::read() {
     conj.clear();
@@ -130,13 +132,12 @@ int Cluster::mc(string x) {
 }
 
 bool Cluster::recive_processes(Process a) {
-    int mem, no_space, free_space, time, id;
+    int mem, time, id;
     time = a.what_time();
     id = a.what_id();
     mem = a.what_mem();
-    no_space = free_space = -1;
     clus::iterator ite = conj.end();
-    find_best(mem, no_space, free_space, id, ite, cluster);
+    find_best(mem, id, ite, cluster);
 
     if (ite != conj.end()) {
         ite->second.add_process_cpu(id, mem, time); //check this line, maybe I can create another add function that takes a process as a parameter and doesn't check so many errors
@@ -145,7 +146,9 @@ bool Cluster::recive_processes(Process a) {
     else return false;
 }
 
-void Cluster::find_best(const int mem, int no_space, int free_space, int identity, clus::iterator& ite, BinTree<string> can) {
+void Cluster::find_best(const int mem, const int identity, cit ite, ord can) {
+    int no_space, free_space;
+    no_space = free_space = -1;
     if (!can.empty()) {
         queue<BinTree<string>> need_visit;
         need_visit.push(can);

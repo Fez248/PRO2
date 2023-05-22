@@ -183,7 +183,7 @@ int Cpu::add_process_cpu(int identity, int memory, int time) {
     return 100;
 }
 
-int Cpu::check_ffree(int direction, int tam, naio::iterator& it) {
+int Cpu::check_ffree(const int direction, const int tam, naio::iterator& it) {
     int aux = direction + tam;
     ++it;
     if (it == diro.end()) {

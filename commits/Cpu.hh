@@ -9,23 +9,45 @@
 #include <map>
 #include <set>
 
+typedef map<int, pair<int, int>>::iterator& dit;
+
 /**
     @class Cpu
     @brief It represents a cpu, a processor
 
-    The processor has a memory with limited space and it can contain processes, each one with a 'delta' time needed to be completed and stored
-    in crhonological order
+    The processor has a memory with limited space and it can contain 
+    processes, each one with a 'delta' time needed to be completed and 
+    stored in crhonological order
 */
 
 class Cpu {
     private:
-    int ffree, mema, max;
-    bool leaf = false;
-    map<int, Process> prl; //Map with, key -> id, value -> processes
-    map<int, set<int>> es; //Free memory, map with, key -> empty space in front of a process, value -> A set with directions of memmory non consecutives with that space empty
-    map<int, pair<int,int>> diro; //Occuped direction of memory with the id of the process and space needed for the process
+    int ffree, mema, max;               //ffree (value of the first free
+                                        //direction of the memory)
 
-    int check_ffree(int direction, int tam, map<int, pair<int, int>>::iterator& it);
+                                        //mema (total memory of the cpu)
+
+                                        //max (total ffree memory)
+    bool leaf = false;
+    map<int, Process> prl;              //key -> id, value -> processes
+
+    map<int, set<int>> es;              //key -> empty space in front 
+                                        //of a process
+                                        //value -> set with directions of 
+                                        //memmory with that empty space
+
+    map<int, pair<int,int>> diro;       //key -> direction of occuped memory
+                                        //value -> map with
+                                        //key2 -> process id
+                                        //value2 -> size of the process
+
+    /**
+        @brief Searches for the lowest direction of free memory of the cpu.
+
+        \pre <em>True</em>
+        \post A Cpu without the memory initialized
+    */
+    int check_ffree(const int direction, const int tam, dit it);
 
     void update_set_and_erase(int key, int diff);
 
