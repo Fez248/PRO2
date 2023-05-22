@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['read_52',['read',['../classCluster.html#a3461bf6425ed68be10136da7f065674c',1,'Cluster']]],
-  ['read_5fbintree_53',['read_bintree',['../classCluster.html#a0f67ae08ed1bb763f431ba21c4292cc5',1,'Cluster']]],
-  ['read_5fwaiting_5farea_54',['read_waiting_area',['../classWaiting__Area.html#ae61dd48170f29a4a16cb599cc1bed250',1,'Waiting_Area']]],
-  ['recive_5fprocesses_55',['recive_processes',['../classCluster.html#a93fb7b595036497a78e75a54947ae551',1,'Cluster']]],
-  ['reducing_56',['reducing',['../classProcess.html#af0ca6bf3dbf44f361e6283b633a737b0',1,'Process']]],
-  ['relocate_57',['relocate',['../classCpu.html#a106b8f4418820c19c0500c979e7ae818',1,'Cpu']]],
-  ['remove_5fprocess_5fcpu_58',['remove_process_cpu',['../classCpu.html#afb0ed7e26fffc54cbf585744cff7cfee',1,'Cpu']]],
-  ['reread_59',['reread',['../classCluster.html#a207680a453088ee7ee51bd05a5050a70',1,'Cluster']]]
+  ['prl_50',['prl',['../classCpu.html#a4e2ef25b9aecf49a9c2b6dbd702bebc0',1,'Cpu']]],
+  ['process_51',['Process',['../classProcess.html',1,'Process'],['../classProcess.html#a9f4553eac74c657bb451f390c17d6bea',1,'Process::Process()'],['../classProcess.html#a5711384fd578d025137787ade588bfc2',1,'Process::Process(int identity, int memmory, int delta, int direction)']]],
+  ['process_2ecc_52',['Process.cc',['../Process_8cc.html',1,'']]],
+  ['process_2ehh_53',['Process.hh',['../Process_8hh.html',1,'']]],
+  ['program_2ecc_54',['program.cc',['../program_8cc.html',1,'']]]
 ];

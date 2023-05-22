@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['simulation_20of_20a_20cluster_60',['Simulation of a cluster',['../index.html',1,'']]],
-  ['search_5fcpu_61',['search_cpu',['../classCluster.html#ab23ca36cc1d152f84f024856bd15946b',1,'Cluster']]],
-  ['search_5fprocess_62',['search_process',['../classWaiting__Area.html#a22f3c475077f426d20e32e3d35a36c62',1,'Waiting_Area']]],
-  ['sera_63',['sera',['../classWaiting__Area.html#af8330a55e29939de1b46f0c16f002b12',1,'Waiting_Area']]],
-  ['siu_64',['siu',['../Waiting__Area_8cc.html#a9f04e21438b8bb656e9ddd253952cbb0',1,'Waiting_Area.cc']]],
-  ['space_5fleft_65',['space_left',['../classCpu.html#af62d530892364ea8530cab12c2ec1414',1,'Cpu']]]
+  ['read_55',['read',['../classCluster.html#a3461bf6425ed68be10136da7f065674c',1,'Cluster']]],
+  ['read_5fbintree_56',['read_bintree',['../classCluster.html#a0f67ae08ed1bb763f431ba21c4292cc5',1,'Cluster']]],
+  ['read_5fwaiting_5farea_57',['read_waiting_area',['../classWaiting__Area.html#ae61dd48170f29a4a16cb599cc1bed250',1,'Waiting_Area']]],
+  ['recive_5fprocesses_58',['recive_processes',['../classCluster.html#a93fb7b595036497a78e75a54947ae551',1,'Cluster']]],
+  ['reducing_59',['reducing',['../classProcess.html#af0ca6bf3dbf44f361e6283b633a737b0',1,'Process']]],
+  ['relocate_60',['relocate',['../classCpu.html#a106b8f4418820c19c0500c979e7ae818',1,'Cpu']]],
+  ['remove_5fprocess_5fcpu_61',['remove_process_cpu',['../classCpu.html#afb0ed7e26fffc54cbf585744cff7cfee',1,'Cpu']]],
+  ['reread_62',['reread',['../classCluster.html#a207680a453088ee7ee51bd05a5050a70',1,'Cluster']]]
 ];

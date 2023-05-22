@@ -1,8 +1,10 @@
 #ifndef BINTREE_HH
 #define BINTREE_HH
 
+#ifndef NO_DIAGRAM
 #include <cassert>
 #include <memory>
+#endif
 using namespace std;
 
 // A BinTree<T> implements binary trees with values of type T.

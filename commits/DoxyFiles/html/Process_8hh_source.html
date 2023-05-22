@@ -72,36 +72,36 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef PROCESS_HH</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define PROCESS_HH</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classProcess.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classProcess.html">Process</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">   18</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="Cpu_8cc.html#ade369179a3e9f2fd3703f28d81647de1">dir</a>, ide, memo, <a class="code" href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">time</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classProcess.html">Process</a>();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classProcess.html">Process</a>(<span class="keywordtype">int</span> identity, <span class="keywordtype">int</span> memmory, <span class="keywordtype">int</span> delta, <span class="keywordtype">int</span> direction);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">int</span> what_id() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">int</span> what_mem() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">int</span> what_time() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">int</span> what_dir() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> wr_process() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> wr2_process() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">bool</span> reducing(<span class="keywordtype">int</span> t);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classProcess.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classProcess.html">Process</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">   19</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="Cpu_8cc.html#ade369179a3e9f2fd3703f28d81647de1">dir</a>, ide, memo, <a class="code" href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">time</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classProcess.html">Process</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classProcess.html">Process</a>(<span class="keywordtype">int</span> identity, <span class="keywordtype">int</span> memmory, <span class="keywordtype">int</span> delta, <span class="keywordtype">int</span> direction);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span> what_id() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">int</span> what_mem() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">int</span> what_time() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">int</span> what_dir() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> wr_process() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> wr2_process() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">bool</span> reducing(<span class="keywordtype">int</span> t);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassProcess_html"><div class="ttname"><a href="classProcess.html">Process</a></div><div class="ttdoc">It represents a process.</div><div class="ttdef"><b>Definition:</b> <a href="Process_8hh_source.html#l00016">Process.hh:16</a></div></div>
+<div class="ttc" id="aclassProcess_html"><div class="ttname"><a href="classProcess.html">Process</a></div><div class="ttdoc">It represents a process.</div><div class="ttdef"><b>Definition:</b> <a href="Process_8hh_source.html#l00017">Process.hh:17</a></div></div>
 <div class="ttc" id="aCpu_8cc_html_ade369179a3e9f2fd3703f28d81647de1"><div class="ttname"><a href="Cpu_8cc.html#ade369179a3e9f2fd3703f28d81647de1">dir</a></div><div class="ttdeci">map&lt; int, set&lt; int &gt; &gt; dir</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8cc_source.html#l00009">Cpu.cc:9</a></div></div>
-<div class="ttc" id="aclassProcess_html_afbcaed5d0540706f919d1d96adb5c61d"><div class="ttname"><a href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">Process::time</a></div><div class="ttdeci">int time</div><div class="ttdef"><b>Definition:</b> <a href="Process_8hh_source.html#l00018">Process.hh:18</a></div></div>
+<div class="ttc" id="aclassProcess_html_afbcaed5d0540706f919d1d96adb5c61d"><div class="ttname"><a href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">Process::time</a></div><div class="ttdeci">int time</div><div class="ttdef"><b>Definition:</b> <a href="Process_8hh_source.html#l00019">Process.hh:19</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

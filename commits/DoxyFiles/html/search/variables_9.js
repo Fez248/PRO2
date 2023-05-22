@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['time_162',['time',['../classProcess.html#afbcaed5d0540706f919d1d96adb5c61d',1,'Process']]]
+  ['sera_163',['sera',['../classWaiting__Area.html#af8330a55e29939de1b46f0c16f002b12',1,'Waiting_Area']]]
 ];

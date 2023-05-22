@@ -28,10 +28,9 @@ bool Cpu::yn_leaf() const {
 }
 
 int Cpu::remove_process_cpu(int proc_id, int& back) {
-    map<int, Process>::const_iterator it = prl.find(proc_id);
+    mem::const_iterator it = prl.find(proc_id);
 
-    //Checks if the process exists
-    if (it == prl.end()) return 102; //quitar para la v2
+    if (it == prl.end()) return 102;
 
     int a, b, new_tam, new_dir;
     a = new_tam = it->second.what_mem();
@@ -39,11 +38,10 @@ int Cpu::remove_process_cpu(int proc_id, int& back) {
     max += a;
 
     if (b < ffree) ffree = b;
-
-    map<int, pair<int,int>>::iterator itf = diro.find(b);
+    naio::iterator itf = diro.find(b);
 
     if (itf != diro.begin()) {
-        map<int, pair<int,int>>::iterator ita = itf;
+        naio::iterator ita = itf;
         --ita;
 
         int c, d;
@@ -51,24 +49,15 @@ int Cpu::remove_process_cpu(int proc_id, int& back) {
         d = ita->second.second;
 
         if (c + d != b) {
-            new_tam = new_tam + (b - c - d); //+d
-            new_dir = c + d; //c
-
-            //pendiente de cambiar por update_set_and_erase()
-            map<int, set<int>>::iterator ite = es.find(b - (c + d));
-            ite->second.erase(c + d);
-
-            if (ite->second.empty()) es.erase(ite);
+            new_tam = new_tam + (b - c - d);
+            new_dir = c + d;
+            update_set_and_erase(c + d, b - c - d);
         }
     }
     else if (b != 0) {
         new_dir = 0;
         new_tam = new_tam + b;
-        
-        //otro update_set_and_erase()
-        map<int, set<int>>::iterator ite = es.find(b);
-        ite->second.erase(0);
-        if (ite->second.empty()) es.erase(ite);
+        update_set_and_erase(0, b);
     }
 
     if (++itf != diro.end()) {
@@ -76,35 +65,16 @@ int Cpu::remove_process_cpu(int proc_id, int& back) {
         e = itf->first;
 
         if (a + b != e) {
-            new_tam = new_tam + e - a - b; //f
-
-            //otro update set_and_erase()
-            map<int, set<int>>::iterator ite = es.find(e - (a + b));
-            ite->second.erase(a + b);
-
-            if (ite->second.empty()) es.erase(ite);
+            new_tam = new_tam + e - a - b;
+            update_set_and_erase(a + b, e - a - b);
         }
     }
     else if (a + b != mema) {
         new_tam = new_tam + (mema - a - b);
-
-        //otro update_set_and_erase()
-        map<int, set<int>>::iterator ite = es.find(mema - a - b);
-        ite->second.erase(a + b);
-        if (ite->second.empty()) es.erase(ite);
+        update_set_and_erase(a + b, mema - a - b);
     }
 
-    //cambiar por un insert_set()
-    map<int, set<int>>::iterator aux = es.find(new_tam);
-
-    if (aux != es.end()) aux->second.insert(new_dir);
-    else {
-        set<int> z;
-        z.insert(new_dir);
-        es.insert(make_pair(new_tam, z));
-    }
-    //hasta aquí
-
+    insert_set(new_tam, new_dir);
     back = new_tam;
     diro.erase(b);
     prl.erase(proc_id);
@@ -262,27 +232,27 @@ bool Cpu::active_processes() const {
     return diro.empty();
 }
 
-void Cpu:: update_set_and_erase(int key, int diff) {
-    dir::iterator ite = es.find(diff);
-    ite->second.erase(key);
+void Cpu:: update_set_and_erase(int diff, int key) {
+    dir::iterator ite = es.find(key);
+    ite->second.erase(diff);
 
     if (ite->second.empty()) es.erase(ite);
 }
 
-void Cpu::insert_set(int key, int value) {
-    dir::iterator ite = es.find(key);
+void Cpu::insert_set(int value, int key) {
+    dir::iterator ite = es.find(value);
 
-    if (ite != es.end()) ite->second.insert(value);
+    if (ite != es.end()) ite->second.insert(key);
     else {
         set<int> z;
-        z.insert(value);
-        es.insert(make_pair(key, z));
+        z.insert(key);
+        es.insert(make_pair(value, z));
     }
 }
 
 int Cpu::get_memory(int mem, int identity) const {
     dir::const_iterator it2 = es.lower_bound(mem);
-    map<int, Process>::const_iterator it = prl.lower_bound(identity); //quitar para la v2
+    map<int, Process>::const_iterator it = prl.lower_bound(identity);
 
     if (it != prl.end() and it->first == identity) return -1;
     if (it2 == es.end()) return -1;

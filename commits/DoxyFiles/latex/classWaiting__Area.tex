@@ -14,8 +14,6 @@ It represents a waiting area.
 \item 
 \mbox{\hyperlink{classWaiting__Area_a316e80ed61881489ee75f761f1f21207}{Waiting\+\_\+\+Area}} ()
 \begin{DoxyCompactList}\small\item\em Default creator. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classWaiting__Area_a24b85583b8fdaf665819caa877853ebf}{add\+\_\+process}} (const string \&prio, const \mbox{\hyperlink{classProcess}{Process}} \&a)
-\begin{DoxyCompactList}\small\item\em Adds a process to the waiting area. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classWaiting__Area_ae61dd48170f29a4a16cb599cc1bed250}{read\+\_\+waiting\+\_\+area}} ()
 \begin{DoxyCompactList}\small\item\em Used to initialize the Waiting Area. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classWaiting__Area_ac934b910ba1348f2cccda5e38e664aff}{ap}} (const string \&x)
@@ -25,7 +23,8 @@ int \mbox{\hyperlink{classWaiting__Area_a4cadefb192f4184ca984e2d33786edca}{bp}} 
 int \mbox{\hyperlink{classWaiting__Area_a4c791e71342b16fe06ed31e0f7a297e8}{ape}} (const string \&x, int identity, int memory, int time)
 \begin{DoxyCompactList}\small\item\em Reads the values of a procces and a priority id and if everything goes right, adds the proccess to the waiting area with that priority id. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classWaiting__Area_ae35218147d2e213a038ea8469b502396}{epc}} (int n, \mbox{\hyperlink{classCluster}{Cluster}} \&clust)
-\begin{DoxyCompactList}\small\item\em Reads a positive number, n and tries to send n waiting processes to the cluster by priority and by the time they have been waiting. They are send to the best spot, if a process can not be send to the cluster it comes back as a new process to the waiting area. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Reads a positive number, n and tries to send n waiting ~\newline
+ processes to the cluster by priority and by the time they have been waiting. They are send to the best spot, if a process can not be send to the cluster it comes back as a new process to the waiting area. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classWaiting__Area_a02cbd45ad12d9ac33f1302687a1e63f9}{ipri}} (const string \&x) const
 \begin{DoxyCompactList}\small\item\em Reads a priority id and prints all the pending processes, the number of processes sended to the cluster and rejections. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classWaiting__Area_a1d293edfdf732b8c08c384a92247f29e}{iae}} () const
@@ -34,7 +33,9 @@ void \mbox{\hyperlink{classWaiting__Area_a1d293edfdf732b8c08c384a92247f29e}{iae}
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{classWaiting__Area_a22f3c475077f426d20e32e3d35a36c62}{search\+\_\+process}} (area\+::const\+\_\+iterator it, int proc\+\_\+id) const
-\begin{DoxyCompactList}\small\item\em Search for a process with a specific priority in the waiting area. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Search for a process with a specific priority in the waiting area. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiting__Area_a24b85583b8fdaf665819caa877853ebf}{add\+\_\+process}} (const string \&prio, const \mbox{\hyperlink{classProcess}{Process}} \&a)
+\begin{DoxyCompactList}\small\item\em Adds a process to the waiting area. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -49,7 +50,7 @@ It represents a waiting area.
 
 Here we store the processes waiting to be sended to the cluster sorted by tehir priority. 
 
-Definition at line 26 of file Waiting\+\_\+\+Area.\+hh.
+Definition at line 27 of file Waiting\+\_\+\+Area.\+hh.
 
 
 
@@ -86,7 +87,7 @@ Definition at line 12 of file Waiting\+\_\+\+Area.\+cc.
 \index{Waiting\_Area@{Waiting\_Area}!add\_process@{add\_process}}
 \index{add\_process@{add\_process}!Waiting\_Area@{Waiting\_Area}}
 \doxysubsubsection{\texorpdfstring{add\_process()}{add\_process()}}
-{\footnotesize\ttfamily void Waiting\+\_\+\+Area\+::add\+\_\+process (\begin{DoxyParamCaption}\item[{const string \&}]{prio,  }\item[{const \mbox{\hyperlink{classProcess}{Process}} \&}]{a }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Waiting\+\_\+\+Area\+::add\+\_\+process (\begin{DoxyParamCaption}\item[{const string \&}]{prio,  }\item[{const \mbox{\hyperlink{classProcess}{Process}} \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -222,7 +223,8 @@ Definition at line 58 of file Waiting\+\_\+\+Area.\+cc.
 
 
 
-Reads a positive number, n and tries to send n waiting processes to the cluster by priority and by the time they have been waiting. They are send to the best spot, if a process can not be send to the cluster it comes back as a new process to the waiting area. 
+Reads a positive number, n and tries to send n waiting ~\newline
+ processes to the cluster by priority and by the time they have been waiting. They are send to the best spot, if a process can not be send to the cluster it comes back as a new process to the waiting area. 
 
 \begin{DoxyPrecond}{Precondition}
 A number n ready to be read in the console. 
@@ -431,7 +433,7 @@ Definition at line 14 of file Waiting\+\_\+\+Area.\+cc.
 
 
 
-Definition at line 29 of file Waiting\+\_\+\+Area.\+hh.
+Definition at line 30 of file Waiting\+\_\+\+Area.\+hh.
 
 \mbox{\Hypertarget{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}\label{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}} 
 \index{Waiting\_Area@{Waiting\_Area}!wa@{wa}}
@@ -441,7 +443,7 @@ Definition at line 29 of file Waiting\+\_\+\+Area.\+hh.
 
 
 
-Definition at line 28 of file Waiting\+\_\+\+Area.\+hh.
+Definition at line 29 of file Waiting\+\_\+\+Area.\+hh.
 
 
 
