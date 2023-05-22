@@ -69,6 +69,9 @@ $(function() {
 <div class="title">Cluster.cc File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of the class <a class="el" href="classCluster.html" title="It represents a clsuter.">Cluster</a>.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;list&gt;</code><br />
 <code>#include &quot;<a class="el" href="Waiting__Area_8hh_source.html">Waiting_Area.hh</a>&quot;</code><br />
@@ -80,7 +83,7 @@ Include dependency graph for Cluster.cc:</div>
 <div class="dyncontent">
 <div class="center"><img src="Cluster_8cc__incl.png" border="0" usemap="#Cluster_8cc" alt=""/></div>
 <map name="Cluster_8cc" id="Cluster_8cc">
-<area shape="rect" title=" " alt="" coords="248,5,333,32"/>
+<area shape="rect" title="Implementation of the class Cluster." alt="" coords="248,5,333,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,85,107"/>
 <area shape="rect" title=" " alt="" coords="109,80,152,107"/>
 <area shape="rect" href="Waiting__Area_8hh.html" title="Especification of the class Waiting_Area." alt="" coords="176,80,304,107"/>
@@ -97,15 +100,25 @@ Include dependency graph for Cluster.cc:</div>
 Typedefs</h2></td></tr>
 <tr class="memitem:a95b07402f46593f50671879724269aa0"><td class="memItemLeft" align="right" valign="top">typedef map&lt; string, <a class="el" href="classCpu.html">Cpu</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cluster_8cc.html#a95b07402f46593f50671879724269aa0">clus</a></td></tr>
 <tr class="separator:a95b07402f46593f50671879724269aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca9bff578e68b2d3af09b6bfaa7bd68d"><td class="memItemLeft" align="right" valign="top">typedef map&lt; string, <a class="el" href="classCpu.html">Cpu</a> &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cluster_8cc.html#aca9bff578e68b2d3af09b6bfaa7bd68d">clus_it</a></td></tr>
+<tr class="separator:aca9bff578e68b2d3af09b6bfaa7bd68d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a968d4b1d542c9f666e1a1fbd7f1c9c11"><td class="memItemLeft" align="right" valign="top">typedef map&lt; string, <a class="el" href="classCpu.html">Cpu</a> &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cluster_8cc.html#a968d4b1d542c9f666e1a1fbd7f1c9c11">clus_ct</a></td></tr>
+<tr class="separator:a968d4b1d542c9f666e1a1fbd7f1c9c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7d0b2c90eae59f62c853607414355db"><td class="memItemLeft" align="right" valign="top">typedef BinTree&lt; string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cluster_8cc.html#ab7d0b2c90eae59f62c853607414355db">ord</a></td></tr>
+<tr class="separator:ab7d0b2c90eae59f62c853607414355db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1e017a8f236298c12d87027bf00c0e3"><td class="memItemLeft" align="right" valign="top">typedef clus::iterator &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cluster_8cc.html#ae1e017a8f236298c12d87027bf00c0e3">cit</a></td></tr>
 <tr class="separator:ae1e017a8f236298c12d87027bf00c0e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aacbe7b43ba612546df8e6fbc79ae5b89"><td class="memItemLeft" align="right" valign="top">const typedef BinTree&lt; string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cluster_8cc.html#aacbe7b43ba612546df8e6fbc79ae5b89">ord</a></td></tr>
-<tr class="separator:aacbe7b43ba612546df8e6fbc79ae5b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e2ab6d19f821e58db3f5c4f3005937b"><td class="memItemLeft" align="right" valign="top">const typedef BinTree&lt; string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cluster_8cc.html#a8e2ab6d19f821e58db3f5c4f3005937b">ord_ct</a></td></tr>
+<tr class="separator:a8e2ab6d19f821e58db3f5c4f3005937b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the class <a class="el" href="classCluster.html" title="It represents a clsuter.">Cluster</a>. </p>
+
+<p class="definition">Definition in file <a class="el" href="Cluster_8cc_source.html">Cluster.cc</a>.</p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
 <a id="ae1e017a8f236298c12d87027bf00c0e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae1e017a8f236298c12d87027bf00c0e3">&#9670;&nbsp;</a></span>cit</h2>
 
@@ -118,7 +131,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Cluster_8cc_source.html#l00011">11</a> of file <a class="el" href="Cluster_8cc_source.html">Cluster.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cluster_8cc_source.html#l00021">21</a> of file <a class="el" href="Cluster_8cc_source.html">Cluster.cc</a>.</p>
 
 </div>
 </div>
@@ -134,24 +147,72 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Cluster_8cc_source.html#l00009">9</a> of file <a class="el" href="Cluster_8cc_source.html">Cluster.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cluster_8cc_source.html#l00014">14</a> of file <a class="el" href="Cluster_8cc_source.html">Cluster.cc</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="aacbe7b43ba612546df8e6fbc79ae5b89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aacbe7b43ba612546df8e6fbc79ae5b89">&#9670;&nbsp;</a></span>ord</h2>
+<a id="a968d4b1d542c9f666e1a1fbd7f1c9c11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a968d4b1d542c9f666e1a1fbd7f1c9c11">&#9670;&nbsp;</a></span>clus_ct</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const typedef BinTree&lt;string&gt;&amp; ord</td>
+          <td class="memname">typedef map&lt;string, <a class="el" href="classCpu.html">Cpu</a>&gt;::const_iterator <a class="el" href="Cluster_8cc.html#a968d4b1d542c9f666e1a1fbd7f1c9c11">clus_ct</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Cluster_8cc_source.html#l00010">10</a> of file <a class="el" href="Cluster_8cc_source.html">Cluster.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cluster_8cc_source.html#l00016">16</a> of file <a class="el" href="Cluster_8cc_source.html">Cluster.cc</a>.</p>
+
+</div>
+</div>
+<a id="aca9bff578e68b2d3af09b6bfaa7bd68d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca9bff578e68b2d3af09b6bfaa7bd68d">&#9670;&nbsp;</a></span>clus_it</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef map&lt;string, <a class="el" href="classCpu.html">Cpu</a>&gt;::iterator <a class="el" href="Cluster_8cc.html#aca9bff578e68b2d3af09b6bfaa7bd68d">clus_it</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Cluster_8cc_source.html#l00015">15</a> of file <a class="el" href="Cluster_8cc_source.html">Cluster.cc</a>.</p>
+
+</div>
+</div>
+<a id="ab7d0b2c90eae59f62c853607414355db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7d0b2c90eae59f62c853607414355db">&#9670;&nbsp;</a></span>ord</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef BinTree&lt;string&gt;&amp; <a class="el" href="Cluster_8cc.html#ab7d0b2c90eae59f62c853607414355db">ord</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Cluster_8cc_source.html#l00018">18</a> of file <a class="el" href="Cluster_8cc_source.html">Cluster.cc</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a8e2ab6d19f821e58db3f5c4f3005937b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e2ab6d19f821e58db3f5c4f3005937b">&#9670;&nbsp;</a></span>ord_ct</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const typedef BinTree&lt;string&gt;&amp; ord_ct</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Cluster_8cc_source.html#l00019">19</a> of file <a class="el" href="Cluster_8cc_source.html">Cluster.cc</a>.</p>
 
 </div>
 </div>

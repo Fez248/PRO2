@@ -1,3 +1,7 @@
+/** @file Cluster.cc
+    @brief Implementation of the class Cluster
+*/
+
 #include <iostream>
 #include <list>
 #include "Waiting_Area.hh"
@@ -6,8 +10,14 @@
 #include <queue>
 using namespace std;
 
+//Typedefs to code faster, keep lines shorter and to make it more readable
 typedef map<string, Cpu> clus;
-typedef const BinTree<string>& ord;
+typedef map<string, Cpu>::iterator clus_it;
+typedef map<string, Cpu>::const_iterator clus_ct;
+
+typedef BinTree<string>& ord;
+typedef const BinTree<string>& ord_ct;
+
 typedef clus::iterator& cit;
 
 void Cluster::read() {
@@ -19,7 +29,7 @@ void Cluster::iec() const {
     write_bintree(cluster);
 }
 
-void Cluster::write_bintree(const BinTree<string>& cluster) const {
+void Cluster::write_bintree(ord_ct cluster) const {
     if (!cluster.empty()) {
         cout << "(" << cluster.value();
         write_bintree(cluster.left());
@@ -29,7 +39,7 @@ void Cluster::write_bintree(const BinTree<string>& cluster) const {
     else cout << " ";
 }
 
-bool Cluster::read_bintree(BinTree<string>& a) { //quizá el error está aquí
+bool Cluster::read_bintree(ord   a) {
     string x;
     cin >> x;
 
@@ -49,7 +59,7 @@ bool Cluster::read_bintree(BinTree<string>& a) { //quizá el error está aquí
     else return true;
 }
 
-void Cluster::reread(BinTree<string>& a, string p) {
+void Cluster::reread(ord a, string p) {
     if (!a.empty()) {
         string x = a.value();
         if (x == p) read_bintree(a);
@@ -66,23 +76,23 @@ void Cluster::reread(BinTree<string>& a, string p) {
 }
 
 void Cluster::ipc() const {
-    clus::const_iterator it2 = conj.end();
+    clus_ct it2 = conj.end();
 
-    for (clus::const_iterator it = conj.begin(); it != it2; ++it) {
+    for (clus_ct it = conj.begin(); it != it2; ++it) {
         cout << it->first << endl;
         it->second.write_cpu();
     }
 }
 
 int Cluster::app(const string& x, int identity, int memory, int time) {
-    clus::iterator it = conj.find(x);
+    clus_it it = conj.find(x);
 
     if (it == conj.end()) return 101;
     return it->second.add_process_cpu(identity, memory, time);
 }
 
 int Cluster::bpp(const string& x, int identity) {
-    clus::iterator it = conj.find(x);
+    clus_it it = conj.find(x);
 
     if (it == conj.end()) return 101;
     int back = 0;
@@ -90,7 +100,7 @@ int Cluster::bpp(const string& x, int identity) {
 }
 
 bool Cluster::ipro(const string& x) const {
-    clus::const_iterator it = conj.find(x);
+    clus_ct it = conj.find(x);
     
     if (it == conj.end()) return false;
     it->second.write_cpu();
@@ -98,28 +108,32 @@ bool Cluster::ipro(const string& x) const {
 }
 
 void Cluster::at(int t) {
-    clus::iterator itf = conj.end();
+    clus_it itf = conj.end();
 
-    for (clus::iterator it = conj.begin(); it != itf; ++it) it->second.advance(t);
+    for (clus_it it = conj.begin(); it != itf; ++it) it->second.advance(t);
 }
 
 bool Cluster::cmp(string x) {
-    clus::iterator it = conj.lower_bound(x);
+    clus_it it = conj.lower_bound(x);
 
     if (it == conj.end() or it->first != x) return false;
-    if (it->second.what_ffree() <= it->second.what_mema())it->second.compactar();
+    if (it->second.what_ffree() <= it->second.what_mema()) {
+        it->second.compactar();
+    }
     return true;
 }
 
 void Cluster::cmc() {
-    clus::iterator itf = conj.end();
-    for (clus::iterator it = conj.begin(); it != itf; ++it) {
-        if (it->second.what_ffree() <= it->second.what_mema())it->second.compactar();
+    clus_it itf = conj.end();
+    for (clus_it it = conj.begin(); it != itf; ++it) {
+        if (it->second.what_ffree() <= it->second.what_mema()) {
+            it->second.compactar();
+        }
     }
 }   
 
 int Cluster::mc(string x) {
-    clus::const_iterator it = conj.lower_bound(x);
+    clus_ct it = conj.lower_bound(x);
 
     if (it == conj.end() or it->first != x) return 101;
     if (!it->second.active_processes()) return 102;
@@ -136,17 +150,17 @@ bool Cluster::recive_processes(Process a) {
     time = a.what_time();
     id = a.what_id();
     mem = a.what_mem();
-    clus::iterator ite = conj.end();
+    clus_it ite = conj.end();
     find_best(mem, id, ite, cluster);
 
     if (ite != conj.end()) {
-        ite->second.add_process_cpu(id, mem, time); //check this line, maybe I can create another add function that takes a process as a parameter and doesn't check so many errors
+        ite->second.add_process_cpu(id, mem, time);
         return true;
     }
     else return false;
 }
 
-void Cluster::find_best(const int mem, const int identity, cit ite, ord can) {
+void Cluster::find_best(const int mem, const int identity, cit ite, ord_ct can) {
     int no_space, free_space;
     no_space = free_space = -1;
     if (!can.empty()) {
@@ -160,7 +174,7 @@ void Cluster::find_best(const int mem, const int identity, cit ite, ord can) {
             string x = need_visit.front().value();
             need_visit.pop();
 
-            clus::iterator it = conj.find(x);
+            clus_it it = conj.find(x);
             int aux = it->second.get_memory(mem, identity);
 
             if (aux != -1) {
@@ -178,5 +192,4 @@ void Cluster::find_best(const int mem, const int identity, cit ite, ord can) {
     }
 }
 
-//CODE HELL
 Cluster::Cluster() {}

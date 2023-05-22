@@ -68,6 +68,9 @@ $(function() {
 <div class="title">Cpu.cc File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of the class <a class="el" href="classCpu.html" title="It represents a cpu, a processor.">Cpu</a>.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;set&gt;</code><br />
@@ -78,7 +81,7 @@ Include dependency graph for Cpu.cc:</div>
 <div class="dyncontent">
 <div class="center"><img src="Cpu_8cc__incl.png" border="0" usemap="#Cpu_8cc" alt=""/></div>
 <map name="Cpu_8cc" id="Cpu_8cc">
-<area shape="rect" title=" " alt="" coords="173,5,238,32"/>
+<area shape="rect" title="Implementation of the class Cpu." alt="" coords="173,5,238,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,85,107"/>
 <area shape="rect" title=" " alt="" coords="109,80,160,107"/>
 <area shape="rect" title=" " alt="" coords="184,80,227,107"/>
@@ -93,12 +96,28 @@ Include dependency graph for Cpu.cc:</div>
 Typedefs</h2></td></tr>
 <tr class="memitem:a6249481818bd0eaba64860eec50ca613"><td class="memItemLeft" align="right" valign="top">typedef map&lt; int, <a class="el" href="classProcess.html">Process</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cpu_8cc.html#a6249481818bd0eaba64860eec50ca613">mem</a></td></tr>
 <tr class="separator:a6249481818bd0eaba64860eec50ca613"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41766767ec4e28df609e1bd5420266bf"><td class="memItemLeft" align="right" valign="top">typedef map&lt; int, <a class="el" href="classProcess.html">Process</a> &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cpu_8cc.html#a41766767ec4e28df609e1bd5420266bf">mem_it</a></td></tr>
+<tr class="separator:a41766767ec4e28df609e1bd5420266bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef6f0e4a23d5816882c3da0456af9d17"><td class="memItemLeft" align="right" valign="top">typedef map&lt; int, <a class="el" href="classProcess.html">Process</a> &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cpu_8cc.html#aef6f0e4a23d5816882c3da0456af9d17">mem_ct</a></td></tr>
+<tr class="separator:aef6f0e4a23d5816882c3da0456af9d17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade369179a3e9f2fd3703f28d81647de1"><td class="memItemLeft" align="right" valign="top">typedef map&lt; int, set&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cpu_8cc.html#ade369179a3e9f2fd3703f28d81647de1">dir</a></td></tr>
 <tr class="separator:ade369179a3e9f2fd3703f28d81647de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b0daefe2151c1d7a94f73f54f342211"><td class="memItemLeft" align="right" valign="top">typedef map&lt; int, set&lt; int &gt; &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cpu_8cc.html#a1b0daefe2151c1d7a94f73f54f342211">dir_it</a></td></tr>
+<tr class="separator:a1b0daefe2151c1d7a94f73f54f342211"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae773180a951bf80205e6106de1d13466"><td class="memItemLeft" align="right" valign="top">typedef map&lt; int, set&lt; int &gt; &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cpu_8cc.html#ae773180a951bf80205e6106de1d13466">dir_ct</a></td></tr>
+<tr class="separator:ae773180a951bf80205e6106de1d13466"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79a9bc8ce0a5861b1292337f2ec2a755"><td class="memItemLeft" align="right" valign="top">typedef map&lt; int, pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cpu_8cc.html#a79a9bc8ce0a5861b1292337f2ec2a755">naio</a></td></tr>
 <tr class="separator:a79a9bc8ce0a5861b1292337f2ec2a755"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c85688cf7c7dd952c981fd9f82746ef"><td class="memItemLeft" align="right" valign="top">typedef map&lt; int, pair&lt; int, int &gt; &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cpu_8cc.html#a2c85688cf7c7dd952c981fd9f82746ef">naio_it</a></td></tr>
+<tr class="separator:a2c85688cf7c7dd952c981fd9f82746ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0914957812c8e80fbf6b0f1ef43723ed"><td class="memItemLeft" align="right" valign="top">typedef map&lt; int, pair&lt; int, int &gt; &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cpu_8cc.html#a0914957812c8e80fbf6b0f1ef43723ed">naio_ct</a></td></tr>
+<tr class="separator:a0914957812c8e80fbf6b0f1ef43723ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the class <a class="el" href="classCpu.html" title="It represents a cpu, a processor.">Cpu</a>. </p>
+
+<p class="definition">Definition in file <a class="el" href="Cpu_8cc_source.html">Cpu.cc</a>.</p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
 <a id="ade369179a3e9f2fd3703f28d81647de1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ade369179a3e9f2fd3703f28d81647de1">&#9670;&nbsp;</a></span>dir</h2>
 
@@ -111,7 +130,39 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Cpu_8cc_source.html#l00009">9</a> of file <a class="el" href="Cpu_8cc_source.html">Cpu.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cpu_8cc_source.html#l00017">17</a> of file <a class="el" href="Cpu_8cc_source.html">Cpu.cc</a>.</p>
+
+</div>
+</div>
+<a id="ae773180a951bf80205e6106de1d13466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae773180a951bf80205e6106de1d13466">&#9670;&nbsp;</a></span>dir_ct</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef map&lt;int, set&lt;int&gt; &gt;::const_iterator <a class="el" href="Cpu_8cc.html#ae773180a951bf80205e6106de1d13466">dir_ct</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Cpu_8cc_source.html#l00019">19</a> of file <a class="el" href="Cpu_8cc_source.html">Cpu.cc</a>.</p>
+
+</div>
+</div>
+<a id="a1b0daefe2151c1d7a94f73f54f342211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b0daefe2151c1d7a94f73f54f342211">&#9670;&nbsp;</a></span>dir_it</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef map&lt;int, set&lt;int&gt; &gt;::iterator <a class="el" href="Cpu_8cc.html#a1b0daefe2151c1d7a94f73f54f342211">dir_it</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Cpu_8cc_source.html#l00018">18</a> of file <a class="el" href="Cpu_8cc_source.html">Cpu.cc</a>.</p>
 
 </div>
 </div>
@@ -127,7 +178,39 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Cpu_8cc_source.html#l00008">8</a> of file <a class="el" href="Cpu_8cc_source.html">Cpu.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cpu_8cc_source.html#l00013">13</a> of file <a class="el" href="Cpu_8cc_source.html">Cpu.cc</a>.</p>
+
+</div>
+</div>
+<a id="aef6f0e4a23d5816882c3da0456af9d17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef6f0e4a23d5816882c3da0456af9d17">&#9670;&nbsp;</a></span>mem_ct</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef map&lt;int, <a class="el" href="classProcess.html">Process</a>&gt;::const_iterator <a class="el" href="Cpu_8cc.html#aef6f0e4a23d5816882c3da0456af9d17">mem_ct</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Cpu_8cc_source.html#l00015">15</a> of file <a class="el" href="Cpu_8cc_source.html">Cpu.cc</a>.</p>
+
+</div>
+</div>
+<a id="a41766767ec4e28df609e1bd5420266bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41766767ec4e28df609e1bd5420266bf">&#9670;&nbsp;</a></span>mem_it</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef map&lt;int, <a class="el" href="classProcess.html">Process</a>&gt;::iterator <a class="el" href="Cpu_8cc.html#a41766767ec4e28df609e1bd5420266bf">mem_it</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Cpu_8cc_source.html#l00014">14</a> of file <a class="el" href="Cpu_8cc_source.html">Cpu.cc</a>.</p>
 
 </div>
 </div>
@@ -143,7 +226,39 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Cpu_8cc_source.html#l00010">10</a> of file <a class="el" href="Cpu_8cc_source.html">Cpu.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cpu_8cc_source.html#l00021">21</a> of file <a class="el" href="Cpu_8cc_source.html">Cpu.cc</a>.</p>
+
+</div>
+</div>
+<a id="a0914957812c8e80fbf6b0f1ef43723ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0914957812c8e80fbf6b0f1ef43723ed">&#9670;&nbsp;</a></span>naio_ct</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef map&lt;int, pair&lt;int,int&gt; &gt;::const_iterator <a class="el" href="Cpu_8cc.html#a0914957812c8e80fbf6b0f1ef43723ed">naio_ct</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Cpu_8cc_source.html#l00023">23</a> of file <a class="el" href="Cpu_8cc_source.html">Cpu.cc</a>.</p>
+
+</div>
+</div>
+<a id="a2c85688cf7c7dd952c981fd9f82746ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c85688cf7c7dd952c981fd9f82746ef">&#9670;&nbsp;</a></span>naio_it</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef map&lt;int, pair&lt;int,int&gt; &gt;::iterator <a class="el" href="Cpu_8cc.html#a2c85688cf7c7dd952c981fd9f82746ef">naio_it</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Cpu_8cc_source.html#l00022">22</a> of file <a class="el" href="Cpu_8cc_source.html">Cpu.cc</a>.</p>
 
 </div>
 </div>

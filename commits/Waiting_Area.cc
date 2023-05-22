@@ -1,3 +1,7 @@
+/** @file Waiting_Area.cc
+    @brief Implementation of the class Waiting_Area
+*/
+
 #include <iostream>
 #include <list>
 #include "Waiting_Area.hh"
@@ -5,22 +9,31 @@
 #include "Cluster.hh"
 using namespace std;
 
+//Typedefs to code faster, keep lines shorter and to make it more readable
 typedef map<string, list<Process>> area;
-typedef list<Process> category;
+typedef map<string, list<Process>>::iterator area_it;
+typedef map<string, list<Process>>::const_iterator area_ct;
+
+typedef list<Process> cat;
+typedef list<Process>::iterator cat_it;
+typedef list<Process>::const_iterator cat_ct;
+
 typedef map<string, pair<int, int>> siu;
+typedef map<string, pair<int, int>>::iterator siu_it;
+typedef map<string, pair<int, int>>::const_iterator siu_ct;
 
 Waiting_Area::Waiting_Area() {}
 
-bool Waiting_Area::search_process(area::const_iterator it, int proc_id) const {
+bool Waiting_Area::search_process(area_ct it, int proc_id) const {
+    cat_ct ite = it->second.end();
 
-    for (category::const_iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
+    for (cat_ct it2 = it->second.begin(); it2 != ite; ++it2) {
         if (it2->what_id() == proc_id) return true;
     }
 
     return false;
 }
 
-//Preguntar al profe
 void Waiting_Area::read_waiting_area() {
     int n;
     cin >> n;
@@ -37,19 +50,17 @@ void Waiting_Area::read_waiting_area() {
 }
 
 void Waiting_Area::add_process(const string& prio, const Process& a) {
-    area::iterator it = wa.find(prio);
-    category::iterator it2 = it->second.end();
+    area_it it = wa.find(prio);
+    cat_it it2 = it->second.end();
     it->second.insert(it2, a);
 }
 
-/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-
 bool Waiting_Area::ap(const string& x) {
-    area::iterator it = wa.find(x);
+    area_it it = wa.find(x);
 
     if (it != wa.end()) return false;
 
-    category a;
+    cat a;
     wa.insert(make_pair(x, a));
     sera.insert(make_pair(x, make_pair(0, 0)));
     return true;
@@ -67,27 +78,27 @@ int Waiting_Area::bp(const string& x) {
 }
 
 int Waiting_Area::ape(const string& x, int identity, int memory, int time) {
-    Process a = Process(identity, memory, time, 0);
-
     area::iterator it = wa.find(x);
 
     if (it == wa.end()) return 101;
     else if (search_process(it, identity)) return 102;
 
-    add_process(x, a);
+    add_process(x, Process(identity, memory, time, 0));
     return 100;
 } 
 
 bool Waiting_Area::ipri(const string& x) const {
-    area::const_iterator it = wa.find(x);
+    area_ct it = wa.find(x);
 
     if (it == wa.end()) return false;
     else {
-        for(category::const_iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
+        cat_ct ite = it->second.end();
+    
+        for(cat_ct it2 = it->second.begin(); it2 != ite; ++it2) {
             it2->wr2_process();
         }
 
-        siu::const_iterator ita = sera.find(x);
+        siu_ct ita = sera.find(x);
         cout << ita->second.first << " " << ita->second.second << endl;
     }
 
@@ -95,35 +106,37 @@ bool Waiting_Area::ipri(const string& x) const {
 }
 
 void Waiting_Area::iae() const {
-    area::const_iterator it2 = wa.end();
+    area_ct it2 = wa.end();
 
-    for (area::const_iterator it = wa.begin(); it != it2; ++it) {
+    for (area_ct it = wa.begin(); it != it2; ++it) {
         string name = it->first;
         cout << name << endl;
-        category::const_iterator itf2 = it->second.end();
+        cat_ct itf2 = it->second.end();
 
-        for (category::const_iterator itf = it->second.begin(); itf != itf2; ++itf) itf->wr2_process();
+        for (cat_ct itf = it->second.begin(); itf != itf2; ++itf) {
+            itf->wr2_process();
+        }
 
-        map<string, pair<int, int>>::const_iterator its = sera.find(name);
+        siu_ct its = sera.find(name);
         cout << its->second.first << " " << its->second.second << endl;
     }
 }
 
 void Waiting_Area::epc(int n, Cluster& clust) {
-    area::iterator it = wa.begin();
-    area::iterator itf = wa.end();
+    area_it it = wa.begin();
+    area_it itf = wa.end();
     int i = 0;
 
     while (i < n and it != itf) {
-        category::iterator it2 = it->second.begin();
-        siu::iterator cat = sera.find(it->first);
+        cat_it it2 = it->second.begin();
+        siu_it cat = sera.find(it->first);
 
         int tam, j;
         tam = it->second.size();
         j = 0;
 
         while (i < n and j < tam) {
-            category::iterator its = it2;
+            cat_it its = it2;
             Process a = *it2;
             ++its;
             

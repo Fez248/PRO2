@@ -1,3 +1,7 @@
+/** @file Process.cc
+    @brief Implementation of the class Process
+*/
+
 #include <iostream>
 #include "Process.hh"
 using namespace std;
@@ -27,7 +31,6 @@ int Process::what_time() const {
 }
 
 void Process::wr_process() const {
-    //posicion, nombre, memoria, tiempo
     cout << dir << " " << ide << " " << memo << " " << time << endl;
 }
 

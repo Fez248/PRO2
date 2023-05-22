@@ -1,13 +1,17 @@
 \hypertarget{Cluster_8cc}{}\doxysection{Cluster.\+cc File Reference}
 \label{Cluster_8cc}\index{Cluster.cc@{Cluster.cc}}
+
+
+Implementation of the class \mbox{\hyperlink{classCluster}{Cluster}}.  
+
+
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$list$>$}\newline
 {\ttfamily \#include \char`\"{}Waiting\+\_\+\+Area.\+hh\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Process.\+hh\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Cluster.\+hh\char`\"{}}\newline
 {\ttfamily \#include $<$queue$>$}\newline
-Include dependency graph for Cluster.\+cc\+:
-\nopagebreak
+Include dependency graph for Cluster.\+cc\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -19,13 +23,24 @@ Include dependency graph for Cluster.\+cc\+:
 \item 
 typedef map$<$ string, \mbox{\hyperlink{classCpu}{Cpu}} $>$ \mbox{\hyperlink{Cluster_8cc_a95b07402f46593f50671879724269aa0}{clus}}
 \item 
+typedef map$<$ string, \mbox{\hyperlink{classCpu}{Cpu}} $>$\+::iterator \mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\+\_\+it}}
+\item 
+typedef map$<$ string, \mbox{\hyperlink{classCpu}{Cpu}} $>$\+::const\+\_\+iterator \mbox{\hyperlink{Cluster_8cc_a968d4b1d542c9f666e1a1fbd7f1c9c11}{clus\+\_\+ct}}
+\item 
+typedef Bin\+Tree$<$ string $>$ \& \mbox{\hyperlink{Cluster_8cc_ab7d0b2c90eae59f62c853607414355db}{ord}}
+\item 
 typedef clus\+::iterator \& \mbox{\hyperlink{Cluster_8cc_ae1e017a8f236298c12d87027bf00c0e3}{cit}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-const typedef Bin\+Tree$<$ string $>$ \& \mbox{\hyperlink{Cluster_8cc_aacbe7b43ba612546df8e6fbc79ae5b89}{ord}}
+const typedef Bin\+Tree$<$ string $>$ \& \mbox{\hyperlink{Cluster_8cc_a8e2ab6d19f821e58db3f5c4f3005937b}{ord\+\_\+ct}}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the class \mbox{\hyperlink{classCluster}{Cluster}}. 
+
 
 
 \doxysubsection{Typedef Documentation}
@@ -37,7 +52,7 @@ const typedef Bin\+Tree$<$ string $>$ \& \mbox{\hyperlink{Cluster_8cc_aacbe7b43b
 
 
 
-Definition at line 11 of file Cluster.\+cc.
+Definition at line 21 of file Cluster.\+cc.
 
 \mbox{\Hypertarget{Cluster_8cc_a95b07402f46593f50671879724269aa0}\label{Cluster_8cc_a95b07402f46593f50671879724269aa0}} 
 \index{Cluster.cc@{Cluster.cc}!clus@{clus}}
@@ -47,18 +62,48 @@ Definition at line 11 of file Cluster.\+cc.
 
 
 
-Definition at line 9 of file Cluster.\+cc.
+Definition at line 14 of file Cluster.\+cc.
+
+\mbox{\Hypertarget{Cluster_8cc_a968d4b1d542c9f666e1a1fbd7f1c9c11}\label{Cluster_8cc_a968d4b1d542c9f666e1a1fbd7f1c9c11}} 
+\index{Cluster.cc@{Cluster.cc}!clus\_ct@{clus\_ct}}
+\index{clus\_ct@{clus\_ct}!Cluster.cc@{Cluster.cc}}
+\doxysubsubsection{\texorpdfstring{clus\_ct}{clus\_ct}}
+{\footnotesize\ttfamily typedef map$<$string, \mbox{\hyperlink{classCpu}{Cpu}}$>$\+::const\+\_\+iterator \mbox{\hyperlink{Cluster_8cc_a968d4b1d542c9f666e1a1fbd7f1c9c11}{clus\+\_\+ct}}}
+
+
+
+Definition at line 16 of file Cluster.\+cc.
+
+\mbox{\Hypertarget{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}\label{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}} 
+\index{Cluster.cc@{Cluster.cc}!clus\_it@{clus\_it}}
+\index{clus\_it@{clus\_it}!Cluster.cc@{Cluster.cc}}
+\doxysubsubsection{\texorpdfstring{clus\_it}{clus\_it}}
+{\footnotesize\ttfamily typedef map$<$string, \mbox{\hyperlink{classCpu}{Cpu}}$>$\+::iterator \mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\+\_\+it}}}
+
+
+
+Definition at line 15 of file Cluster.\+cc.
+
+\mbox{\Hypertarget{Cluster_8cc_ab7d0b2c90eae59f62c853607414355db}\label{Cluster_8cc_ab7d0b2c90eae59f62c853607414355db}} 
+\index{Cluster.cc@{Cluster.cc}!ord@{ord}}
+\index{ord@{ord}!Cluster.cc@{Cluster.cc}}
+\doxysubsubsection{\texorpdfstring{ord}{ord}}
+{\footnotesize\ttfamily typedef Bin\+Tree$<$string$>$\& \mbox{\hyperlink{Cluster_8cc_ab7d0b2c90eae59f62c853607414355db}{ord}}}
+
+
+
+Definition at line 18 of file Cluster.\+cc.
 
 
 
 \doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{Cluster_8cc_aacbe7b43ba612546df8e6fbc79ae5b89}\label{Cluster_8cc_aacbe7b43ba612546df8e6fbc79ae5b89}} 
-\index{Cluster.cc@{Cluster.cc}!ord@{ord}}
-\index{ord@{ord}!Cluster.cc@{Cluster.cc}}
-\doxysubsubsection{\texorpdfstring{ord}{ord}}
-{\footnotesize\ttfamily const typedef Bin\+Tree$<$string$>$\& ord}
+\mbox{\Hypertarget{Cluster_8cc_a8e2ab6d19f821e58db3f5c4f3005937b}\label{Cluster_8cc_a8e2ab6d19f821e58db3f5c4f3005937b}} 
+\index{Cluster.cc@{Cluster.cc}!ord\_ct@{ord\_ct}}
+\index{ord\_ct@{ord\_ct}!Cluster.cc@{Cluster.cc}}
+\doxysubsubsection{\texorpdfstring{ord\_ct}{ord\_ct}}
+{\footnotesize\ttfamily const typedef Bin\+Tree$<$string$>$\& ord\+\_\+ct}
 
 
 
-Definition at line 10 of file Cluster.\+cc.
+Definition at line 19 of file Cluster.\+cc.
 

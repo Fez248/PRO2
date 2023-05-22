@@ -1,12 +1,16 @@
 \hypertarget{Waiting__Area_8cc}{}\doxysection{Waiting\+\_\+\+Area.\+cc File Reference}
 \label{Waiting__Area_8cc}\index{Waiting\_Area.cc@{Waiting\_Area.cc}}
+
+
+Implementation of the class \mbox{\hyperlink{classWaiting__Area}{Waiting\+\_\+\+Area}}.  
+
+
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$list$>$}\newline
 {\ttfamily \#include \char`\"{}Waiting\+\_\+\+Area.\+hh\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Process.\+hh\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Cluster.\+hh\char`\"{}}\newline
-Include dependency graph for Waiting\+\_\+\+Area.\+cc\+:
-\nopagebreak
+Include dependency graph for Waiting\+\_\+\+Area.\+cc\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -18,10 +22,27 @@ Include dependency graph for Waiting\+\_\+\+Area.\+cc\+:
 \item 
 typedef map$<$ string, list$<$ \mbox{\hyperlink{classProcess}{Process}} $>$ $>$ \mbox{\hyperlink{Waiting__Area_8cc_a301fb6499f769bddc6485e902fc76561}{area}}
 \item 
-typedef list$<$ \mbox{\hyperlink{classProcess}{Process}} $>$ \mbox{\hyperlink{Waiting__Area_8cc_a7831dd7f5c9c7fbf18ecd697e397b507}{category}}
+typedef map$<$ string, list$<$ \mbox{\hyperlink{classProcess}{Process}} $>$ $>$\+::iterator \mbox{\hyperlink{Waiting__Area_8cc_a9b486d34a6563c22490430dab5fb3d62}{area\+\_\+it}}
+\item 
+typedef map$<$ string, list$<$ \mbox{\hyperlink{classProcess}{Process}} $>$ $>$\+::const\+\_\+iterator \mbox{\hyperlink{Waiting__Area_8cc_a602a59ceef9dfce10f20ec8628b60db2}{area\+\_\+ct}}
+\item 
+typedef list$<$ \mbox{\hyperlink{classProcess}{Process}} $>$ \mbox{\hyperlink{Waiting__Area_8cc_aa62be058eeaabb7f90581db6a94b1b48}{cat}}
+\item 
+typedef list$<$ \mbox{\hyperlink{classProcess}{Process}} $>$\+::iterator \mbox{\hyperlink{Waiting__Area_8cc_ac863cf4b0ed43a4905d4f2aef36d5913}{cat\+\_\+it}}
+\item 
+typedef list$<$ \mbox{\hyperlink{classProcess}{Process}} $>$\+::const\+\_\+iterator \mbox{\hyperlink{Waiting__Area_8cc_a52d31adeea04f85b13aa95b6fc9fcd6e}{cat\+\_\+ct}}
 \item 
 typedef map$<$ string, pair$<$ int, int $>$ $>$ \mbox{\hyperlink{Waiting__Area_8cc_a9f04e21438b8bb656e9ddd253952cbb0}{siu}}
+\item 
+typedef map$<$ string, pair$<$ int, int $>$ $>$\+::iterator \mbox{\hyperlink{Waiting__Area_8cc_a31bb8ebe283c7d5565da749a9e5527f3}{siu\+\_\+it}}
+\item 
+typedef map$<$ string, pair$<$ int, int $>$ $>$\+::const\+\_\+iterator \mbox{\hyperlink{Waiting__Area_8cc_a57490da531374d2f7dedaf4f53b0c8b0}{siu\+\_\+ct}}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the class \mbox{\hyperlink{classWaiting__Area}{Waiting\+\_\+\+Area}}. 
+
 
 
 \doxysubsection{Typedef Documentation}
@@ -33,17 +54,57 @@ typedef map$<$ string, pair$<$ int, int $>$ $>$ \mbox{\hyperlink{Waiting__Area_8
 
 
 
-Definition at line 8 of file Waiting\+\_\+\+Area.\+cc.
+Definition at line 13 of file Waiting\+\_\+\+Area.\+cc.
 
-\mbox{\Hypertarget{Waiting__Area_8cc_a7831dd7f5c9c7fbf18ecd697e397b507}\label{Waiting__Area_8cc_a7831dd7f5c9c7fbf18ecd697e397b507}} 
-\index{Waiting\_Area.cc@{Waiting\_Area.cc}!category@{category}}
-\index{category@{category}!Waiting\_Area.cc@{Waiting\_Area.cc}}
-\doxysubsubsection{\texorpdfstring{category}{category}}
-{\footnotesize\ttfamily typedef list$<$\mbox{\hyperlink{classProcess}{Process}}$>$ \mbox{\hyperlink{Waiting__Area_8cc_a7831dd7f5c9c7fbf18ecd697e397b507}{category}}}
+\mbox{\Hypertarget{Waiting__Area_8cc_a602a59ceef9dfce10f20ec8628b60db2}\label{Waiting__Area_8cc_a602a59ceef9dfce10f20ec8628b60db2}} 
+\index{Waiting\_Area.cc@{Waiting\_Area.cc}!area\_ct@{area\_ct}}
+\index{area\_ct@{area\_ct}!Waiting\_Area.cc@{Waiting\_Area.cc}}
+\doxysubsubsection{\texorpdfstring{area\_ct}{area\_ct}}
+{\footnotesize\ttfamily typedef map$<$string, list$<$\mbox{\hyperlink{classProcess}{Process}}$>$ $>$\+::const\+\_\+iterator \mbox{\hyperlink{Waiting__Area_8cc_a602a59ceef9dfce10f20ec8628b60db2}{area\+\_\+ct}}}
 
 
 
-Definition at line 9 of file Waiting\+\_\+\+Area.\+cc.
+Definition at line 15 of file Waiting\+\_\+\+Area.\+cc.
+
+\mbox{\Hypertarget{Waiting__Area_8cc_a9b486d34a6563c22490430dab5fb3d62}\label{Waiting__Area_8cc_a9b486d34a6563c22490430dab5fb3d62}} 
+\index{Waiting\_Area.cc@{Waiting\_Area.cc}!area\_it@{area\_it}}
+\index{area\_it@{area\_it}!Waiting\_Area.cc@{Waiting\_Area.cc}}
+\doxysubsubsection{\texorpdfstring{area\_it}{area\_it}}
+{\footnotesize\ttfamily typedef map$<$string, list$<$\mbox{\hyperlink{classProcess}{Process}}$>$ $>$\+::iterator \mbox{\hyperlink{Waiting__Area_8cc_a9b486d34a6563c22490430dab5fb3d62}{area\+\_\+it}}}
+
+
+
+Definition at line 14 of file Waiting\+\_\+\+Area.\+cc.
+
+\mbox{\Hypertarget{Waiting__Area_8cc_aa62be058eeaabb7f90581db6a94b1b48}\label{Waiting__Area_8cc_aa62be058eeaabb7f90581db6a94b1b48}} 
+\index{Waiting\_Area.cc@{Waiting\_Area.cc}!cat@{cat}}
+\index{cat@{cat}!Waiting\_Area.cc@{Waiting\_Area.cc}}
+\doxysubsubsection{\texorpdfstring{cat}{cat}}
+{\footnotesize\ttfamily typedef list$<$\mbox{\hyperlink{classProcess}{Process}}$>$ \mbox{\hyperlink{Waiting__Area_8cc_aa62be058eeaabb7f90581db6a94b1b48}{cat}}}
+
+
+
+Definition at line 17 of file Waiting\+\_\+\+Area.\+cc.
+
+\mbox{\Hypertarget{Waiting__Area_8cc_a52d31adeea04f85b13aa95b6fc9fcd6e}\label{Waiting__Area_8cc_a52d31adeea04f85b13aa95b6fc9fcd6e}} 
+\index{Waiting\_Area.cc@{Waiting\_Area.cc}!cat\_ct@{cat\_ct}}
+\index{cat\_ct@{cat\_ct}!Waiting\_Area.cc@{Waiting\_Area.cc}}
+\doxysubsubsection{\texorpdfstring{cat\_ct}{cat\_ct}}
+{\footnotesize\ttfamily typedef list$<$\mbox{\hyperlink{classProcess}{Process}}$>$\+::const\+\_\+iterator \mbox{\hyperlink{Waiting__Area_8cc_a52d31adeea04f85b13aa95b6fc9fcd6e}{cat\+\_\+ct}}}
+
+
+
+Definition at line 19 of file Waiting\+\_\+\+Area.\+cc.
+
+\mbox{\Hypertarget{Waiting__Area_8cc_ac863cf4b0ed43a4905d4f2aef36d5913}\label{Waiting__Area_8cc_ac863cf4b0ed43a4905d4f2aef36d5913}} 
+\index{Waiting\_Area.cc@{Waiting\_Area.cc}!cat\_it@{cat\_it}}
+\index{cat\_it@{cat\_it}!Waiting\_Area.cc@{Waiting\_Area.cc}}
+\doxysubsubsection{\texorpdfstring{cat\_it}{cat\_it}}
+{\footnotesize\ttfamily typedef list$<$\mbox{\hyperlink{classProcess}{Process}}$>$\+::iterator \mbox{\hyperlink{Waiting__Area_8cc_ac863cf4b0ed43a4905d4f2aef36d5913}{cat\+\_\+it}}}
+
+
+
+Definition at line 18 of file Waiting\+\_\+\+Area.\+cc.
 
 \mbox{\Hypertarget{Waiting__Area_8cc_a9f04e21438b8bb656e9ddd253952cbb0}\label{Waiting__Area_8cc_a9f04e21438b8bb656e9ddd253952cbb0}} 
 \index{Waiting\_Area.cc@{Waiting\_Area.cc}!siu@{siu}}
@@ -53,5 +114,25 @@ Definition at line 9 of file Waiting\+\_\+\+Area.\+cc.
 
 
 
-Definition at line 10 of file Waiting\+\_\+\+Area.\+cc.
+Definition at line 21 of file Waiting\+\_\+\+Area.\+cc.
+
+\mbox{\Hypertarget{Waiting__Area_8cc_a57490da531374d2f7dedaf4f53b0c8b0}\label{Waiting__Area_8cc_a57490da531374d2f7dedaf4f53b0c8b0}} 
+\index{Waiting\_Area.cc@{Waiting\_Area.cc}!siu\_ct@{siu\_ct}}
+\index{siu\_ct@{siu\_ct}!Waiting\_Area.cc@{Waiting\_Area.cc}}
+\doxysubsubsection{\texorpdfstring{siu\_ct}{siu\_ct}}
+{\footnotesize\ttfamily typedef map$<$string, pair$<$int, int$>$ $>$\+::const\+\_\+iterator \mbox{\hyperlink{Waiting__Area_8cc_a57490da531374d2f7dedaf4f53b0c8b0}{siu\+\_\+ct}}}
+
+
+
+Definition at line 23 of file Waiting\+\_\+\+Area.\+cc.
+
+\mbox{\Hypertarget{Waiting__Area_8cc_a31bb8ebe283c7d5565da749a9e5527f3}\label{Waiting__Area_8cc_a31bb8ebe283c7d5565da749a9e5527f3}} 
+\index{Waiting\_Area.cc@{Waiting\_Area.cc}!siu\_it@{siu\_it}}
+\index{siu\_it@{siu\_it}!Waiting\_Area.cc@{Waiting\_Area.cc}}
+\doxysubsubsection{\texorpdfstring{siu\_it}{siu\_it}}
+{\footnotesize\ttfamily typedef map$<$string, pair$<$int, int$>$ $>$\+::iterator \mbox{\hyperlink{Waiting__Area_8cc_a31bb8ebe283c7d5565da749a9e5527f3}{siu\+\_\+it}}}
+
+
+
+Definition at line 22 of file Waiting\+\_\+\+Area.\+cc.
 

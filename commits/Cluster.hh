@@ -13,7 +13,7 @@
 #endif
 
 typedef map<string, Cpu> clus;
-typedef const BinTree<string>& ord;
+typedef const BinTree<string>& ord_ct;
 typedef clus::iterator& cit;
 
 /**
@@ -70,7 +70,7 @@ class Cluster {
         \post The new cluster a contains the old cluster and the new one in
         the position of p.
     */
-    void find_best(const int mem, const int identity, cit ite, ord can);
+    void find_best(const int mem, const int identity, cit ite, ord_ct can);
 
     public:
 

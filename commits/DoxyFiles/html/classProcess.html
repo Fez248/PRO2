@@ -186,13 +186,13 @@ Private Attributes</h2></td></tr>
 <dl class="section pre"><dt>Precondition</dt><dd><em>Identity, memory, delta and direction initialized</em>. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>A process with this information. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Process_8cc_source.html#l00005">5</a> of file <a class="el" href="Process_8cc_source.html">Process.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                                                                   {</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <a class="code" href="classProcess.html#acf8bf6874670e4d11819528caf093aa7">ide</a> = identity;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="classProcess.html#a21d2c162c236aa09d88f91bd025ce44b">memo</a> = memory;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">time</a> = delta;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="Cpu_8cc.html#ade369179a3e9f2fd3703f28d81647de1">dir</a> = direction;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Process_8cc_source.html#l00009">9</a> of file <a class="el" href="Process_8cc_source.html">Process.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                                                                   {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="classProcess.html#acf8bf6874670e4d11819528caf093aa7">ide</a> = identity;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="classProcess.html#a21d2c162c236aa09d88f91bd025ce44b">memo</a> = memory;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">time</a> = delta;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="Cpu_8cc.html#ade369179a3e9f2fd3703f28d81647de1">dir</a> = direction;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -217,11 +217,11 @@ Private Attributes</h2></td></tr>
 <dl class="section pre"><dt>Precondition</dt><dd>Initialized and t &gt; 0. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Reduces time in t unities, if delta == 0 it returns false, if not returns true. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Process_8cc_source.html#l00012">12</a> of file <a class="el" href="Process_8cc_source.html">Process.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                            {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">time</a> = <a class="code" href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">time</a> - t;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">time</a> &gt; 0;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Process_8cc_source.html#l00016">16</a> of file <a class="el" href="Process_8cc_source.html">Process.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                            {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">time</a> = <a class="code" href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">time</a> - t;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">time</a> &gt; 0;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -244,10 +244,10 @@ Private Attributes</h2></td></tr>
 <dl class="section pre"><dt>Precondition</dt><dd>Initialized cpu direction. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Returns the direction. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Process_8cc_source.html#l00038">38</a> of file <a class="el" href="Process_8cc_source.html">Process.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                            {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classProcess.html#a859e26edf3265d40a42666d160b4a9c4">dir</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Process_8cc_source.html#l00041">41</a> of file <a class="el" href="Process_8cc_source.html">Process.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                            {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classProcess.html#a859e26edf3265d40a42666d160b4a9c4">dir</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -270,10 +270,10 @@ Private Attributes</h2></td></tr>
 <dl class="section pre"><dt>Precondition</dt><dd><em>True</em>. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Returns proc_id. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Process_8cc_source.html#l00017">17</a> of file <a class="el" href="Process_8cc_source.html">Process.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                           {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classProcess.html#acf8bf6874670e4d11819528caf093aa7">ide</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Process_8cc_source.html#l00021">21</a> of file <a class="el" href="Process_8cc_source.html">Process.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                           {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classProcess.html#acf8bf6874670e4d11819528caf093aa7">ide</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -296,10 +296,10 @@ Private Attributes</h2></td></tr>
 <dl class="section pre"><dt>Precondition</dt><dd><em>True</em>. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Returns mem. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Process_8cc_source.html#l00021">21</a> of file <a class="el" href="Process_8cc_source.html">Process.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                            {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classProcess.html#a21d2c162c236aa09d88f91bd025ce44b">memo</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Process_8cc_source.html#l00025">25</a> of file <a class="el" href="Process_8cc_source.html">Process.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                            {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classProcess.html#a21d2c162c236aa09d88f91bd025ce44b">memo</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -322,10 +322,10 @@ Private Attributes</h2></td></tr>
 <dl class="section pre"><dt>Precondition</dt><dd><em>True</em>. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Returns delta. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Process_8cc_source.html#l00025">25</a> of file <a class="el" href="Process_8cc_source.html">Process.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                             {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">time</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Process_8cc_source.html#l00029">29</a> of file <a class="el" href="Process_8cc_source.html">Process.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                             {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">time</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -348,10 +348,10 @@ Private Attributes</h2></td></tr>
 <dl class="section pre"><dt>Precondition</dt><dd><em>True</em>. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>The process is printed. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Process_8cc_source.html#l00034">34</a> of file <a class="el" href="Process_8cc_source.html">Process.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    cout &lt;&lt; <a class="code" href="classProcess.html#acf8bf6874670e4d11819528caf093aa7">ide</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="classProcess.html#a21d2c162c236aa09d88f91bd025ce44b">memo</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">time</a> &lt;&lt; endl;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Process_8cc_source.html#l00037">37</a> of file <a class="el" href="Process_8cc_source.html">Process.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    cout &lt;&lt; <a class="code" href="classProcess.html#acf8bf6874670e4d11819528caf093aa7">ide</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="classProcess.html#a21d2c162c236aa09d88f91bd025ce44b">memo</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">time</a> &lt;&lt; endl;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -374,11 +374,10 @@ Private Attributes</h2></td></tr>
 <dl class="section pre"><dt>Precondition</dt><dd><em>True</em>. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>The process is printed. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Process_8cc_source.html#l00029">29</a> of file <a class="el" href="Process_8cc_source.html">Process.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                               {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">//posicion, nombre, memoria, tiempo</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    cout &lt;&lt; <a class="code" href="Cpu_8cc.html#ade369179a3e9f2fd3703f28d81647de1">dir</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="classProcess.html#acf8bf6874670e4d11819528caf093aa7">ide</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="classProcess.html#a21d2c162c236aa09d88f91bd025ce44b">memo</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">time</a> &lt;&lt; endl;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Process_8cc_source.html#l00033">33</a> of file <a class="el" href="Process_8cc_source.html">Process.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                               {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    cout &lt;&lt; <a class="code" href="Cpu_8cc.html#ade369179a3e9f2fd3703f28d81647de1">dir</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="classProcess.html#acf8bf6874670e4d11819528caf093aa7">ide</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="classProcess.html#a21d2c162c236aa09d88f91bd025ce44b">memo</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">time</a> &lt;&lt; endl;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -487,7 +486,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aclassProcess_html_acf8bf6874670e4d11819528caf093aa7"><div class="ttname"><a href="classProcess.html#acf8bf6874670e4d11819528caf093aa7">Process::ide</a></div><div class="ttdeci">int ide</div><div class="ttdef"><b>Definition:</b> <a href="Process_8hh_source.html#l00023">Process.hh:23</a></div></div>
 <div class="ttc" id="aclassProcess_html_a859e26edf3265d40a42666d160b4a9c4"><div class="ttname"><a href="classProcess.html#a859e26edf3265d40a42666d160b4a9c4">Process::dir</a></div><div class="ttdeci">int dir</div><div class="ttdef"><b>Definition:</b> <a href="Process_8hh_source.html#l00023">Process.hh:23</a></div></div>
 <div class="ttc" id="aclassProcess_html_a21d2c162c236aa09d88f91bd025ce44b"><div class="ttname"><a href="classProcess.html#a21d2c162c236aa09d88f91bd025ce44b">Process::memo</a></div><div class="ttdeci">int memo</div><div class="ttdef"><b>Definition:</b> <a href="Process_8hh_source.html#l00023">Process.hh:23</a></div></div>
-<div class="ttc" id="aCpu_8cc_html_ade369179a3e9f2fd3703f28d81647de1"><div class="ttname"><a href="Cpu_8cc.html#ade369179a3e9f2fd3703f28d81647de1">dir</a></div><div class="ttdeci">map&lt; int, set&lt; int &gt; &gt; dir</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8cc_source.html#l00009">Cpu.cc:9</a></div></div>
+<div class="ttc" id="aCpu_8cc_html_ade369179a3e9f2fd3703f28d81647de1"><div class="ttname"><a href="Cpu_8cc.html#ade369179a3e9f2fd3703f28d81647de1">dir</a></div><div class="ttdeci">map&lt; int, set&lt; int &gt; &gt; dir</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8cc_source.html#l00017">Cpu.cc:17</a></div></div>
 <div class="ttc" id="aclassProcess_html_afbcaed5d0540706f919d1d96adb5c61d"><div class="ttname"><a href="classProcess.html#afbcaed5d0540706f919d1d96adb5c61d">Process::time</a></div><div class="ttdeci">int time</div><div class="ttdef"><b>Definition:</b> <a href="Process_8hh_source.html#l00023">Process.hh:23</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

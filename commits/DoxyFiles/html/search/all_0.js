@@ -8,5 +8,7 @@ var searchData=
   ['ape_5',['ape',['../classWaiting__Area.html#a4c791e71342b16fe06ed31e0f7a297e8',1,'Waiting_Area']]],
   ['app_6',['app',['../classCluster.html#a9640e73a23961804c9ede181844b598a',1,'Cluster']]],
   ['area_7',['area',['../Waiting__Area_8cc.html#a301fb6499f769bddc6485e902fc76561',1,'area():&#160;Waiting_Area.cc'],['../Waiting__Area_8hh.html#a301fb6499f769bddc6485e902fc76561',1,'area():&#160;Waiting_Area.hh']]],
-  ['at_8',['at',['../classCluster.html#aa0ca0c66ba9d8ddcfb8ff9868b34ac3a',1,'Cluster']]]
+  ['area_5fct_8',['area_ct',['../Waiting__Area_8cc.html#a602a59ceef9dfce10f20ec8628b60db2',1,'Waiting_Area.cc']]],
+  ['area_5fit_9',['area_it',['../Waiting__Area_8cc.html#a9b486d34a6563c22490430dab5fb3d62',1,'Waiting_Area.cc']]],
+  ['at_10',['at',['../classCluster.html#aa0ca0c66ba9d8ddcfb8ff9868b34ac3a',1,'Cluster']]]
 ];

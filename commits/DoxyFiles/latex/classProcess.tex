@@ -87,16 +87,16 @@ A process with this information.
 \end{DoxyPostcond}
 
 
-Definition at line 5 of file Process.\+cc.
+Definition at line 9 of file Process.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{5                                                                    \{}
-\DoxyCodeLine{6     \mbox{\hyperlink{classProcess_acf8bf6874670e4d11819528caf093aa7}{ide}} = identity;}
-\DoxyCodeLine{7     \mbox{\hyperlink{classProcess_a21d2c162c236aa09d88f91bd025ce44b}{memo}} = memory;}
-\DoxyCodeLine{8     \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}} = delta;}
-\DoxyCodeLine{9     \mbox{\hyperlink{Cpu_8cc_ade369179a3e9f2fd3703f28d81647de1}{dir}} = direction;}
-\DoxyCodeLine{10 \}}
+\DoxyCodeLine{9                                                                    \{}
+\DoxyCodeLine{10     \mbox{\hyperlink{classProcess_acf8bf6874670e4d11819528caf093aa7}{ide}} = identity;}
+\DoxyCodeLine{11     \mbox{\hyperlink{classProcess_a21d2c162c236aa09d88f91bd025ce44b}{memo}} = memory;}
+\DoxyCodeLine{12     \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}} = delta;}
+\DoxyCodeLine{13     \mbox{\hyperlink{Cpu_8cc_ade369179a3e9f2fd3703f28d81647de1}{dir}} = direction;}
+\DoxyCodeLine{14 \}}
 
 \end{DoxyCode}
 
@@ -120,14 +120,14 @@ Reduces time in t unities, if delta == 0 it returns false, if not returns true.
 \end{DoxyPostcond}
 
 
-Definition at line 12 of file Process.\+cc.
+Definition at line 16 of file Process.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{12                             \{}
-\DoxyCodeLine{13     \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}} = \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}} -\/ t;}
-\DoxyCodeLine{14     \textcolor{keywordflow}{return} \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}} > 0;}
-\DoxyCodeLine{15 \}}
+\DoxyCodeLine{16                             \{}
+\DoxyCodeLine{17     \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}} = \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}} -\/ t;}
+\DoxyCodeLine{18     \textcolor{keywordflow}{return} \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}} > 0;}
+\DoxyCodeLine{19 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classProcess_a7f67272ff6d2946d8e0ab89e8763ca36}\label{classProcess_a7f67272ff6d2946d8e0ab89e8763ca36}} 
@@ -148,13 +148,13 @@ Returns the direction.
 \end{DoxyPostcond}
 
 
-Definition at line 38 of file Process.\+cc.
+Definition at line 41 of file Process.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{38                             \{}
-\DoxyCodeLine{39     \textcolor{keywordflow}{return} \mbox{\hyperlink{classProcess_a859e26edf3265d40a42666d160b4a9c4}{dir}};}
-\DoxyCodeLine{40 \}}
+\DoxyCodeLine{41                             \{}
+\DoxyCodeLine{42     \textcolor{keywordflow}{return} \mbox{\hyperlink{classProcess_a859e26edf3265d40a42666d160b4a9c4}{dir}};}
+\DoxyCodeLine{43 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classProcess_a1c83a78bf269ff88e0ce1b929eee325c}\label{classProcess_a1c83a78bf269ff88e0ce1b929eee325c}} 
@@ -175,13 +175,13 @@ Returns proc\+\_\+id.
 \end{DoxyPostcond}
 
 
-Definition at line 17 of file Process.\+cc.
+Definition at line 21 of file Process.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{17                            \{}
-\DoxyCodeLine{18     \textcolor{keywordflow}{return} \mbox{\hyperlink{classProcess_acf8bf6874670e4d11819528caf093aa7}{ide}};}
-\DoxyCodeLine{19 \}}
+\DoxyCodeLine{21                            \{}
+\DoxyCodeLine{22     \textcolor{keywordflow}{return} \mbox{\hyperlink{classProcess_acf8bf6874670e4d11819528caf093aa7}{ide}};}
+\DoxyCodeLine{23 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classProcess_a829698b52b61409c211979e86c808065}\label{classProcess_a829698b52b61409c211979e86c808065}} 
@@ -202,13 +202,13 @@ Returns mem.
 \end{DoxyPostcond}
 
 
-Definition at line 21 of file Process.\+cc.
+Definition at line 25 of file Process.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{21                             \{}
-\DoxyCodeLine{22     \textcolor{keywordflow}{return} \mbox{\hyperlink{classProcess_a21d2c162c236aa09d88f91bd025ce44b}{memo}};}
-\DoxyCodeLine{23 \}}
+\DoxyCodeLine{25                             \{}
+\DoxyCodeLine{26     \textcolor{keywordflow}{return} \mbox{\hyperlink{classProcess_a21d2c162c236aa09d88f91bd025ce44b}{memo}};}
+\DoxyCodeLine{27 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classProcess_a35de003f1633c047d70e29265d505b52}\label{classProcess_a35de003f1633c047d70e29265d505b52}} 
@@ -229,13 +229,13 @@ Returns delta.
 \end{DoxyPostcond}
 
 
-Definition at line 25 of file Process.\+cc.
+Definition at line 29 of file Process.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{25                              \{}
-\DoxyCodeLine{26     \textcolor{keywordflow}{return} \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}};}
-\DoxyCodeLine{27 \}}
+\DoxyCodeLine{29                              \{}
+\DoxyCodeLine{30     \textcolor{keywordflow}{return} \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}};}
+\DoxyCodeLine{31 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classProcess_ade0eeec0a4b9cab02b9d677d555112d3}\label{classProcess_ade0eeec0a4b9cab02b9d677d555112d3}} 
@@ -256,13 +256,13 @@ The process is printed.
 \end{DoxyPostcond}
 
 
-Definition at line 34 of file Process.\+cc.
+Definition at line 37 of file Process.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{34                                 \{}
-\DoxyCodeLine{35     cout << \mbox{\hyperlink{classProcess_acf8bf6874670e4d11819528caf093aa7}{ide}} << \textcolor{stringliteral}{" "} << \mbox{\hyperlink{classProcess_a21d2c162c236aa09d88f91bd025ce44b}{memo}} << \textcolor{stringliteral}{" "} << \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}} << endl;}
-\DoxyCodeLine{36 \}}
+\DoxyCodeLine{37                                 \{}
+\DoxyCodeLine{38     cout << \mbox{\hyperlink{classProcess_acf8bf6874670e4d11819528caf093aa7}{ide}} << \textcolor{stringliteral}{" "} << \mbox{\hyperlink{classProcess_a21d2c162c236aa09d88f91bd025ce44b}{memo}} << \textcolor{stringliteral}{" "} << \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}} << endl;}
+\DoxyCodeLine{39 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classProcess_a70e7cccbb3ab17890baba2c8e4ad1b47}\label{classProcess_a70e7cccbb3ab17890baba2c8e4ad1b47}} 
@@ -283,14 +283,13 @@ The process is printed.
 \end{DoxyPostcond}
 
 
-Definition at line 29 of file Process.\+cc.
+Definition at line 33 of file Process.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{29                                \{}
-\DoxyCodeLine{30     \textcolor{comment}{//posicion, nombre, memoria, tiempo}}
-\DoxyCodeLine{31     cout << \mbox{\hyperlink{Cpu_8cc_ade369179a3e9f2fd3703f28d81647de1}{dir}} << \textcolor{stringliteral}{" "} << \mbox{\hyperlink{classProcess_acf8bf6874670e4d11819528caf093aa7}{ide}} << \textcolor{stringliteral}{" "} << \mbox{\hyperlink{classProcess_a21d2c162c236aa09d88f91bd025ce44b}{memo}} << \textcolor{stringliteral}{" "} << \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}} << endl;}
-\DoxyCodeLine{32 \}}
+\DoxyCodeLine{33                                \{}
+\DoxyCodeLine{34     cout << \mbox{\hyperlink{Cpu_8cc_ade369179a3e9f2fd3703f28d81647de1}{dir}} << \textcolor{stringliteral}{" "} << \mbox{\hyperlink{classProcess_acf8bf6874670e4d11819528caf093aa7}{ide}} << \textcolor{stringliteral}{" "} << \mbox{\hyperlink{classProcess_a21d2c162c236aa09d88f91bd025ce44b}{memo}} << \textcolor{stringliteral}{" "} << \mbox{\hyperlink{classProcess_afbcaed5d0540706f919d1d96adb5c61d}{time}} << endl;}
+\DoxyCodeLine{35 \}}
 
 \end{DoxyCode}
 
