@@ -6,8 +6,11 @@
 #define CPU_HH
 
 #include "Process.hh"
+
+#ifndef NO_DIAGRAM
 #include <map>
 #include <set>
+#endif
 
 typedef map<int, pair<int, int>>::iterator& dit;
 

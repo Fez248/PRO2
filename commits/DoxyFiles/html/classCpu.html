@@ -104,16 +104,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a212bedb698bcbafd62164984840e774e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the memory of the cpu, occuped and free memory.  <a href="classCpu.html#a212bedb698bcbafd62164984840e774e">More...</a><br /></td></tr>
 <tr class="separator:a212bedb698bcbafd62164984840e774e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c044199226fe7e981b51ea090442be9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpu.html#a1c044199226fe7e981b51ea090442be9">write_cpu</a> () const</td></tr>
+<tr class="memdesc:a1c044199226fe7e981b51ea090442be9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the cpu on the console.  <a href="classCpu.html#a1c044199226fe7e981b51ea090442be9">More...</a><br /></td></tr>
 <tr class="separator:a1c044199226fe7e981b51ea090442be9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a5089c0b316f426192da51912406a9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpu.html#a8a5089c0b316f426192da51912406a9e">compactar</a> ()</td></tr>
+<tr class="memdesc:a8a5089c0b316f426192da51912406a9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compacts the memory of the cpu, moving all the processes to the beginning of the memory respecting the order and without overlapping them.  <a href="classCpu.html#a8a5089c0b316f426192da51912406a9e">More...</a><br /></td></tr>
 <tr class="separator:a8a5089c0b316f426192da51912406a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5f2ffa91266c4cc83aabf7c7283df36"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpu.html#aa5f2ffa91266c4cc83aabf7c7283df36">active_processes</a> () const</td></tr>
+<tr class="memdesc:aa5f2ffa91266c4cc83aabf7c7283df36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells if the cpu has any active process or not.  <a href="classCpu.html#aa5f2ffa91266c4cc83aabf7c7283df36">More...</a><br /></td></tr>
 <tr class="separator:aa5f2ffa91266c4cc83aabf7c7283df36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99376a5e5ca2e8f98800be1a3fe80fae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpu.html#a99376a5e5ca2e8f98800be1a3fe80fae">get_memory</a> (int <a class="el" href="Cpu_8cc.html#a6249481818bd0eaba64860eec50ca613">mem</a>, int identity) const</td></tr>
+<tr class="memdesc:a99376a5e5ca2e8f98800be1a3fe80fae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the erros and if everything goes right, returns the lowest space of free memory equal or greater than the variable mem.  <a href="classCpu.html#a99376a5e5ca2e8f98800be1a3fe80fae">More...</a><br /></td></tr>
 <tr class="separator:a99376a5e5ca2e8f98800be1a3fe80fae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af62d530892364ea8530cab12c2ec1414"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpu.html#af62d530892364ea8530cab12c2ec1414">space_left</a> () const</td></tr>
+<tr class="memdesc:af62d530892364ea8530cab12c2ec1414"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the free space left on the cpu, NOT consecutive space, the whole free space.  <a href="classCpu.html#af62d530892364ea8530cab12c2ec1414">More...</a><br /></td></tr>
 <tr class="separator:af62d530892364ea8530cab12c2ec1414"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d1fda6b801f16dbb802feab06a3f719"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpu.html#a5d1fda6b801f16dbb802feab06a3f719">what_ffree</a> () const</td></tr>
+<tr class="memdesc:a5d1fda6b801f16dbb802feab06a3f719"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first direction with free memory of the cpu.  <a href="classCpu.html#a5d1fda6b801f16dbb802feab06a3f719">More...</a><br /></td></tr>
 <tr class="separator:a5d1fda6b801f16dbb802feab06a3f719"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
@@ -152,7 +158,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>It represents a cpu, a processor. </p>
 <p>The processor has a memory with limited space and it can contain processes, each one with a 'delta' time needed to be completed and stored in crhonological order </p>
 
-<p class="definition">Definition at line <a class="el" href="Cpu_8hh_source.html#l00023">23</a> of file <a class="el" href="Cpu_8hh_source.html">Cpu.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cpu_8hh_source.html#l00026">26</a> of file <a class="el" href="Cpu_8hh_source.html">Cpu.hh</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aee3f1f0f2f4d85e2681af1e225c8712e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aee3f1f0f2f4d85e2681af1e225c8712e">&#9670;&nbsp;</a></span>Cpu() <span class="overload">[1/2]</span></h2>
@@ -219,6 +225,10 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Tells if the cpu has any active process or not. </p>
+<dl class="section pre"><dt>Precondition</dt><dd><em>True</em>. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>True if it's empty and false if it has at least one process. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Cpu_8cc_source.html#l00231">231</a> of file <a class="el" href="Cpu_8cc_source.html">Cpu.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                                 {</div>
@@ -424,6 +434,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Compacts the memory of the cpu, moving all the processes to the beginning of the memory respecting the order and without overlapping them. </p>
+<dl class="section pre"><dt>Precondition</dt><dd><em>True</em>. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>The memory of the cpu has been compacted. </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="Cpu_8cc_source.html#l00172">172</a> of file <a class="el" href="Cpu_8cc_source.html">Cpu.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                    {</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    naio::iterator itf = <a class="code" href="classCpu.html#aa279093f84e550b4453addec33669709">diro</a>.end();</div>
@@ -480,10 +494,14 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Checks the erros and if everything goes right, returns the lowest space of free memory equal or greater than the variable mem. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>Both variables initialized mem and identity. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Returns -1 if it doesn't fit or if it already exists a process with that id. If not it returns the space where it would be added. </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="Cpu_8cc_source.html#l00253">253</a> of file <a class="el" href="Cpu_8cc_source.html">Cpu.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                                               {</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    dir::const_iterator it2 = <a class="code" href="classCpu.html#a974e1abc9d6c02aed31bdef24afafda9">es</a>.lower_bound(<a class="code" href="Cpu_8cc.html#a6249481818bd0eaba64860eec50ca613">mem</a>);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    map&lt;int, Process&gt;::const_iterator it = <a class="code" href="classCpu.html#a4e2ef25b9aecf49a9c2b6dbd702bebc0">prl</a>.lower_bound(identity); <span class="comment">//quitar para la v2</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    map&lt;int, Process&gt;::const_iterator it = <a class="code" href="classCpu.html#a4e2ef25b9aecf49a9c2b6dbd702bebc0">prl</a>.lower_bound(identity);</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">if</span> (it != <a class="code" href="classCpu.html#a4e2ef25b9aecf49a9c2b6dbd702bebc0">prl</a>.end() and it-&gt;first == identity) <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">if</span> (it2 == <a class="code" href="classCpu.html#a974e1abc9d6c02aed31bdef24afafda9">es</a>.end()) <span class="keywordflow">return</span> -1;</div>
@@ -758,6 +776,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the value of the free space left on the cpu, NOT consecutive space, the whole free space. </p>
+<dl class="section pre"><dt>Precondition</dt><dd><em>True</em>. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Returns max. </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="Cpu_8cc_source.html#l00262">262</a> of file <a class="el" href="Cpu_8cc_source.html">Cpu.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                          {</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classCpu.html#aac2aadcb8ae5b0e5b337f1f886164e45">max</a>;</div>
@@ -828,6 +850,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the first direction with free memory of the cpu. </p>
+<dl class="section pre"><dt>Precondition</dt><dd><em>True</em>. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Returns ffree. </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="Cpu_8cc_source.html#l00018">18</a> of file <a class="el" href="Cpu_8cc_source.html">Cpu.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                          {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classCpu.html#a3e06b4afd52f1b64f8f75f4cf2decb11">ffree</a>;</div>
@@ -875,6 +901,10 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Prints the cpu on the console. </p>
+<dl class="section pre"><dt>Precondition</dt><dd><em>True</em>. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>The cpu has been printed. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Cpu_8cc_source.html#l00105">105</a> of file <a class="el" href="Cpu_8cc_source.html">Cpu.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                          {</div>
@@ -936,7 +966,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Cpu_8hh_source.html#l00039">39</a> of file <a class="el" href="Cpu_8hh_source.html">Cpu.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cpu_8hh_source.html#l00042">42</a> of file <a class="el" href="Cpu_8hh_source.html">Cpu.hh</a>.</p>
 
 </div>
 </div>
@@ -960,7 +990,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Cpu_8hh_source.html#l00034">34</a> of file <a class="el" href="Cpu_8hh_source.html">Cpu.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cpu_8hh_source.html#l00037">37</a> of file <a class="el" href="Cpu_8hh_source.html">Cpu.hh</a>.</p>
 
 </div>
 </div>
@@ -984,7 +1014,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Cpu_8hh_source.html#l00025">25</a> of file <a class="el" href="Cpu_8hh_source.html">Cpu.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cpu_8hh_source.html#l00028">28</a> of file <a class="el" href="Cpu_8hh_source.html">Cpu.hh</a>.</p>
 
 </div>
 </div>
@@ -1008,7 +1038,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Cpu_8hh_source.html#l00031">31</a> of file <a class="el" href="Cpu_8hh_source.html">Cpu.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cpu_8hh_source.html#l00034">34</a> of file <a class="el" href="Cpu_8hh_source.html">Cpu.hh</a>.</p>
 
 </div>
 </div>
@@ -1032,7 +1062,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Cpu_8hh_source.html#l00025">25</a> of file <a class="el" href="Cpu_8hh_source.html">Cpu.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cpu_8hh_source.html#l00028">28</a> of file <a class="el" href="Cpu_8hh_source.html">Cpu.hh</a>.</p>
 
 </div>
 </div>
@@ -1056,7 +1086,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Cpu_8hh_source.html#l00025">25</a> of file <a class="el" href="Cpu_8hh_source.html">Cpu.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cpu_8hh_source.html#l00028">28</a> of file <a class="el" href="Cpu_8hh_source.html">Cpu.hh</a>.</p>
 
 </div>
 </div>
@@ -1080,7 +1110,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Cpu_8hh_source.html#l00032">32</a> of file <a class="el" href="Cpu_8hh_source.html">Cpu.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cpu_8hh_source.html#l00035">35</a> of file <a class="el" href="Cpu_8hh_source.html">Cpu.hh</a>.</p>
 
 </div>
 </div>
@@ -1089,20 +1119,20 @@ Private Attributes</h2></td></tr>
 <li><a class="el" href="Cpu_8cc_source.html">Cpu.cc</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassCpu_html_adebb3064aef3263f6e4084768059ae25"><div class="ttname"><a href="classCpu.html#adebb3064aef3263f6e4084768059ae25">Cpu::mema</a></div><div class="ttdeci">int mema</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8hh_source.html#l00025">Cpu.hh:25</a></div></div>
-<div class="ttc" id="aclassProcess_html"><div class="ttname"><a href="classProcess.html">Process</a></div><div class="ttdoc">It represents a process.</div><div class="ttdef"><b>Definition:</b> <a href="Process_8hh_source.html#l00017">Process.hh:17</a></div></div>
+<div class="ttc" id="aclassCpu_html_adebb3064aef3263f6e4084768059ae25"><div class="ttname"><a href="classCpu.html#adebb3064aef3263f6e4084768059ae25">Cpu::mema</a></div><div class="ttdeci">int mema</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8hh_source.html#l00028">Cpu.hh:28</a></div></div>
+<div class="ttc" id="aclassProcess_html"><div class="ttname"><a href="classProcess.html">Process</a></div><div class="ttdoc">It represents a process.</div><div class="ttdef"><b>Definition:</b> <a href="Process_8hh_source.html#l00021">Process.hh:21</a></div></div>
 <div class="ttc" id="aclassCpu_html_a8ec8b3e013b2bd949bb97a86e9397850"><div class="ttname"><a href="classCpu.html#a8ec8b3e013b2bd949bb97a86e9397850">Cpu::insert_set</a></div><div class="ttdeci">void insert_set(int value, int key)</div><div class="ttdoc">Takes value -&gt; direction of memory and key -&gt; size. Adds the direction to the set of that size of fre...</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8cc_source.html#l00242">Cpu.cc:242</a></div></div>
-<div class="ttc" id="aclassCpu_html_a974e1abc9d6c02aed31bdef24afafda9"><div class="ttname"><a href="classCpu.html#a974e1abc9d6c02aed31bdef24afafda9">Cpu::es</a></div><div class="ttdeci">map&lt; int, set&lt; int &gt; &gt; es</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8hh_source.html#l00034">Cpu.hh:34</a></div></div>
-<div class="ttc" id="aclassCpu_html_a4e2ef25b9aecf49a9c2b6dbd702bebc0"><div class="ttname"><a href="classCpu.html#a4e2ef25b9aecf49a9c2b6dbd702bebc0">Cpu::prl</a></div><div class="ttdeci">map&lt; int, Process &gt; prl</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8hh_source.html#l00032">Cpu.hh:32</a></div></div>
-<div class="ttc" id="aclassCpu_html_aac2aadcb8ae5b0e5b337f1f886164e45"><div class="ttname"><a href="classCpu.html#aac2aadcb8ae5b0e5b337f1f886164e45">Cpu::max</a></div><div class="ttdeci">int max</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8hh_source.html#l00025">Cpu.hh:25</a></div></div>
+<div class="ttc" id="aclassCpu_html_a974e1abc9d6c02aed31bdef24afafda9"><div class="ttname"><a href="classCpu.html#a974e1abc9d6c02aed31bdef24afafda9">Cpu::es</a></div><div class="ttdeci">map&lt; int, set&lt; int &gt; &gt; es</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8hh_source.html#l00037">Cpu.hh:37</a></div></div>
+<div class="ttc" id="aclassCpu_html_a4e2ef25b9aecf49a9c2b6dbd702bebc0"><div class="ttname"><a href="classCpu.html#a4e2ef25b9aecf49a9c2b6dbd702bebc0">Cpu::prl</a></div><div class="ttdeci">map&lt; int, Process &gt; prl</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8hh_source.html#l00035">Cpu.hh:35</a></div></div>
+<div class="ttc" id="aclassCpu_html_aac2aadcb8ae5b0e5b337f1f886164e45"><div class="ttname"><a href="classCpu.html#aac2aadcb8ae5b0e5b337f1f886164e45">Cpu::max</a></div><div class="ttdeci">int max</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8hh_source.html#l00028">Cpu.hh:28</a></div></div>
 <div class="ttc" id="aclassCpu_html_afb0ed7e26fffc54cbf585744cff7cfee"><div class="ttname"><a href="classCpu.html#afb0ed7e26fffc54cbf585744cff7cfee">Cpu::remove_process_cpu</a></div><div class="ttdeci">int remove_process_cpu(int proc_id, int &amp;back)</div><div class="ttdoc">Checks the errors and removes the process to the cpu if everything goes right.</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8cc_source.html#l00030">Cpu.cc:30</a></div></div>
-<div class="ttc" id="aclassCpu_html_a7d2b4436d602ffaf5023a080f7974bd1"><div class="ttname"><a href="classCpu.html#a7d2b4436d602ffaf5023a080f7974bd1">Cpu::leaf</a></div><div class="ttdeci">bool leaf</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8hh_source.html#l00031">Cpu.hh:31</a></div></div>
-<div class="ttc" id="aclassCpu_html_aa279093f84e550b4453addec33669709"><div class="ttname"><a href="classCpu.html#aa279093f84e550b4453addec33669709">Cpu::diro</a></div><div class="ttdeci">map&lt; int, pair&lt; int, int &gt; &gt; diro</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8hh_source.html#l00039">Cpu.hh:39</a></div></div>
+<div class="ttc" id="aclassCpu_html_a7d2b4436d602ffaf5023a080f7974bd1"><div class="ttname"><a href="classCpu.html#a7d2b4436d602ffaf5023a080f7974bd1">Cpu::leaf</a></div><div class="ttdeci">bool leaf</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8hh_source.html#l00034">Cpu.hh:34</a></div></div>
+<div class="ttc" id="aclassCpu_html_aa279093f84e550b4453addec33669709"><div class="ttname"><a href="classCpu.html#aa279093f84e550b4453addec33669709">Cpu::diro</a></div><div class="ttdeci">map&lt; int, pair&lt; int, int &gt; &gt; diro</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8hh_source.html#l00042">Cpu.hh:42</a></div></div>
 <div class="ttc" id="aclassCpu_html_a5c0eace532c8655a72e44ad06896fc07"><div class="ttname"><a href="classCpu.html#a5c0eace532c8655a72e44ad06896fc07">Cpu::update_set_and_erase</a></div><div class="ttdeci">void update_set_and_erase(int diff, int key)</div><div class="ttdoc">Takes key -&gt; size and diff -&gt; direction of free memory. Erases the direction and the size if this one...</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8cc_source.html#l00235">Cpu.cc:235</a></div></div>
 <div class="ttc" id="aCpu_8cc_html_a6249481818bd0eaba64860eec50ca613"><div class="ttname"><a href="Cpu_8cc.html#a6249481818bd0eaba64860eec50ca613">mem</a></div><div class="ttdeci">map&lt; int, Process &gt; mem</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8cc_source.html#l00008">Cpu.cc:8</a></div></div>
 <div class="ttc" id="aclassCpu_html_a873e3d5fc917369b8649281e7196c824"><div class="ttname"><a href="classCpu.html#a873e3d5fc917369b8649281e7196c824">Cpu::check_ffree</a></div><div class="ttdeci">int check_ffree(const int direction, const int tam, dit it)</div><div class="ttdoc">Checks for the next direction with free memory in front of a given process which &quot;it&quot; points to.</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8cc_source.html#l00156">Cpu.cc:156</a></div></div>
 <div class="ttc" id="aclassCpu_html_a106b8f4418820c19c0500c979e7ae818"><div class="ttname"><a href="classCpu.html#a106b8f4418820c19c0500c979e7ae818">Cpu::relocate</a></div><div class="ttdeci">void relocate(int proc_id, int mem, int time, int back)</div><div class="ttdoc">Same functionality as add_process_cpu() but modified to epc().</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8cc_source.html#l00199">Cpu.cc:199</a></div></div>
-<div class="ttc" id="aclassCpu_html_a3e06b4afd52f1b64f8f75f4cf2decb11"><div class="ttname"><a href="classCpu.html#a3e06b4afd52f1b64f8f75f4cf2decb11">Cpu::ffree</a></div><div class="ttdeci">int ffree</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8hh_source.html#l00025">Cpu.hh:25</a></div></div>
+<div class="ttc" id="aclassCpu_html_a3e06b4afd52f1b64f8f75f4cf2decb11"><div class="ttname"><a href="classCpu.html#a3e06b4afd52f1b64f8f75f4cf2decb11">Cpu::ffree</a></div><div class="ttdeci">int ffree</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8hh_source.html#l00028">Cpu.hh:28</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -142,7 +142,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>It represents a clsuter. </p>
 <p>The cluster is a binary tree where his components are processors, cpus. It needs to have at least one cpu. </p>
 
-<p class="definition">Definition at line <a class="el" href="Cluster_8hh_source.html#l00025">25</a> of file <a class="el" href="Cluster_8hh_source.html">Cluster.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cluster_8hh_source.html#l00027">27</a> of file <a class="el" href="Cluster_8hh_source.html">Cluster.hh</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aee7feb1d599d4c8fda6c3ee83e86ba81"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aee7feb1d599d4c8fda6c3ee83e86ba81">&#9670;&nbsp;</a></span>Cluster()</h2>
@@ -795,7 +795,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Cluster_8hh_source.html#l00027">27</a> of file <a class="el" href="Cluster_8hh_source.html">Cluster.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cluster_8hh_source.html#l00029">29</a> of file <a class="el" href="Cluster_8hh_source.html">Cluster.hh</a>.</p>
 
 </div>
 </div>
@@ -819,7 +819,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Cluster_8hh_source.html#l00028">28</a> of file <a class="el" href="Cluster_8hh_source.html">Cluster.hh</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Cluster_8hh_source.html#l00030">30</a> of file <a class="el" href="Cluster_8hh_source.html">Cluster.hh</a>.</p>
 
 </div>
 </div>
@@ -830,12 +830,12 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <div class="ttc" id="aclassCluster_html_a207680a453088ee7ee51bd05a5050a70"><div class="ttname"><a href="classCluster.html#a207680a453088ee7ee51bd05a5050a70">Cluster::reread</a></div><div class="ttdeci">void reread(BinTree&lt; string &gt; &amp;a, string p)</div><div class="ttdoc">Modifies the cluster from a node p, if the node it's reading it is not p it continues reading,...</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00052">Cluster.cc:52</a></div></div>
 <div class="ttc" id="aclassProcess_html_a829698b52b61409c211979e86c808065"><div class="ttname"><a href="classProcess.html#a829698b52b61409c211979e86c808065">Process::what_mem</a></div><div class="ttdeci">int what_mem() const</div><div class="ttdoc">Returns the memory needed for the process.</div><div class="ttdef"><b>Definition:</b> <a href="Process_8cc_source.html#l00021">Process.cc:21</a></div></div>
-<div class="ttc" id="aclassCluster_html_aea7f1c755c1fb744008e344a3692dafb"><div class="ttname"><a href="classCluster.html#aea7f1c755c1fb744008e344a3692dafb">Cluster::conj</a></div><div class="ttdeci">map&lt; string, Cpu &gt; conj</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8hh_source.html#l00028">Cluster.hh:28</a></div></div>
-<div class="ttc" id="aclassCluster_html_a371e399702db6ab3ea1eb21acd625408"><div class="ttname"><a href="classCluster.html#a371e399702db6ab3ea1eb21acd625408">Cluster::cluster</a></div><div class="ttdeci">BinTree&lt; string &gt; cluster</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8hh_source.html#l00027">Cluster.hh:27</a></div></div>
+<div class="ttc" id="aclassCluster_html_aea7f1c755c1fb744008e344a3692dafb"><div class="ttname"><a href="classCluster.html#aea7f1c755c1fb744008e344a3692dafb">Cluster::conj</a></div><div class="ttdeci">map&lt; string, Cpu &gt; conj</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8hh_source.html#l00030">Cluster.hh:30</a></div></div>
+<div class="ttc" id="aclassCluster_html_a371e399702db6ab3ea1eb21acd625408"><div class="ttname"><a href="classCluster.html#a371e399702db6ab3ea1eb21acd625408">Cluster::cluster</a></div><div class="ttdeci">BinTree&lt; string &gt; cluster</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8hh_source.html#l00029">Cluster.hh:29</a></div></div>
 <div class="ttc" id="aclassCluster_html_a0f67ae08ed1bb763f431ba21c4292cc5"><div class="ttname"><a href="classCluster.html#a0f67ae08ed1bb763f431ba21c4292cc5">Cluster::read_bintree</a></div><div class="ttdeci">bool read_bintree(BinTree&lt; string &gt; &amp;cluster)</div><div class="ttdoc">Reads a cluster and sets the leaf value of the processors.</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00032">Cluster.cc:32</a></div></div>
 <div class="ttc" id="aclassCluster_html_aa25a3c0b374e0b379ee2aebb7f30c315"><div class="ttname"><a href="classCluster.html#aa25a3c0b374e0b379ee2aebb7f30c315">Cluster::find_best</a></div><div class="ttdeci">void find_best(const int mem, const int identity, cit ite, ord can)</div><div class="ttdoc">Finds the best cpu to insert the process with memory = mem and id = identity. It returns an iterator ...</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00149">Cluster.cc:149</a></div></div>
 <div class="ttc" id="aCpu_8cc_html_a6249481818bd0eaba64860eec50ca613"><div class="ttname"><a href="Cpu_8cc.html#a6249481818bd0eaba64860eec50ca613">mem</a></div><div class="ttdeci">map&lt; int, Process &gt; mem</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8cc_source.html#l00008">Cpu.cc:8</a></div></div>
-<div class="ttc" id="aclassCpu_html"><div class="ttname"><a href="classCpu.html">Cpu</a></div><div class="ttdoc">It represents a cpu, a processor.</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8hh_source.html#l00023">Cpu.hh:23</a></div></div>
+<div class="ttc" id="aclassCpu_html"><div class="ttname"><a href="classCpu.html">Cpu</a></div><div class="ttdoc">It represents a cpu, a processor.</div><div class="ttdef"><b>Definition:</b> <a href="Cpu_8hh_source.html#l00026">Cpu.hh:26</a></div></div>
 <div class="ttc" id="aclassProcess_html_a35de003f1633c047d70e29265d505b52"><div class="ttname"><a href="classProcess.html#a35de003f1633c047d70e29265d505b52">Process::what_time</a></div><div class="ttdeci">int what_time() const</div><div class="ttdoc">Returns the time left of the process.</div><div class="ttdef"><b>Definition:</b> <a href="Process_8cc_source.html#l00025">Process.cc:25</a></div></div>
 <div class="ttc" id="aclassCluster_html_abf5680db313a34a21856e0221453d9c3"><div class="ttname"><a href="classCluster.html#abf5680db313a34a21856e0221453d9c3">Cluster::write_bintree</a></div><div class="ttdeci">void write_bintree(const BinTree&lt; string &gt; &amp;cluster) const</div><div class="ttdoc">Prints the cluster.</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00022">Cluster.cc:22</a></div></div>
 <div class="ttc" id="aclassProcess_html_a1c83a78bf269ff88e0ce1b929eee325c"><div class="ttname"><a href="classProcess.html#a1c83a78bf269ff88e0ce1b929eee325c">Process::what_id</a></div><div class="ttdeci">int what_id() const</div><div class="ttdoc">Returns the id of the process.</div><div class="ttdef"><b>Definition:</b> <a href="Process_8cc_source.html#l00017">Process.cc:17</a></div></div>

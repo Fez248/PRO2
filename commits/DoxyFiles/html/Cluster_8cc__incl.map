@@ -1,13 +1,10 @@
 <map id="Cluster.cc" name="Cluster.cc">
-<area shape="rect" id="node1" title=" " alt="" coords="131,5,216,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="50,379,130,405"/>
-<area shape="rect" id="node3" title=" " alt="" coords="43,80,86,107"/>
-<area shape="rect" id="node4" href="$Waiting__Area_8hh.html" title="Especification of the class Waiting_Area." alt="" coords="160,80,288,107"/>
-<area shape="rect" id="node5" href="$Process_8hh.html" title="Especification of the class Process." alt="" coords="128,304,220,331"/>
-<area shape="rect" id="node6" href="$Cluster_8hh.html" title="Especification of the class Cluster." alt="" coords="273,155,360,181"/>
-<area shape="rect" id="node11" title=" " alt="" coords="364,80,426,107"/>
-<area shape="rect" id="node7" title=" " alt="" coords="262,229,352,256"/>
-<area shape="rect" id="node8" href="$Cpu_8hh.html" title="Especification of the class Cpu." alt="" coords="376,229,443,256"/>
-<area shape="rect" id="node9" title=" " alt="" coords="455,304,506,331"/>
-<area shape="rect" id="node10" title=" " alt="" coords="388,304,431,331"/>
+<area shape="rect" id="node1" title=" " alt="" coords="248,5,333,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,85,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="109,80,152,107"/>
+<area shape="rect" id="node4" href="$Waiting__Area_8hh.html" title="Especification of the class Waiting_Area." alt="" coords="176,80,304,107"/>
+<area shape="rect" id="node5" href="$Cluster_8hh.html" title="Especification of the class Cluster." alt="" coords="267,155,354,181"/>
+<area shape="rect" id="node7" href="$Process_8hh.html" title="Especification of the class Process." alt="" coords="305,304,397,331"/>
+<area shape="rect" id="node8" title=" " alt="" coords="430,80,493,107"/>
+<area shape="rect" id="node6" href="$Cpu_8hh.html" title="Especification of the class Cpu." alt="" coords="283,229,349,256"/>
 </map>

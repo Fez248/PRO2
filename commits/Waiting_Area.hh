@@ -5,7 +5,6 @@
 #ifndef WAITING_AREA_HH
 #define WAITING_AREA_HH
 
-#include "Process.hh"
 #include "Cluster.hh"
 
 #ifndef NO_DIAGRAM

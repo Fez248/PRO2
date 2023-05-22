@@ -1,7 +1,11 @@
 /** @file Process.hh
     @brief Especification of the class Process
 */
+
+#ifndef NO_DIAGRAM
 #include <iostream>
+#endif
+
 using namespace std;
 #ifndef PROCESS_HH
 #define PROCESS_HH

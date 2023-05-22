@@ -4,5 +4,6 @@ var searchData=
   ['process_51',['Process',['../classProcess.html',1,'Process'],['../classProcess.html#a9f4553eac74c657bb451f390c17d6bea',1,'Process::Process()'],['../classProcess.html#a5711384fd578d025137787ade588bfc2',1,'Process::Process(int identity, int memmory, int delta, int direction)']]],
   ['process_2ecc_52',['Process.cc',['../Process_8cc.html',1,'']]],
   ['process_2ehh_53',['Process.hh',['../Process_8hh.html',1,'']]],
-  ['program_2ecc_54',['program.cc',['../program_8cc.html',1,'']]]
+  ['process_5fhh_54',['PROCESS_HH',['../Process_8hh.html#a0a288dae20e031ee651a1a06bd2687ff',1,'Process.hh']]],
+  ['program_2ecc_55',['program.cc',['../program_8cc.html',1,'']]]
 ];

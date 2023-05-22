@@ -5,10 +5,12 @@
 #ifndef CLUSTER_HH
 #define CLUSTER_HH
 
-#include "Process.hh"
-#include "BinTree.hh"
 #include "Cpu.hh"
+
+#ifndef NO_DIAGRAM
+#include "BinTree.hh"
 #include <map>
+#endif
 
 typedef map<string, Cpu> clus;
 typedef const BinTree<string>& ord;

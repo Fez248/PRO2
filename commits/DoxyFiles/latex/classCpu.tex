@@ -29,17 +29,17 @@ void \mbox{\hyperlink{classCpu_a96daf4708917f5d0e2cc57d6fafcf628}{advance}} (int
 int \mbox{\hyperlink{classCpu_a212bedb698bcbafd62164984840e774e}{what\+\_\+mema}} () const
 \begin{DoxyCompactList}\small\item\em Returns the memory of the cpu, occuped and free memory. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCpu_a1c044199226fe7e981b51ea090442be9}{write\+\_\+cpu}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Prints the cpu on the console. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCpu_a8a5089c0b316f426192da51912406a9e}{compactar}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Compacts the memory of the cpu, moving all the processes to the beginning of the memory respecting the order and without overlapping them. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classCpu_aa5f2ffa91266c4cc83aabf7c7283df36}{active\+\_\+processes}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Tells if the cpu has any active process or not. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCpu_a99376a5e5ca2e8f98800be1a3fe80fae}{get\+\_\+memory}} (int \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}, int identity) const
-\item 
+\begin{DoxyCompactList}\small\item\em Checks the erros and if everything goes right, returns the lowest space of free memory equal or greater than the variable mem. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCpu_af62d530892364ea8530cab12c2ec1414}{space\+\_\+left}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the value of the free space left on the cpu, N\+OT consecutive space, the whole free space. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCpu_a5d1fda6b801f16dbb802feab06a3f719}{what\+\_\+ffree}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the first direction with free memory of the cpu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -75,7 +75,7 @@ It represents a cpu, a processor.
 
 The processor has a memory with limited space and it can contain processes, each one with a \textquotesingle{}delta\textquotesingle{} time needed to be completed and stored in crhonological order 
 
-Definition at line 23 of file Cpu.\+hh.
+Definition at line 26 of file Cpu.\+hh.
 
 
 
@@ -134,6 +134,16 @@ Definition at line 12 of file Cpu.\+cc.
 \doxysubsubsection{\texorpdfstring{active\_processes()}{active\_processes()}}
 {\footnotesize\ttfamily bool Cpu\+::active\+\_\+processes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+
+
+Tells if the cpu has any active process or not. 
+
+\begin{DoxyPrecond}{Precondition}
+{\itshape True}. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+True if it\textquotesingle{}s empty and false if it has at least one process. 
+\end{DoxyPostcond}
 
 
 Definition at line 231 of file Cpu.\+cc.
@@ -295,6 +305,16 @@ Definition at line 156 of file Cpu.\+cc.
 
 
 
+Compacts the memory of the cpu, moving all the processes to the beginning of the memory respecting the order and without overlapping them. 
+
+\begin{DoxyPrecond}{Precondition}
+{\itshape True}. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The memory of the cpu has been compacted. 
+\end{DoxyPostcond}
+
+
 Definition at line 172 of file Cpu.\+cc.
 
 
@@ -335,13 +355,23 @@ Definition at line 172 of file Cpu.\+cc.
 
 
 
+Checks the erros and if everything goes right, returns the lowest space of free memory equal or greater than the variable mem. 
+
+\begin{DoxyPrecond}{Precondition}
+Both variables initialized mem and identity. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Returns -\/1 if it doesn\textquotesingle{}t fit or if it already exists a process with that id. If not it returns the space where it would be added. 
+\end{DoxyPostcond}
+
+
 Definition at line 253 of file Cpu.\+cc.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{253                                                \{}
 \DoxyCodeLine{254     dir::const\_iterator it2 = \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.lower\_bound(\mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}});}
-\DoxyCodeLine{255     map<int, Process>::const\_iterator it = \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.lower\_bound(identity); \textcolor{comment}{//quitar para la v2}}
+\DoxyCodeLine{255     map<int, Process>::const\_iterator it = \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.lower\_bound(identity);}
 \DoxyCodeLine{256 }
 \DoxyCodeLine{257     \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.end() and it-\/>first == identity) \textcolor{keywordflow}{return} -\/1;}
 \DoxyCodeLine{258     \textcolor{keywordflow}{if} (it2 == \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.end()) \textcolor{keywordflow}{return} -\/1;}
@@ -551,6 +581,16 @@ Definition at line 30 of file Cpu.\+cc.
 
 
 
+Returns the value of the free space left on the cpu, N\+OT consecutive space, the whole free space. 
+
+\begin{DoxyPrecond}{Precondition}
+{\itshape True}. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Returns max. 
+\end{DoxyPostcond}
+
+
 Definition at line 262 of file Cpu.\+cc.
 
 
@@ -598,6 +638,16 @@ Definition at line 235 of file Cpu.\+cc.
 
 
 
+Returns the first direction with free memory of the cpu. 
+
+\begin{DoxyPrecond}{Precondition}
+{\itshape True}. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Returns ffree. 
+\end{DoxyPostcond}
+
+
 Definition at line 18 of file Cpu.\+cc.
 
 
@@ -640,6 +690,16 @@ Definition at line 85 of file Cpu.\+cc.
 \doxysubsubsection{\texorpdfstring{write\_cpu()}{write\_cpu()}}
 {\footnotesize\ttfamily void Cpu\+::write\+\_\+cpu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+
+
+Prints the cpu on the console. 
+
+\begin{DoxyPrecond}{Precondition}
+{\itshape True}. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The cpu has been printed. 
+\end{DoxyPostcond}
 
 
 Definition at line 105 of file Cpu.\+cc.
@@ -695,7 +755,7 @@ Definition at line 26 of file Cpu.\+cc.
 
 
 
-Definition at line 39 of file Cpu.\+hh.
+Definition at line 42 of file Cpu.\+hh.
 
 \mbox{\Hypertarget{classCpu_a974e1abc9d6c02aed31bdef24afafda9}\label{classCpu_a974e1abc9d6c02aed31bdef24afafda9}} 
 \index{Cpu@{Cpu}!es@{es}}
@@ -705,7 +765,7 @@ Definition at line 39 of file Cpu.\+hh.
 
 
 
-Definition at line 34 of file Cpu.\+hh.
+Definition at line 37 of file Cpu.\+hh.
 
 \mbox{\Hypertarget{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}\label{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}} 
 \index{Cpu@{Cpu}!ffree@{ffree}}
@@ -715,7 +775,7 @@ Definition at line 34 of file Cpu.\+hh.
 
 
 
-Definition at line 25 of file Cpu.\+hh.
+Definition at line 28 of file Cpu.\+hh.
 
 \mbox{\Hypertarget{classCpu_a7d2b4436d602ffaf5023a080f7974bd1}\label{classCpu_a7d2b4436d602ffaf5023a080f7974bd1}} 
 \index{Cpu@{Cpu}!leaf@{leaf}}
@@ -725,7 +785,7 @@ Definition at line 25 of file Cpu.\+hh.
 
 
 
-Definition at line 31 of file Cpu.\+hh.
+Definition at line 34 of file Cpu.\+hh.
 
 \mbox{\Hypertarget{classCpu_aac2aadcb8ae5b0e5b337f1f886164e45}\label{classCpu_aac2aadcb8ae5b0e5b337f1f886164e45}} 
 \index{Cpu@{Cpu}!max@{max}}
@@ -735,7 +795,7 @@ Definition at line 31 of file Cpu.\+hh.
 
 
 
-Definition at line 25 of file Cpu.\+hh.
+Definition at line 28 of file Cpu.\+hh.
 
 \mbox{\Hypertarget{classCpu_adebb3064aef3263f6e4084768059ae25}\label{classCpu_adebb3064aef3263f6e4084768059ae25}} 
 \index{Cpu@{Cpu}!mema@{mema}}
@@ -745,7 +805,7 @@ Definition at line 25 of file Cpu.\+hh.
 
 
 
-Definition at line 25 of file Cpu.\+hh.
+Definition at line 28 of file Cpu.\+hh.
 
 \mbox{\Hypertarget{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}\label{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}} 
 \index{Cpu@{Cpu}!prl@{prl}}
@@ -755,7 +815,7 @@ Definition at line 25 of file Cpu.\+hh.
 
 
 
-Definition at line 32 of file Cpu.\+hh.
+Definition at line 35 of file Cpu.\+hh.
 
 
 

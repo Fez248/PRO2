@@ -8,9 +8,6 @@
 */
 
 #include "Waiting_Area.hh"
-#include "Cluster.hh"
-#include "Process.hh"
-#include "Cpu.hh"
 using namespace std;
 
 int main() {
