@@ -2,10 +2,12 @@
     @brief Implementation of the class Waiting_Area
 */
 
+#ifndef NO_DIAGRAM
 #include <iostream>
 #include <list>
 #include "Waiting_Area.hh"
-#include "Process.hh"
+#endif
+
 #include "Cluster.hh"
 using namespace std;
 
@@ -22,7 +24,41 @@ typedef map<string, pair<int, int>> siu;
 typedef map<string, pair<int, int>>::iterator siu_it;
 typedef map<string, pair<int, int>>::const_iterator siu_ct;
 
-Waiting_Area::Waiting_Area() {}
+void Waiting_Area::epc(int n, Cluster& clust) {
+    area_it it = wa.begin();
+    area_it itf = wa.end();
+    int i = 0;
+
+    while (i < n and it != itf) {
+        cat_it it2 = it->second.begin();
+        siu_it cat = sera.find(it->first);
+
+        int tam, j;
+        tam = it->second.size();
+        j = 0;
+
+        while (i < n and j < tam) {
+            cat_it its = it2;
+            Process a = *it2;
+            ++its;
+            
+            if (clust.recive_processes(a)) {
+                ++i;
+                cat->second.first += 1;
+                it->second.erase(it2);
+            }
+            else {
+                it->second.erase(it2);
+                it->second.insert(it->second.end(), a);
+                cat->second.second += 1;
+            }
+            it2 = its;
+            ++j;
+        }
+
+        ++it;
+    }
+}
 
 bool Waiting_Area::search_process(area_ct it, int proc_id) const {
     cat_ct ite = it->second.end();
@@ -122,38 +158,4 @@ void Waiting_Area::iae() const {
     }
 }
 
-void Waiting_Area::epc(int n, Cluster& clust) {
-    area_it it = wa.begin();
-    area_it itf = wa.end();
-    int i = 0;
-
-    while (i < n and it != itf) {
-        cat_it it2 = it->second.begin();
-        siu_it cat = sera.find(it->first);
-
-        int tam, j;
-        tam = it->second.size();
-        j = 0;
-
-        while (i < n and j < tam) {
-            cat_it its = it2;
-            Process a = *it2;
-            ++its;
-            
-            if (clust.recive_processes(a)) {
-                ++i;
-                cat->second.first += 1;
-                it->second.erase(it2);
-            }
-            else {
-                it->second.erase(it2);
-                it->second.insert(it->second.end(), a);
-                cat->second.second += 1;
-            }
-            it2 = its;
-            ++j;
-        }
-
-        ++it;
-    }
-}
+Waiting_Area::Waiting_Area() {}

@@ -2,7 +2,10 @@
     @brief Implementation of the class Process
 */
 
+#ifndef NO_DIAGRAM
 #include <iostream>
+#endif
+
 #include "Process.hh"
 using namespace std;
 

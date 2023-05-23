@@ -1,0 +1,330 @@
+#ape 111 99
+#enviar_procesos_cluster 1
+#ipc
+proc1
+0 99 10 10
+proc11
+proc111
+proc112
+proc12
+proc121
+proc122
+#at 10
+#ipc
+proc1
+proc11
+proc111
+proc112
+proc12
+proc121
+proc122
+#app proc12 30
+#app proc11 20
+#app proc111 40
+#ape 111 31
+#enviar_procesos_cluster 1
+#ipc
+proc1
+proc11
+0 20 10 10
+proc111
+0 40 10 10
+proc112
+proc12
+0 30 20 10
+20 31 10 10
+proc121
+proc122
+#ape 11 32
+#ape 11 33
+#ape 111 34
+#ape 111 21
+#ape 111 22
+#ape 111 23
+#ape 1111 24
+#ape 11111 41
+#enviar_procesos_cluster 8
+#ipc
+proc1
+proc11
+0 20 10 10
+10 21 20 10
+30 22 20 10
+50 23 20 10
+70 24 20 10
+proc111
+0 40 10 10
+10 41 30 10
+proc112
+proc12
+0 30 20 10
+20 31 10 10
+30 32 20 10
+50 33 20 10
+70 34 20 10
+proc121
+proc122
+#app proc122 70
+#app proc122 71
+#app proc122 72
+#ape 11 25
+#ape 11 42
+#enviar_procesos_cluster 2
+#ipc
+proc1
+proc11
+0 20 10 10
+10 21 20 10
+30 22 20 10
+50 23 20 10
+70 24 20 10
+90 25 10 10
+proc111
+0 40 10 10
+10 41 30 10
+40 42 20 10
+proc112
+proc12
+0 30 20 10
+20 31 10 10
+30 32 20 10
+50 33 20 10
+70 34 20 10
+proc121
+proc122
+0 70 20 10
+20 71 10 10
+30 72 10 10
+#app proc112 50
+#app proc121 60
+#ape 11111 10
+#ape 11111 90
+#ape 111 73
+#ape 111 74
+#ape 11 43
+#enviar_procesos_cluster 5
+#ipc
+proc1
+0 10 30 10
+proc11
+0 20 10 10
+10 21 20 10
+30 22 20 10
+50 23 20 10
+70 24 20 10
+90 25 10 10
+proc111
+0 40 10 10
+10 41 30 10
+40 42 20 10
+60 43 40 10
+proc112
+0 50 90 10
+proc12
+0 30 20 10
+20 31 10 10
+30 32 20 10
+50 33 20 10
+70 34 20 10
+proc121
+0 60 90 10
+proc122
+0 70 20 10
+20 71 10 10
+30 72 10 10
+40 73 30 10
+70 74 30 10
+#iae
+11
+5 0
+111
+8 0
+1111
+1 0
+11111
+90 80 10
+2 1
+#bpp proc122 71
+#bpp proc122 72
+#bpp proc122 74
+#bpp proc11 22
+#bpp proc11 24
+#bpp proc11 25
+#app proc1 11
+#app proc1 12
+#bpp proc1 11
+#ape 11 220
+#ape 11 710
+#ape 11 110
+#ape 11 240
+#ape 11 740
+#enviar_procesos_cluster 6
+#ipc
+proc1
+0 10 30 10
+30 110 30 10
+60 12 30 10
+proc11
+0 20 10 10
+10 21 20 10
+30 220 20 10
+50 23 20 10
+70 240 30 10
+proc111
+0 40 10 10
+10 41 30 10
+40 42 20 10
+60 43 40 10
+proc112
+0 50 90 10
+proc12
+0 30 20 10
+20 31 10 10
+30 32 20 10
+50 33 20 10
+70 34 20 10
+proc121
+0 60 90 10
+proc122
+0 70 20 10
+20 710 20 10
+40 73 30 10
+70 740 30 10
+#iae
+11
+10 0
+111
+8 0
+1111
+1 0
+11111
+90 80 10
+2 2
+#bpp proc11 21
+#bpp proc11 220
+#bpp proc11 240
+#bpp proc111 41
+#bpp proc111 42
+#bpp proc12 30
+#bpp proc12 31
+#bpp proc12 32
+#bpp proc12 33
+#bpp proc12 34
+#app proc12 30
+#app proc12 31
+#app proc12 32
+#app proc12 33
+#app proc12 34
+#app proc12 35
+#app proc12 36
+#app proc12 37
+#app proc12 38
+#app proc12 39
+#bpp proc12 31
+#bpp proc12 32
+#bpp proc12 33
+#bpp proc12 34
+#bpp proc12 36
+#bpp proc12 37
+#bpp proc12 38
+#ipc
+proc1
+0 10 30 10
+30 110 30 10
+60 12 30 10
+proc11
+0 20 10 10
+50 23 20 10
+proc111
+0 40 10 10
+60 43 40 10
+proc112
+0 50 90 10
+proc12
+0 30 10 10
+50 35 10 10
+90 39 10 10
+proc121
+0 60 90 10
+proc122
+0 70 20 10
+20 710 20 10
+40 73 30 10
+70 740 30 10
+#ape 11 2100
+#enviar_procesos_cluster 1
+#ipc
+proc1
+0 10 30 10
+30 110 30 10
+60 12 30 10
+proc11
+0 20 10 10
+10 2100 40 10
+50 23 20 10
+proc111
+0 40 10 10
+60 43 40 10
+proc112
+0 50 90 10
+proc12
+0 30 10 10
+50 35 10 10
+90 39 10 10
+proc121
+0 60 90 10
+proc122
+0 70 20 10
+20 710 20 10
+40 73 30 10
+70 740 30 10
+#bpp proc112 50
+#app proc112 50
+#app proc112 51
+#app proc112 52
+#app proc112 53
+#app proc112 54
+#app proc112 55
+#app proc112 56
+#app proc112 57
+#app proc112 58
+#app proc112 59
+#bpp proc112 58
+#bpp proc112 52
+#bpp proc112 53
+#bpp proc112 54
+#bpp proc112 55
+#ape 11 3100
+#ape 1111 5200
+#enviar_procesos_cluster 2
+#ipc
+proc1
+0 10 30 10
+30 110 30 10
+60 12 30 10
+proc11
+0 20 10 10
+10 2100 40 10
+50 23 20 10
+proc111
+0 40 10 10
+60 43 40 10
+proc112
+0 50 10 10
+10 51 10 10
+20 5200 40 10
+60 56 10 10
+70 57 10 10
+90 59 10 10
+proc12
+0 30 10 10
+10 3100 40 10
+50 35 10 10
+90 39 10 10
+proc121
+0 60 90 10
+proc122
+0 70 20 10
+20 710 20 10
+40 73 30 10
+70 740 30 10

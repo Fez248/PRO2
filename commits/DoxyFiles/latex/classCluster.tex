@@ -84,11 +84,11 @@ An empty cluster.
 \end{DoxyPostcond}
 
 
-Definition at line 195 of file Cluster.\+cc.
+Definition at line 197 of file Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{195 \{\}}
+\DoxyCodeLine{197 \{\}}
 
 \end{DoxyCode}
 
@@ -112,16 +112,16 @@ If the cpu doesn\textquotesingle{}t exist it returns 101, if not it calls add\+\
 \end{DoxyPostcond}
 
 
-Definition at line 87 of file Cluster.\+cc.
+Definition at line 175 of file Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{87                                                                     \{}
-\DoxyCodeLine{88     \mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\_it}} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.find(x);}
-\DoxyCodeLine{89 }
-\DoxyCodeLine{90     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end()) \textcolor{keywordflow}{return} 101;}
-\DoxyCodeLine{91     \textcolor{keywordflow}{return} it-\/>second.add\_process\_cpu(identity, memory, time);}
-\DoxyCodeLine{92 \}}
+\DoxyCodeLine{175                                                                     \{}
+\DoxyCodeLine{176     \mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\_it}} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.find(x);}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end()) \textcolor{keywordflow}{return} 101;}
+\DoxyCodeLine{179     \textcolor{keywordflow}{return} it-\/>second.add\_process\_cpu(identity, memory, time);}
+\DoxyCodeLine{180 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCluster_aa0ca0c66ba9d8ddcfb8ff9868b34ac3a}\label{classCluster_aa0ca0c66ba9d8ddcfb8ff9868b34ac3a}} 
@@ -142,15 +142,15 @@ The time has been advanced in t unities.
 \end{DoxyPostcond}
 
 
-Definition at line 110 of file Cluster.\+cc.
+Definition at line 182 of file Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{110                       \{}
-\DoxyCodeLine{111     \mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\_it}} itf = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end();}
-\DoxyCodeLine{112 }
-\DoxyCodeLine{113     \textcolor{keywordflow}{for} (\mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\_it}} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.begin(); it != itf; ++it) it-\/>second.advance(t);}
-\DoxyCodeLine{114 \}}
+\DoxyCodeLine{182                       \{}
+\DoxyCodeLine{183     \mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\_it}} itf = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end();}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185     \textcolor{keywordflow}{for} (\mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\_it}} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.begin(); it != itf; ++it) it-\/>second.advance(t);}
+\DoxyCodeLine{186 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCluster_aced7cf64f11e80c668d164300f91d49a}\label{classCluster_aced7cf64f11e80c668d164300f91d49a}} 
@@ -171,17 +171,17 @@ If the cpu doesn\textquotesingle{}t exist it returns 101, if it does exist, it c
 \end{DoxyPostcond}
 
 
-Definition at line 94 of file Cluster.\+cc.
+Definition at line 167 of file Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{94                                               \{}
-\DoxyCodeLine{95     \mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\_it}} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.find(x);}
-\DoxyCodeLine{96 }
-\DoxyCodeLine{97     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end()) \textcolor{keywordflow}{return} 101;}
-\DoxyCodeLine{98     \textcolor{keywordtype}{int} back = 0;}
-\DoxyCodeLine{99     \textcolor{keywordflow}{return} it-\/>second.remove\_process\_cpu(identity, back);}
-\DoxyCodeLine{100 \}}
+\DoxyCodeLine{167                                               \{}
+\DoxyCodeLine{168     \mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\_it}} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.find(x);}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end()) \textcolor{keywordflow}{return} 101;}
+\DoxyCodeLine{171     \textcolor{keywordtype}{int} back = 0;}
+\DoxyCodeLine{172     \textcolor{keywordflow}{return} it-\/>second.remove\_process\_cpu(identity, back);}
+\DoxyCodeLine{173 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCluster_a473788edb16c0d25dd52e24b4a2c3c61}\label{classCluster_a473788edb16c0d25dd52e24b4a2c3c61}} 
@@ -202,18 +202,18 @@ All the memmory moduls from all the cpus have been compacted.
 \end{DoxyPostcond}
 
 
-Definition at line 126 of file Cluster.\+cc.
+Definition at line 141 of file Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{126                   \{}
-\DoxyCodeLine{127     \mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\_it}} itf = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end();}
-\DoxyCodeLine{128     \textcolor{keywordflow}{for} (\mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\_it}} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.begin(); it != itf; ++it) \{}
-\DoxyCodeLine{129         \textcolor{keywordflow}{if} (it-\/>second.what\_ffree() <= it-\/>second.what\_mema()) \{}
-\DoxyCodeLine{130             it-\/>second.compactar();}
-\DoxyCodeLine{131         \}}
-\DoxyCodeLine{132     \}}
-\DoxyCodeLine{133 \}   }
+\DoxyCodeLine{141                   \{}
+\DoxyCodeLine{142     \mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\_it}} itf = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end();}
+\DoxyCodeLine{143     \textcolor{keywordflow}{for} (\mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\_it}} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.begin(); it != itf; ++it) \{}
+\DoxyCodeLine{144         \textcolor{keywordflow}{if} (it-\/>second.what\_ffree() <= it-\/>second.what\_mema()) \{}
+\DoxyCodeLine{145             it-\/>second.compactar();}
+\DoxyCodeLine{146         \}}
+\DoxyCodeLine{147     \}}
+\DoxyCodeLine{148 \}  }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCluster_ae632becdee8b3c212e2102e678aa5627}\label{classCluster_ae632becdee8b3c212e2102e678aa5627}} 
@@ -234,19 +234,19 @@ If the cpu id doesn\textquotesingle{}t exist it returns false, if not, it compac
 \end{DoxyPostcond}
 
 
-Definition at line 116 of file Cluster.\+cc.
+Definition at line 131 of file Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{116                           \{}
-\DoxyCodeLine{117     \mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\_it}} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.lower\_bound(x);}
-\DoxyCodeLine{118 }
-\DoxyCodeLine{119     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end() or it-\/>first != x) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{120     \textcolor{keywordflow}{if} (it-\/>second.what\_ffree() <= it-\/>second.what\_mema()) \{}
-\DoxyCodeLine{121         it-\/>second.compactar();}
-\DoxyCodeLine{122     \}}
-\DoxyCodeLine{123     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{124 \}}
+\DoxyCodeLine{131                           \{}
+\DoxyCodeLine{132     \mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\_it}} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.lower\_bound(x);}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end() or it-\/>first != x) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{135     \textcolor{keywordflow}{if} (it-\/>second.what\_ffree() <= it-\/>second.what\_mema()) \{}
+\DoxyCodeLine{136         it-\/>second.compactar();}
+\DoxyCodeLine{137     \}}
+\DoxyCodeLine{138     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{139 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCluster_afaff5bd2847c24048b02705e9671da2e}\label{classCluster_afaff5bd2847c24048b02705e9671da2e}} 
@@ -267,41 +267,41 @@ The new cluster a contains the old cluster and the new one in the position of p.
 \end{DoxyPostcond}
 
 
-Definition at line 163 of file Cluster.\+cc.
+Definition at line 25 of file Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{163                                                                               \{}
-\DoxyCodeLine{164     \textcolor{keywordtype}{int} no\_space, free\_space;}
-\DoxyCodeLine{165     no\_space = free\_space = -\/1;}
-\DoxyCodeLine{166     \textcolor{keywordflow}{if} (!can.empty()) \{}
-\DoxyCodeLine{167         queue<BinTree<string>> need\_visit;}
-\DoxyCodeLine{168         need\_visit.push(can);}
-\DoxyCodeLine{169 }
-\DoxyCodeLine{170         \textcolor{keywordflow}{while} (!need\_visit.empty()) \{}
-\DoxyCodeLine{171             BinTree<string> ls, rs;}
-\DoxyCodeLine{172             ls = need\_visit.front().left();}
-\DoxyCodeLine{173             rs = need\_visit.front().right();}
-\DoxyCodeLine{174             \textcolor{keywordtype}{string} x = need\_visit.front().value();}
-\DoxyCodeLine{175             need\_visit.pop();}
-\DoxyCodeLine{176 }
-\DoxyCodeLine{177             \mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\_it}} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.find(x);}
-\DoxyCodeLine{178             \textcolor{keywordtype}{int} aux = it-\/>second.get\_memory(\mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}, identity);}
-\DoxyCodeLine{179 }
-\DoxyCodeLine{180             \textcolor{keywordflow}{if} (aux != -\/1) \{}
-\DoxyCodeLine{181                 \textcolor{keywordtype}{int} aux2 = it-\/>second.space\_left();}
-\DoxyCodeLine{182                 \textcolor{keywordflow}{if} (no\_space == -\/1 or aux -\/ \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}} < no\_space or (aux -\/ \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}} == no\_space and aux2 > free\_space)) \{}
-\DoxyCodeLine{183                     no\_space = aux -\/ \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}};}
-\DoxyCodeLine{184                     free\_space = aux2;}
-\DoxyCodeLine{185                     ite = it;}
-\DoxyCodeLine{186                 \}}
-\DoxyCodeLine{187             \}}
-\DoxyCodeLine{188 }
-\DoxyCodeLine{189             \textcolor{keywordflow}{if} (!ls.empty()) need\_visit.push(ls);}
-\DoxyCodeLine{190             \textcolor{keywordflow}{if} (!rs.empty()) need\_visit.push(rs);}
-\DoxyCodeLine{191         \}}
-\DoxyCodeLine{192     \}}
-\DoxyCodeLine{193 \}}
+\DoxyCodeLine{25                                                                               \{}
+\DoxyCodeLine{26     \textcolor{keywordtype}{int} no\_space, free\_space;}
+\DoxyCodeLine{27     no\_space = free\_space = -\/1;}
+\DoxyCodeLine{28     \textcolor{keywordflow}{if} (!can.empty()) \{}
+\DoxyCodeLine{29         queue<BinTree<string>> need\_visit;}
+\DoxyCodeLine{30         need\_visit.push(can);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{keywordflow}{while} (!need\_visit.empty()) \{}
+\DoxyCodeLine{33             BinTree<string> ls, rs;}
+\DoxyCodeLine{34             ls = need\_visit.front().left();}
+\DoxyCodeLine{35             rs = need\_visit.front().right();}
+\DoxyCodeLine{36             \textcolor{keywordtype}{string} x = need\_visit.front().value();}
+\DoxyCodeLine{37             need\_visit.pop();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39             \mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\_it}} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.find(x);}
+\DoxyCodeLine{40             \textcolor{keywordtype}{int} aux = it-\/>second.get\_memory(\mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}, identity);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42             \textcolor{keywordflow}{if} (aux != -\/1) \{}
+\DoxyCodeLine{43                 \textcolor{keywordtype}{int} aux2 = it-\/>second.space\_left();}
+\DoxyCodeLine{44                 \textcolor{keywordflow}{if} (no\_space == -\/1 or aux -\/ \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}} < no\_space or (aux -\/ \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}} == no\_space and aux2 > free\_space)) \{}
+\DoxyCodeLine{45                     no\_space = aux -\/ \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}};}
+\DoxyCodeLine{46                     free\_space = aux2;}
+\DoxyCodeLine{47                     ite = it;}
+\DoxyCodeLine{48                 \}}
+\DoxyCodeLine{49             \}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51             \textcolor{keywordflow}{if} (!ls.empty()) need\_visit.push(ls);}
+\DoxyCodeLine{52             \textcolor{keywordflow}{if} (!rs.empty()) need\_visit.push(rs);}
+\DoxyCodeLine{53         \}}
+\DoxyCodeLine{54     \}}
+\DoxyCodeLine{55 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCluster_ac43d39f3a287facd88d1b095e1096eaa}\label{classCluster_ac43d39f3a287facd88d1b095e1096eaa}} 
@@ -322,13 +322,13 @@ The cluster has been printed.
 \end{DoxyPostcond}
 
 
-Definition at line 28 of file Cluster.\+cc.
+Definition at line 193 of file Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{28                         \{}
-\DoxyCodeLine{29     \mbox{\hyperlink{classCluster_abf5680db313a34a21856e0221453d9c3}{write\_bintree}}(\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}});}
-\DoxyCodeLine{30 \}}
+\DoxyCodeLine{193                         \{}
+\DoxyCodeLine{194     \mbox{\hyperlink{classCluster_abf5680db313a34a21856e0221453d9c3}{write\_bintree}}(\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}});}
+\DoxyCodeLine{195 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCluster_a4f957b2623758e3a37103197beaf257c}\label{classCluster_a4f957b2623758e3a37103197beaf257c}} 
@@ -349,18 +349,18 @@ All the processes have been printed.
 \end{DoxyPostcond}
 
 
-Definition at line 78 of file Cluster.\+cc.
+Definition at line 158 of file Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{78                         \{}
-\DoxyCodeLine{79     \mbox{\hyperlink{Cluster_8cc_a968d4b1d542c9f666e1a1fbd7f1c9c11}{clus\_ct}} it2 = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end();}
-\DoxyCodeLine{80 }
-\DoxyCodeLine{81     \textcolor{keywordflow}{for} (\mbox{\hyperlink{Cluster_8cc_a968d4b1d542c9f666e1a1fbd7f1c9c11}{clus\_ct}} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.begin(); it != it2; ++it) \{}
-\DoxyCodeLine{82         cout << it-\/>first << endl;}
-\DoxyCodeLine{83         it-\/>second.write\_cpu();}
-\DoxyCodeLine{84     \}}
-\DoxyCodeLine{85 \}}
+\DoxyCodeLine{158                         \{}
+\DoxyCodeLine{159     \mbox{\hyperlink{Cluster_8cc_a968d4b1d542c9f666e1a1fbd7f1c9c11}{clus\_ct}} it2 = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end();}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161     \textcolor{keywordflow}{for} (\mbox{\hyperlink{Cluster_8cc_a968d4b1d542c9f666e1a1fbd7f1c9c11}{clus\_ct}} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.begin(); it != it2; ++it) \{}
+\DoxyCodeLine{162         cout << it-\/>first << endl;}
+\DoxyCodeLine{163         it-\/>second.write\_cpu();}
+\DoxyCodeLine{164     \}}
+\DoxyCodeLine{165 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCluster_a2ee3faea667862eccfa83423987f3f5d}\label{classCluster_a2ee3faea667862eccfa83423987f3f5d}} 
@@ -381,17 +381,17 @@ If the cpu doesn\textquotesingle{}t exist it returns false, if not, it prints hi
 \end{DoxyPostcond}
 
 
-Definition at line 102 of file Cluster.\+cc.
+Definition at line 150 of file Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{102                                         \{}
-\DoxyCodeLine{103     \mbox{\hyperlink{Cluster_8cc_a968d4b1d542c9f666e1a1fbd7f1c9c11}{clus\_ct}} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.find(x);}
-\DoxyCodeLine{104     }
-\DoxyCodeLine{105     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end()) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{106     it-\/>second.write\_cpu();}
-\DoxyCodeLine{107     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{108 \}}
+\DoxyCodeLine{150                                         \{}
+\DoxyCodeLine{151     \mbox{\hyperlink{Cluster_8cc_a968d4b1d542c9f666e1a1fbd7f1c9c11}{clus\_ct}} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.find(x);}
+\DoxyCodeLine{152     }
+\DoxyCodeLine{153     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end()) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{154     it-\/>second.write\_cpu();}
+\DoxyCodeLine{155     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{156 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCluster_a67a07d7fa050cb54cdad5893f21d7d05}\label{classCluster_a67a07d7fa050cb54cdad5893f21d7d05}} 
@@ -412,22 +412,22 @@ If the cpu doesn\textquotesingle{}t exist it returns 101, if it has any active p
 \end{DoxyPostcond}
 
 
-Definition at line 135 of file Cluster.\+cc.
+Definition at line 108 of file Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{135                         \{}
-\DoxyCodeLine{136     \mbox{\hyperlink{Cluster_8cc_a968d4b1d542c9f666e1a1fbd7f1c9c11}{clus\_ct}} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.lower\_bound(x);}
-\DoxyCodeLine{137 }
-\DoxyCodeLine{138     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end() or it-\/>first != x) \textcolor{keywordflow}{return} 101;}
-\DoxyCodeLine{139     \textcolor{keywordflow}{if} (!it-\/>second.active\_processes()) \textcolor{keywordflow}{return} 102;}
-\DoxyCodeLine{140     \textcolor{keywordflow}{if} (!it-\/>second.yn\_leaf()) \textcolor{keywordflow}{return} 103;}
-\DoxyCodeLine{141 }
-\DoxyCodeLine{142     \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.erase(it);}
-\DoxyCodeLine{143     \mbox{\hyperlink{classCluster_a207680a453088ee7ee51bd05a5050a70}{reread}}(\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}}, x);}
-\DoxyCodeLine{144 }
-\DoxyCodeLine{145     \textcolor{keywordflow}{return} 100;}
-\DoxyCodeLine{146 \}}
+\DoxyCodeLine{108                         \{}
+\DoxyCodeLine{109     \mbox{\hyperlink{Cluster_8cc_a968d4b1d542c9f666e1a1fbd7f1c9c11}{clus\_ct}} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.lower\_bound(x);}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end() or it-\/>first != x) \textcolor{keywordflow}{return} 101;}
+\DoxyCodeLine{112     \textcolor{keywordflow}{if} (!it-\/>second.active\_processes()) \textcolor{keywordflow}{return} 102;}
+\DoxyCodeLine{113     \textcolor{keywordflow}{if} (!it-\/>second.yn\_leaf()) \textcolor{keywordflow}{return} 103;}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115     \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.erase(it);}
+\DoxyCodeLine{116     \mbox{\hyperlink{classCluster_a207680a453088ee7ee51bd05a5050a70}{reread}}(\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}}, x);}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118     \textcolor{keywordflow}{return} 100;}
+\DoxyCodeLine{119 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCluster_a3461bf6425ed68be10136da7f065674c}\label{classCluster_a3461bf6425ed68be10136da7f065674c}} 
@@ -448,14 +448,14 @@ A new cluster. The older one it\textquotesingle{}s erased.
 \end{DoxyPostcond}
 
 
-Definition at line 23 of file Cluster.\+cc.
+Definition at line 188 of file Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{23                    \{}
-\DoxyCodeLine{24     \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.clear();}
-\DoxyCodeLine{25     \mbox{\hyperlink{classCluster_a0f67ae08ed1bb763f431ba21c4292cc5}{read\_bintree}}(\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}});}
-\DoxyCodeLine{26 \}}
+\DoxyCodeLine{188                    \{}
+\DoxyCodeLine{189     \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.clear();}
+\DoxyCodeLine{190     \mbox{\hyperlink{classCluster_a0f67ae08ed1bb763f431ba21c4292cc5}{read\_bintree}}(\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}});}
+\DoxyCodeLine{191 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCluster_a0f67ae08ed1bb763f431ba21c4292cc5}\label{classCluster_a0f67ae08ed1bb763f431ba21c4292cc5}} 
@@ -476,29 +476,29 @@ Returns true if the node that it\textquotesingle{}s reading it\textquotesingle{}
 \end{DoxyPostcond}
 
 
-Definition at line 42 of file Cluster.\+cc.
+Definition at line 57 of file Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{42                                   \{}
-\DoxyCodeLine{43     \textcolor{keywordtype}{string} x;}
-\DoxyCodeLine{44     cin >> x;}
-\DoxyCodeLine{45 }
-\DoxyCodeLine{46     \textcolor{keywordflow}{if} (x != \textcolor{stringliteral}{"*"}) \{}
-\DoxyCodeLine{47         \textcolor{keywordtype}{int} n;}
-\DoxyCodeLine{48         cin >> n;}
-\DoxyCodeLine{49         \textcolor{keyword}{auto} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.insert(make\_pair(x, \mbox{\hyperlink{classCpu}{Cpu}}(n)));}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51         BinTree<string> left, right;}
-\DoxyCodeLine{52         \textcolor{keywordtype}{bool} left\_check = \mbox{\hyperlink{classCluster_a0f67ae08ed1bb763f431ba21c4292cc5}{read\_bintree}}(left);}
-\DoxyCodeLine{53         \textcolor{keywordtype}{bool} right\_check = \mbox{\hyperlink{classCluster_a0f67ae08ed1bb763f431ba21c4292cc5}{read\_bintree}}(right);    }
-\DoxyCodeLine{54         \textcolor{keywordflow}{if} (left\_check and right\_check) it.first-\/>second.is\_leaf();}
-\DoxyCodeLine{55         a = BinTree<string>(x, left, right);}
-\DoxyCodeLine{56 }
-\DoxyCodeLine{57         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{58     \}}
-\DoxyCodeLine{59     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{60 \}}
+\DoxyCodeLine{57                                 \{}
+\DoxyCodeLine{58     \textcolor{keywordtype}{string} x;}
+\DoxyCodeLine{59     cin >> x;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{keywordflow}{if} (x != \textcolor{stringliteral}{"*"}) \{}
+\DoxyCodeLine{62         \textcolor{keywordtype}{int} n;}
+\DoxyCodeLine{63         cin >> n;}
+\DoxyCodeLine{64         \textcolor{keyword}{auto} it = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.insert(make\_pair(x, \mbox{\hyperlink{classCpu}{Cpu}}(n)));}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66         BinTree<string> left, right;}
+\DoxyCodeLine{67         \textcolor{keywordtype}{bool} left\_check = \mbox{\hyperlink{classCluster_a0f67ae08ed1bb763f431ba21c4292cc5}{read\_bintree}}(left);}
+\DoxyCodeLine{68         \textcolor{keywordtype}{bool} right\_check = \mbox{\hyperlink{classCluster_a0f67ae08ed1bb763f431ba21c4292cc5}{read\_bintree}}(right);    }
+\DoxyCodeLine{69         \textcolor{keywordflow}{if} (left\_check and right\_check) it.first-\/>second.is\_leaf();}
+\DoxyCodeLine{70         a = BinTree<string>(x, left, right);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{73     \}}
+\DoxyCodeLine{74     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{75 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCluster_a93fb7b595036497a78e75a54947ae551}\label{classCluster_a93fb7b595036497a78e75a54947ae551}} 
@@ -519,24 +519,24 @@ If the process it\textquotesingle{}s added it returns true, if not it returns fa
 \end{DoxyPostcond}
 
 
-Definition at line 148 of file Cluster.\+cc.
+Definition at line 93 of file Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{148                                         \{}
-\DoxyCodeLine{149     \textcolor{keywordtype}{int} \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}, time, id;}
-\DoxyCodeLine{150     time = a.\mbox{\hyperlink{classProcess_a35de003f1633c047d70e29265d505b52}{what\_time}}();}
-\DoxyCodeLine{151     \textcolor{keywordtype}{id} = a.\mbox{\hyperlink{classProcess_a1c83a78bf269ff88e0ce1b929eee325c}{what\_id}}();}
-\DoxyCodeLine{152     \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}} = a.\mbox{\hyperlink{classProcess_a829698b52b61409c211979e86c808065}{what\_mem}}();}
-\DoxyCodeLine{153     \mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\_it}} ite = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end();}
-\DoxyCodeLine{154     \mbox{\hyperlink{classCluster_afaff5bd2847c24048b02705e9671da2e}{find\_best}}(\mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}, \textcolor{keywordtype}{id}, ite, \mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}});}
-\DoxyCodeLine{155 }
-\DoxyCodeLine{156     \textcolor{keywordflow}{if} (ite != \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end()) \{}
-\DoxyCodeLine{157         ite-\/>second.add\_process\_cpu(\textcolor{keywordtype}{id}, \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}, time);}
-\DoxyCodeLine{158         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{159     \}}
-\DoxyCodeLine{160     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{161 \}}
+\DoxyCodeLine{93                                         \{}
+\DoxyCodeLine{94     \textcolor{keywordtype}{int} \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}, time, id;}
+\DoxyCodeLine{95     time = a.\mbox{\hyperlink{classProcess_a35de003f1633c047d70e29265d505b52}{what\_time}}();}
+\DoxyCodeLine{96     \textcolor{keywordtype}{id} = a.\mbox{\hyperlink{classProcess_a1c83a78bf269ff88e0ce1b929eee325c}{what\_id}}();}
+\DoxyCodeLine{97     \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}} = a.\mbox{\hyperlink{classProcess_a829698b52b61409c211979e86c808065}{what\_mem}}();}
+\DoxyCodeLine{98     \mbox{\hyperlink{Cluster_8cc_aca9bff578e68b2d3af09b6bfaa7bd68d}{clus\_it}} ite = \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end();}
+\DoxyCodeLine{99     \mbox{\hyperlink{classCluster_afaff5bd2847c24048b02705e9671da2e}{find\_best}}(\mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}, \textcolor{keywordtype}{id}, ite, \mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}});}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     \textcolor{keywordflow}{if} (ite != \mbox{\hyperlink{classCluster_aea7f1c755c1fb744008e344a3692dafb}{conj}}.end()) \{}
+\DoxyCodeLine{102         ite-\/>second.add\_process\_cpu(\textcolor{keywordtype}{id}, \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}, time);}
+\DoxyCodeLine{103         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{104     \}}
+\DoxyCodeLine{105     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{106 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCluster_a207680a453088ee7ee51bd05a5050a70}\label{classCluster_a207680a453088ee7ee51bd05a5050a70}} 
@@ -557,25 +557,25 @@ The new cluster a contains the old cluster and the new one in the position of p.
 \end{DoxyPostcond}
 
 
-Definition at line 62 of file Cluster.\+cc.
+Definition at line 77 of file Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{62                                     \{}
-\DoxyCodeLine{63     \textcolor{keywordflow}{if} (!a.empty()) \{}
-\DoxyCodeLine{64         \textcolor{keywordtype}{string} x = a.value();}
-\DoxyCodeLine{65         \textcolor{keywordflow}{if} (x == p) \mbox{\hyperlink{classCluster_a0f67ae08ed1bb763f431ba21c4292cc5}{read\_bintree}}(a);}
-\DoxyCodeLine{66         \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{67             BinTree<string> left, right;}
-\DoxyCodeLine{68             left = a.left();}
-\DoxyCodeLine{69             right = a.right();}
-\DoxyCodeLine{70             \mbox{\hyperlink{classCluster_a207680a453088ee7ee51bd05a5050a70}{reread}}(left, p);}
-\DoxyCodeLine{71             \mbox{\hyperlink{classCluster_a207680a453088ee7ee51bd05a5050a70}{reread}}(right, p);}
-\DoxyCodeLine{72 }
-\DoxyCodeLine{73             a = BinTree<string>(x, left, right);}
-\DoxyCodeLine{74         \}}
-\DoxyCodeLine{75     \}}
-\DoxyCodeLine{76 \}}
+\DoxyCodeLine{77                                     \{}
+\DoxyCodeLine{78     \textcolor{keywordflow}{if} (!a.empty()) \{}
+\DoxyCodeLine{79         \textcolor{keywordtype}{string} x = a.value();}
+\DoxyCodeLine{80         \textcolor{keywordflow}{if} (x == p) \mbox{\hyperlink{classCluster_a0f67ae08ed1bb763f431ba21c4292cc5}{read\_bintree}}(a);}
+\DoxyCodeLine{81         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{82             BinTree<string> left, right;}
+\DoxyCodeLine{83             left = a.left();}
+\DoxyCodeLine{84             right = a.right();}
+\DoxyCodeLine{85             \mbox{\hyperlink{classCluster_a207680a453088ee7ee51bd05a5050a70}{reread}}(left, p);}
+\DoxyCodeLine{86             \mbox{\hyperlink{classCluster_a207680a453088ee7ee51bd05a5050a70}{reread}}(right, p);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88             a = BinTree<string>(x, left, right);}
+\DoxyCodeLine{89         \}}
+\DoxyCodeLine{90     \}}
+\DoxyCodeLine{91 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCluster_abf5680db313a34a21856e0221453d9c3}\label{classCluster_abf5680db313a34a21856e0221453d9c3}} 
@@ -596,19 +596,19 @@ The cluster has been printed.
 \end{DoxyPostcond}
 
 
-Definition at line 32 of file Cluster.\+cc.
+Definition at line 121 of file Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{32                                                 \{}
-\DoxyCodeLine{33     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}}.empty()) \{}
-\DoxyCodeLine{34         cout << \textcolor{stringliteral}{"("} << \mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}}.value();}
-\DoxyCodeLine{35         \mbox{\hyperlink{classCluster_abf5680db313a34a21856e0221453d9c3}{write\_bintree}}(\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}}.left());}
-\DoxyCodeLine{36         \mbox{\hyperlink{classCluster_abf5680db313a34a21856e0221453d9c3}{write\_bintree}}(\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}}.right());}
-\DoxyCodeLine{37         cout << \textcolor{stringliteral}{")"};}
-\DoxyCodeLine{38     \}}
-\DoxyCodeLine{39     \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{" "};}
-\DoxyCodeLine{40 \}}
+\DoxyCodeLine{121                                                 \{}
+\DoxyCodeLine{122     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}}.empty()) \{}
+\DoxyCodeLine{123         cout << \textcolor{stringliteral}{"("} << \mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}}.value();}
+\DoxyCodeLine{124         \mbox{\hyperlink{classCluster_abf5680db313a34a21856e0221453d9c3}{write\_bintree}}(\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}}.left());}
+\DoxyCodeLine{125         \mbox{\hyperlink{classCluster_abf5680db313a34a21856e0221453d9c3}{write\_bintree}}(\mbox{\hyperlink{classCluster_a371e399702db6ab3ea1eb21acd625408}{cluster}}.right());}
+\DoxyCodeLine{126         cout << \textcolor{stringliteral}{")"};}
+\DoxyCodeLine{127     \}}
+\DoxyCodeLine{128     \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{129 \}}
 
 \end{DoxyCode}
 

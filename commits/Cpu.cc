@@ -2,11 +2,14 @@
     @brief Implementation of the class Cpu
 */
 
+#ifndef NO_DIAGRAM
 #include <iostream>
 #include <map>
 #include <set>
-#include "Process.hh"
 #include "Cpu.hh"
+#endif
+
+#include "Process.hh"
 using namespace std;
 
 //Typedefs to code faster, keep lines shorter and to make it more readable
@@ -28,31 +31,26 @@ Cpu::Cpu(int n) {
     es.emplace(n, set<int>{0});
 }
 
-int Cpu::what_ffree() const {
-    return ffree;
-}
-
-void Cpu::is_leaf() {
-    leaf = true;
-}
-
-bool Cpu::yn_leaf() const {
-    return leaf;
-}
-
 int Cpu::remove_process_cpu(int proc_id, int& back) {
     mem_ct it = prl.find(proc_id);
-
     if (it == prl.end()) return 102;
 
+    //new_dir -> the new direction of free memory once checked if there is
+    //empty space before and after the removed process
+    //new_tam -> the new free space of that direction
     int a, b, new_tam, new_dir;
     a = new_tam = it->second.what_mem();
     b = new_dir = it->second.what_dir();
     max += a;
 
+    //ffree -> if the direction is smaller than ffree we update it
+    //ffree (the first direction of free memory of the cpu)
     if (b < ffree) ffree = b;
     naio_it itf = diro.find(b);
 
+    //to check it, we take the direction and the size of the process before
+    //we add the together and check if it's equal to the direction of the
+    //process, if not, it means we have empty space
     if (itf != diro.begin()) {
         naio_it ita = itf;
         --ita;
@@ -73,6 +71,7 @@ int Cpu::remove_process_cpu(int proc_id, int& back) {
         update_set_and_erase(0, b);
     }
 
+    //the same but with the spacein front of the process
     if (++itf != diro.end()) {
         int e;
         e = itf->first;
@@ -88,45 +87,14 @@ int Cpu::remove_process_cpu(int proc_id, int& back) {
     }
 
     insert_set(new_tam, new_dir);
-    back = new_tam;
+    back = new_tam; //back it's only used when we are compacting the memory
     diro.erase(b);
     prl.erase(proc_id);
 
     return 100;
 }
 
-int Cpu::what_mema() const {
-    return mema;
-}
-
-void Cpu::advance(int delta) {
-    mem_it it2 = prl.end();
-    mem_it it = prl.begin();
-    int back = 0;
-
-    while (it != it2) {
-        if (!(it->second.reducing(delta))) {
-            mem_it aux = it;
-            ++aux;
-            remove_process_cpu(it->second.what_id(), back);
-            it = aux;
-        }
-        else ++it;
-    } 
-}
-
-void Cpu::write_cpu() const {
-    naio_ct itf = diro.end();
-
-    for (naio_ct it = diro.begin(); it != itf; ++it) {
-        int a = it->second.first;
-        mem_ct ita = prl.find(a);
-        ita->second.wr_process();
-    }
-}
-
 int Cpu::add_process_cpu(int identity, int memory, int time) {
-
     mem_ct it = prl.lower_bound(identity);
     if (it != prl.end() and it->first == identity) return 102;
 
@@ -136,10 +104,9 @@ int Cpu::add_process_cpu(int identity, int memory, int time) {
     max -= memory;
     int direction = *(it2->second.begin());
     int mem_ava = it2->first;
-
     it2->second.erase(it2->second.begin());
 
-    bool need_check = true;
+    bool need_check = true; //used to know if we need to check ffree later
 
     if (mem_ava > memory) {
         if (direction == ffree) {
@@ -165,50 +132,10 @@ int Cpu::add_process_cpu(int identity, int memory, int time) {
     return 100;
 }
 
-int Cpu::check_ffree(const int direction, const int tam, naio_it& it) {
-    int aux = direction + tam;
-    ++it;
-    if (it == diro.end()) {
-        if (aux == mema) return mema + 1;
-        else return aux;
-    }
-    else {
-        int newd = it->first;
-        int newt = it->second.second;
-
-        if (aux != newd) return aux;
-        else return check_ffree(newd, newt, it);
-    }
-}
-
-void Cpu::compactar() {
-    naio_it itf = diro.end();
-    naio_it it = diro.upper_bound(ffree);
-    
-    while (it != itf) {
-        int proc_id = it->second.first;
-        int mem = it->second.second;
-        int back = 0;
-        mem_it it2 = prl.lower_bound(proc_id);
-        int time = it2->second.what_time();
-
-        ++it;
-        remove_process_cpu(proc_id, back);
-        relocate(proc_id, mem, time, back);
-        dir_it pff = es.begin();
-
-        while (pff != es.end()) {
-            if (pff->second.empty()) {
-                dir_it aaa = pff;
-                ++pff;
-                es.erase(aaa);
-            }
-            else ++pff;
-        }
-    }
-}
-
 void Cpu::relocate(int proc_id, int mem, int time, int back) {
+    //this function that does the same as add_process_cpu() but here we know
+    //from before where are we going to put the process, ffree and the size
+    //we are going to use (back), even if we don't use all of the space
     max -= mem;
     int direction = ffree;
     dir_it it2 = es.find(back);
@@ -239,15 +166,54 @@ void Cpu::relocate(int proc_id, int mem, int time, int back) {
     }
 }
 
-bool Cpu::active_processes() const {
-    return diro.empty();
+void Cpu::compactar() {
+    naio_it itf = diro.end();
+    naio_it it = diro.upper_bound(ffree);
+    
+    while (it != itf) {
+        int proc_id = it->second.first;
+        int mem = it->second.second;
+        int back = 0;
+        mem_it it2 = prl.lower_bound(proc_id);
+        int time = it2->second.what_time();
+
+        ++it;
+        remove_process_cpu(proc_id, back);
+        relocate(proc_id, mem, time, back);
+        dir_it pff = es.begin();
+    }
 }
 
-void Cpu:: update_set_and_erase(int diff, int key) {
-    dir_it ite = es.find(key);
-    ite->second.erase(diff);
+void Cpu::advance(int delta) {
+    mem_it it2 = prl.end();
+    mem_it it = prl.begin();
+    int back = 0;
 
-    if (ite->second.empty()) es.erase(ite);
+    while (it != it2) {
+        if (!(it->second.reducing(delta))) {
+            mem_it aux = it;
+            ++aux;
+            remove_process_cpu(it->second.what_id(), back);
+            it = aux;
+        }
+        else ++it;
+    } 
+}
+
+int Cpu::check_ffree(const int direction, const int tam, naio_it& it) {
+    int aux = direction + tam;
+    ++it;
+    if (it == diro.end()) {
+        if (aux == mema) return mema + 1;
+        else return aux;
+    }
+    else {
+        int newd = it->first;
+        int newt = it->second.second;
+
+        if (aux != newd) return aux;
+        else return check_ffree(newd, newt, it);
+    }
 }
 
 void Cpu::insert_set(int value, int key) {
@@ -261,6 +227,16 @@ void Cpu::insert_set(int value, int key) {
     }
 }
 
+void Cpu::write_cpu() const {
+    naio_ct itf = diro.end();
+
+    for (naio_ct it = diro.begin(); it != itf; ++it) {
+        int a = it->second.first;
+        mem_ct ita = prl.find(a);
+        ita->second.wr_process();
+    }
+}
+
 int Cpu::get_memory(int mem, int identity) const {
     dir_ct it2 = es.lower_bound(mem);
     mem_ct it = prl.lower_bound(identity);
@@ -270,6 +246,33 @@ int Cpu::get_memory(int mem, int identity) const {
     return it2->first;
 }
 
+void Cpu:: update_set_and_erase(int diff, int key) {
+    dir_it ite = es.find(key);
+    ite->second.erase(diff);
+
+    if (ite->second.empty()) es.erase(ite);
+}
+
+bool Cpu::active_processes() const {
+    return diro.empty();
+}
+
 int Cpu::space_left() const {
     return max;
+}
+
+int Cpu::what_ffree() const {
+    return ffree;
+}
+
+void Cpu::is_leaf() {
+    leaf = true;
+}
+
+bool Cpu::yn_leaf() const {
+    return leaf;
+}
+
+int Cpu::what_mema() const {
+    return mema;
 }

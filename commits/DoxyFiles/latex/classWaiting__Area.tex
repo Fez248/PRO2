@@ -73,11 +73,11 @@ An empty waiting area.
 \end{DoxyPostcond}
 
 
-Definition at line 25 of file Waiting\+\_\+\+Area.\+cc.
+Definition at line 161 of file Waiting\+\_\+\+Area.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{25 \{\}}
+\DoxyCodeLine{161 \{\}}
 
 \end{DoxyCode}
 
@@ -101,15 +101,15 @@ Adds the process to the waiting area.
 \end{DoxyPostcond}
 
 
-Definition at line 52 of file Waiting\+\_\+\+Area.\+cc.
+Definition at line 88 of file Waiting\+\_\+\+Area.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{52                                                                    \{}
-\DoxyCodeLine{53     \mbox{\hyperlink{Waiting__Area_8cc_a9b486d34a6563c22490430dab5fb3d62}{area\_it}} it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.find(prio);}
-\DoxyCodeLine{54     \mbox{\hyperlink{Waiting__Area_8cc_ac863cf4b0ed43a4905d4f2aef36d5913}{cat\_it}} it2 = it-\/>second.end();}
-\DoxyCodeLine{55     it-\/>second.insert(it2, a);}
-\DoxyCodeLine{56 \}}
+\DoxyCodeLine{88                                                                    \{}
+\DoxyCodeLine{89     \mbox{\hyperlink{Waiting__Area_8cc_a9b486d34a6563c22490430dab5fb3d62}{area\_it}} it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.find(prio);}
+\DoxyCodeLine{90     \mbox{\hyperlink{Waiting__Area_8cc_ac863cf4b0ed43a4905d4f2aef36d5913}{cat\_it}} it2 = it-\/>second.end();}
+\DoxyCodeLine{91     it-\/>second.insert(it2, a);}
+\DoxyCodeLine{92 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classWaiting__Area_ac934b910ba1348f2cccda5e38e664aff}\label{classWaiting__Area_ac934b910ba1348f2cccda5e38e664aff}} 
@@ -130,20 +130,20 @@ If the identificator already exists it returns false, if not, it adds the priori
 \end{DoxyPostcond}
 
 
-Definition at line 58 of file Waiting\+\_\+\+Area.\+cc.
+Definition at line 94 of file Waiting\+\_\+\+Area.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{58                                      \{}
-\DoxyCodeLine{59     \mbox{\hyperlink{Waiting__Area_8cc_a9b486d34a6563c22490430dab5fb3d62}{area\_it}} it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.find(x);}
-\DoxyCodeLine{60 }
-\DoxyCodeLine{61     \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.end()) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{62 }
-\DoxyCodeLine{63     \mbox{\hyperlink{Waiting__Area_8cc_aa62be058eeaabb7f90581db6a94b1b48}{cat}} a;}
-\DoxyCodeLine{64     \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.insert(make\_pair(x, a));}
-\DoxyCodeLine{65     \mbox{\hyperlink{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}{sera}}.insert(make\_pair(x, make\_pair(0, 0)));}
-\DoxyCodeLine{66     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{67 \}}
+\DoxyCodeLine{94                                      \{}
+\DoxyCodeLine{95     \mbox{\hyperlink{Waiting__Area_8cc_a9b486d34a6563c22490430dab5fb3d62}{area\_it}} it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.find(x);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.end()) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \mbox{\hyperlink{Waiting__Area_8cc_aa62be058eeaabb7f90581db6a94b1b48}{cat}} a;}
+\DoxyCodeLine{100     \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.insert(make\_pair(x, a));}
+\DoxyCodeLine{101     \mbox{\hyperlink{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}{sera}}.insert(make\_pair(x, make\_pair(0, 0)));}
+\DoxyCodeLine{102     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{103 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classWaiting__Area_a4c791e71342b16fe06ed31e0f7a297e8}\label{classWaiting__Area_a4c791e71342b16fe06ed31e0f7a297e8}} 
@@ -164,19 +164,19 @@ If the id priority doesn\textquotesingle{}t exist returns 101, if a process with
 \end{DoxyPostcond}
 
 
-Definition at line 80 of file Waiting\+\_\+\+Area.\+cc.
+Definition at line 116 of file Waiting\+\_\+\+Area.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{80                                                                          \{}
-\DoxyCodeLine{81     area::iterator it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.find(x);}
-\DoxyCodeLine{82 }
-\DoxyCodeLine{83     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.end()) \textcolor{keywordflow}{return} 101;}
-\DoxyCodeLine{84     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classWaiting__Area_a22f3c475077f426d20e32e3d35a36c62}{search\_process}}(it, identity)) \textcolor{keywordflow}{return} 102;}
-\DoxyCodeLine{85 }
-\DoxyCodeLine{86     \mbox{\hyperlink{classWaiting__Area_a24b85583b8fdaf665819caa877853ebf}{add\_process}}(x, \mbox{\hyperlink{classProcess}{Process}}(identity, memory, time, 0));}
-\DoxyCodeLine{87     \textcolor{keywordflow}{return} 100;}
-\DoxyCodeLine{88 \} }
+\DoxyCodeLine{116                                                                          \{}
+\DoxyCodeLine{117     area::iterator it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.find(x);}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.end()) \textcolor{keywordflow}{return} 101;}
+\DoxyCodeLine{120     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classWaiting__Area_a22f3c475077f426d20e32e3d35a36c62}{search\_process}}(it, identity)) \textcolor{keywordflow}{return} 102;}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     \mbox{\hyperlink{classWaiting__Area_a24b85583b8fdaf665819caa877853ebf}{add\_process}}(x, \mbox{\hyperlink{classProcess}{Process}}(identity, memory, time, 0));}
+\DoxyCodeLine{123     \textcolor{keywordflow}{return} 100;}
+\DoxyCodeLine{124 \} }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classWaiting__Area_a4cadefb192f4184ca984e2d33786edca}\label{classWaiting__Area_a4cadefb192f4184ca984e2d33786edca}} 
@@ -197,20 +197,20 @@ If the identificator doesn\textquotesingle{}t exist returns 101, if it has pendi
 \end{DoxyPostcond}
 
 
-Definition at line 69 of file Waiting\+\_\+\+Area.\+cc.
+Definition at line 105 of file Waiting\+\_\+\+Area.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{69                                     \{}
-\DoxyCodeLine{70     area::iterator it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.find(x);}
-\DoxyCodeLine{71 }
-\DoxyCodeLine{72     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.end()) \textcolor{keywordflow}{return} 101;}
-\DoxyCodeLine{73     \textcolor{keywordflow}{if} (!(it-\/>second.empty())) \textcolor{keywordflow}{return} 102;}
-\DoxyCodeLine{74 }
-\DoxyCodeLine{75     \mbox{\hyperlink{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}{sera}}.erase(x);}
-\DoxyCodeLine{76     \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.erase(it);}
-\DoxyCodeLine{77     \textcolor{keywordflow}{return} 100;}
-\DoxyCodeLine{78 \}}
+\DoxyCodeLine{105                                     \{}
+\DoxyCodeLine{106     area::iterator it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.find(x);}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.end()) \textcolor{keywordflow}{return} 101;}
+\DoxyCodeLine{109     \textcolor{keywordflow}{if} (!(it-\/>second.empty())) \textcolor{keywordflow}{return} 102;}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \mbox{\hyperlink{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}{sera}}.erase(x);}
+\DoxyCodeLine{112     \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.erase(it);}
+\DoxyCodeLine{113     \textcolor{keywordflow}{return} 100;}
+\DoxyCodeLine{114 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classWaiting__Area_ae35218147d2e213a038ea8469b502396}\label{classWaiting__Area_ae35218147d2e213a038ea8469b502396}} 
@@ -232,45 +232,45 @@ If the process it\textquotesingle{}s sended it increments the number of sended p
 \end{DoxyPostcond}
 
 
-Definition at line 125 of file Waiting\+\_\+\+Area.\+cc.
+Definition at line 27 of file Waiting\+\_\+\+Area.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{125                                             \{}
-\DoxyCodeLine{126     \mbox{\hyperlink{Waiting__Area_8cc_a9b486d34a6563c22490430dab5fb3d62}{area\_it}} it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.begin();}
-\DoxyCodeLine{127     \mbox{\hyperlink{Waiting__Area_8cc_a9b486d34a6563c22490430dab5fb3d62}{area\_it}} itf = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.end();}
-\DoxyCodeLine{128     \textcolor{keywordtype}{int} i = 0;}
-\DoxyCodeLine{129 }
-\DoxyCodeLine{130     \textcolor{keywordflow}{while} (i < n and it != itf) \{}
-\DoxyCodeLine{131         \mbox{\hyperlink{Waiting__Area_8cc_ac863cf4b0ed43a4905d4f2aef36d5913}{cat\_it}} it2 = it-\/>second.begin();}
-\DoxyCodeLine{132         \mbox{\hyperlink{Waiting__Area_8cc_a31bb8ebe283c7d5565da749a9e5527f3}{siu\_it}} \mbox{\hyperlink{Waiting__Area_8cc_aa62be058eeaabb7f90581db6a94b1b48}{cat}} = \mbox{\hyperlink{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}{sera}}.find(it-\/>first);}
-\DoxyCodeLine{133 }
-\DoxyCodeLine{134         \textcolor{keywordtype}{int} tam, j;}
-\DoxyCodeLine{135         tam = it-\/>second.size();}
-\DoxyCodeLine{136         j = 0;}
-\DoxyCodeLine{137 }
-\DoxyCodeLine{138         \textcolor{keywordflow}{while} (i < n and j < tam) \{}
-\DoxyCodeLine{139             \mbox{\hyperlink{Waiting__Area_8cc_ac863cf4b0ed43a4905d4f2aef36d5913}{cat\_it}} its = it2;}
-\DoxyCodeLine{140             \mbox{\hyperlink{classProcess}{Process}} a = *it2;}
-\DoxyCodeLine{141             ++its;}
-\DoxyCodeLine{142             }
-\DoxyCodeLine{143             \textcolor{keywordflow}{if} (clust.\mbox{\hyperlink{classCluster_a93fb7b595036497a78e75a54947ae551}{recive\_processes}}(a)) \{}
-\DoxyCodeLine{144                 ++i;}
-\DoxyCodeLine{145                 \mbox{\hyperlink{Waiting__Area_8cc_aa62be058eeaabb7f90581db6a94b1b48}{cat}}-\/>second.first += 1;}
-\DoxyCodeLine{146                 it-\/>second.erase(it2);}
-\DoxyCodeLine{147             \}}
-\DoxyCodeLine{148             \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{149                 it-\/>second.erase(it2);}
-\DoxyCodeLine{150                 it-\/>second.insert(it-\/>second.end(), a);}
-\DoxyCodeLine{151                 \mbox{\hyperlink{Waiting__Area_8cc_aa62be058eeaabb7f90581db6a94b1b48}{cat}}-\/>second.second += 1;}
-\DoxyCodeLine{152             \}}
-\DoxyCodeLine{153             it2 = its;}
-\DoxyCodeLine{154             ++j;}
-\DoxyCodeLine{155         \}}
-\DoxyCodeLine{156 }
-\DoxyCodeLine{157         ++it;}
-\DoxyCodeLine{158     \}}
-\DoxyCodeLine{159 \}}
+\DoxyCodeLine{27                                             \{}
+\DoxyCodeLine{28     \mbox{\hyperlink{Waiting__Area_8cc_a9b486d34a6563c22490430dab5fb3d62}{area\_it}} it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.begin();}
+\DoxyCodeLine{29     \mbox{\hyperlink{Waiting__Area_8cc_a9b486d34a6563c22490430dab5fb3d62}{area\_it}} itf = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.end();}
+\DoxyCodeLine{30     \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keywordflow}{while} (i < n and it != itf) \{}
+\DoxyCodeLine{33         \mbox{\hyperlink{Waiting__Area_8cc_ac863cf4b0ed43a4905d4f2aef36d5913}{cat\_it}} it2 = it-\/>second.begin();}
+\DoxyCodeLine{34         \mbox{\hyperlink{Waiting__Area_8cc_a31bb8ebe283c7d5565da749a9e5527f3}{siu\_it}} \mbox{\hyperlink{Waiting__Area_8cc_aa62be058eeaabb7f90581db6a94b1b48}{cat}} = \mbox{\hyperlink{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}{sera}}.find(it-\/>first);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36         \textcolor{keywordtype}{int} tam, j;}
+\DoxyCodeLine{37         tam = it-\/>second.size();}
+\DoxyCodeLine{38         j = 0;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         \textcolor{keywordflow}{while} (i < n and j < tam) \{}
+\DoxyCodeLine{41             \mbox{\hyperlink{Waiting__Area_8cc_ac863cf4b0ed43a4905d4f2aef36d5913}{cat\_it}} its = it2;}
+\DoxyCodeLine{42             \mbox{\hyperlink{classProcess}{Process}} a = *it2;}
+\DoxyCodeLine{43             ++its;}
+\DoxyCodeLine{44             }
+\DoxyCodeLine{45             \textcolor{keywordflow}{if} (clust.\mbox{\hyperlink{classCluster_a93fb7b595036497a78e75a54947ae551}{recive\_processes}}(a)) \{}
+\DoxyCodeLine{46                 ++i;}
+\DoxyCodeLine{47                 \mbox{\hyperlink{Waiting__Area_8cc_aa62be058eeaabb7f90581db6a94b1b48}{cat}}-\/>second.first += 1;}
+\DoxyCodeLine{48                 it-\/>second.erase(it2);}
+\DoxyCodeLine{49             \}}
+\DoxyCodeLine{50             \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{51                 it-\/>second.erase(it2);}
+\DoxyCodeLine{52                 it-\/>second.insert(it-\/>second.end(), a);}
+\DoxyCodeLine{53                 \mbox{\hyperlink{Waiting__Area_8cc_aa62be058eeaabb7f90581db6a94b1b48}{cat}}-\/>second.second += 1;}
+\DoxyCodeLine{54             \}}
+\DoxyCodeLine{55             it2 = its;}
+\DoxyCodeLine{56             ++j;}
+\DoxyCodeLine{57         \}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         ++it;}
+\DoxyCodeLine{60     \}}
+\DoxyCodeLine{61 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classWaiting__Area_a1d293edfdf732b8c08c384a92247f29e}\label{classWaiting__Area_a1d293edfdf732b8c08c384a92247f29e}} 
@@ -291,26 +291,26 @@ All the processes have been printed on the console and for each priority the num
 \end{DoxyPostcond}
 
 
-Definition at line 108 of file Waiting\+\_\+\+Area.\+cc.
+Definition at line 144 of file Waiting\+\_\+\+Area.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{108                              \{}
-\DoxyCodeLine{109     \mbox{\hyperlink{Waiting__Area_8cc_a602a59ceef9dfce10f20ec8628b60db2}{area\_ct}} it2 = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.end();}
-\DoxyCodeLine{110 }
-\DoxyCodeLine{111     \textcolor{keywordflow}{for} (\mbox{\hyperlink{Waiting__Area_8cc_a602a59ceef9dfce10f20ec8628b60db2}{area\_ct}} it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.begin(); it != it2; ++it) \{}
-\DoxyCodeLine{112         \textcolor{keywordtype}{string} name = it-\/>first;}
-\DoxyCodeLine{113         cout << name << endl;}
-\DoxyCodeLine{114         \mbox{\hyperlink{Waiting__Area_8cc_a52d31adeea04f85b13aa95b6fc9fcd6e}{cat\_ct}} itf2 = it-\/>second.end();}
-\DoxyCodeLine{115 }
-\DoxyCodeLine{116         \textcolor{keywordflow}{for} (\mbox{\hyperlink{Waiting__Area_8cc_a52d31adeea04f85b13aa95b6fc9fcd6e}{cat\_ct}} itf = it-\/>second.begin(); itf != itf2; ++itf) \{}
-\DoxyCodeLine{117             itf-\/>wr2\_process();}
-\DoxyCodeLine{118         \}}
-\DoxyCodeLine{119 }
-\DoxyCodeLine{120         \mbox{\hyperlink{Waiting__Area_8cc_a57490da531374d2f7dedaf4f53b0c8b0}{siu\_ct}} its = \mbox{\hyperlink{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}{sera}}.find(name);}
-\DoxyCodeLine{121         cout << its-\/>second.first << \textcolor{stringliteral}{" "} << its-\/>second.second << endl;}
-\DoxyCodeLine{122     \}}
-\DoxyCodeLine{123 \}}
+\DoxyCodeLine{144                              \{}
+\DoxyCodeLine{145     \mbox{\hyperlink{Waiting__Area_8cc_a602a59ceef9dfce10f20ec8628b60db2}{area\_ct}} it2 = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.end();}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     \textcolor{keywordflow}{for} (\mbox{\hyperlink{Waiting__Area_8cc_a602a59ceef9dfce10f20ec8628b60db2}{area\_ct}} it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.begin(); it != it2; ++it) \{}
+\DoxyCodeLine{148         \textcolor{keywordtype}{string} name = it-\/>first;}
+\DoxyCodeLine{149         cout << name << endl;}
+\DoxyCodeLine{150         \mbox{\hyperlink{Waiting__Area_8cc_a52d31adeea04f85b13aa95b6fc9fcd6e}{cat\_ct}} itf2 = it-\/>second.end();}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152         \textcolor{keywordflow}{for} (\mbox{\hyperlink{Waiting__Area_8cc_a52d31adeea04f85b13aa95b6fc9fcd6e}{cat\_ct}} itf = it-\/>second.begin(); itf != itf2; ++itf) \{}
+\DoxyCodeLine{153             itf-\/>wr2\_process();}
+\DoxyCodeLine{154         \}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156         \mbox{\hyperlink{Waiting__Area_8cc_a57490da531374d2f7dedaf4f53b0c8b0}{siu\_ct}} its = \mbox{\hyperlink{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}{sera}}.find(name);}
+\DoxyCodeLine{157         cout << its-\/>second.first << \textcolor{stringliteral}{" "} << its-\/>second.second << endl;}
+\DoxyCodeLine{158     \}}
+\DoxyCodeLine{159 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classWaiting__Area_a02cbd45ad12d9ac33f1302687a1e63f9}\label{classWaiting__Area_a02cbd45ad12d9ac33f1302687a1e63f9}} 
@@ -331,27 +331,27 @@ If the priority id doesn\textquotesingle{}t exist it returns false, if not, retu
 \end{DoxyPostcond}
 
 
-Definition at line 90 of file Waiting\+\_\+\+Area.\+cc.
+Definition at line 126 of file Waiting\+\_\+\+Area.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{90                                              \{}
-\DoxyCodeLine{91     \mbox{\hyperlink{Waiting__Area_8cc_a602a59ceef9dfce10f20ec8628b60db2}{area\_ct}} it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.find(x);}
-\DoxyCodeLine{92 }
-\DoxyCodeLine{93     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.end()) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{94     \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{95         \mbox{\hyperlink{Waiting__Area_8cc_a52d31adeea04f85b13aa95b6fc9fcd6e}{cat\_ct}} ite = it-\/>second.end();}
-\DoxyCodeLine{96     }
-\DoxyCodeLine{97         \textcolor{keywordflow}{for}(\mbox{\hyperlink{Waiting__Area_8cc_a52d31adeea04f85b13aa95b6fc9fcd6e}{cat\_ct}} it2 = it-\/>second.begin(); it2 != ite; ++it2) \{}
-\DoxyCodeLine{98             it2-\/>wr2\_process();}
-\DoxyCodeLine{99         \}}
-\DoxyCodeLine{100 }
-\DoxyCodeLine{101         \mbox{\hyperlink{Waiting__Area_8cc_a57490da531374d2f7dedaf4f53b0c8b0}{siu\_ct}} ita = \mbox{\hyperlink{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}{sera}}.find(x);}
-\DoxyCodeLine{102         cout << ita-\/>second.first << \textcolor{stringliteral}{" "} << ita-\/>second.second << endl;}
-\DoxyCodeLine{103     \}}
-\DoxyCodeLine{104 }
-\DoxyCodeLine{105     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{106 \}}
+\DoxyCodeLine{126                                              \{}
+\DoxyCodeLine{127     \mbox{\hyperlink{Waiting__Area_8cc_a602a59ceef9dfce10f20ec8628b60db2}{area\_ct}} it = \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.find(x);}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.end()) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{130     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{131         \mbox{\hyperlink{Waiting__Area_8cc_a52d31adeea04f85b13aa95b6fc9fcd6e}{cat\_ct}} ite = it-\/>second.end();}
+\DoxyCodeLine{132     }
+\DoxyCodeLine{133         \textcolor{keywordflow}{for}(\mbox{\hyperlink{Waiting__Area_8cc_a52d31adeea04f85b13aa95b6fc9fcd6e}{cat\_ct}} it2 = it-\/>second.begin(); it2 != ite; ++it2) \{}
+\DoxyCodeLine{134             it2-\/>wr2\_process();}
+\DoxyCodeLine{135         \}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137         \mbox{\hyperlink{Waiting__Area_8cc_a57490da531374d2f7dedaf4f53b0c8b0}{siu\_ct}} ita = \mbox{\hyperlink{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}{sera}}.find(x);}
+\DoxyCodeLine{138         cout << ita-\/>second.first << \textcolor{stringliteral}{" "} << ita-\/>second.second << endl;}
+\DoxyCodeLine{139     \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{142 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classWaiting__Area_ae61dd48170f29a4a16cb599cc1bed250}\label{classWaiting__Area_ae61dd48170f29a4a16cb599cc1bed250}} 
@@ -372,24 +372,24 @@ Waiting Area initialized.
 \end{DoxyPostcond}
 
 
-Definition at line 37 of file Waiting\+\_\+\+Area.\+cc.
+Definition at line 73 of file Waiting\+\_\+\+Area.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{37                                      \{}
-\DoxyCodeLine{38     \textcolor{keywordtype}{int} n;}
-\DoxyCodeLine{39     cin >> n;}
-\DoxyCodeLine{40 }
-\DoxyCodeLine{41     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i) \{}
-\DoxyCodeLine{42         \textcolor{keywordtype}{string} prio;}
-\DoxyCodeLine{43         list<Process> a;}
-\DoxyCodeLine{44         pair<int, int> b(0, 0);}
-\DoxyCodeLine{45 }
-\DoxyCodeLine{46         cin >> prio;}
-\DoxyCodeLine{47         \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.insert(make\_pair(prio, a));}
-\DoxyCodeLine{48         \mbox{\hyperlink{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}{sera}}.insert(make\_pair(prio, b));}
-\DoxyCodeLine{49     \}   }
-\DoxyCodeLine{50 \}}
+\DoxyCodeLine{73                                      \{}
+\DoxyCodeLine{74     \textcolor{keywordtype}{int} n;}
+\DoxyCodeLine{75     cin >> n;}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i) \{}
+\DoxyCodeLine{78         \textcolor{keywordtype}{string} prio;}
+\DoxyCodeLine{79         list<Process> a;}
+\DoxyCodeLine{80         pair<int, int> b(0, 0);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82         cin >> prio;}
+\DoxyCodeLine{83         \mbox{\hyperlink{classWaiting__Area_ac4839348c5694ad72bd86ab5e96ca34a}{wa}}.insert(make\_pair(prio, a));}
+\DoxyCodeLine{84         \mbox{\hyperlink{classWaiting__Area_af8330a55e29939de1b46f0c16f002b12}{sera}}.insert(make\_pair(prio, b));}
+\DoxyCodeLine{85     \}   }
+\DoxyCodeLine{86 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classWaiting__Area_a22f3c475077f426d20e32e3d35a36c62}\label{classWaiting__Area_a22f3c475077f426d20e32e3d35a36c62}} 
@@ -410,19 +410,19 @@ Returns true if the process exists and false if not.
 \end{DoxyPostcond}
 
 
-Definition at line 27 of file Waiting\+\_\+\+Area.\+cc.
+Definition at line 63 of file Waiting\+\_\+\+Area.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{27                                                                \{}
-\DoxyCodeLine{28     \mbox{\hyperlink{Waiting__Area_8cc_a52d31adeea04f85b13aa95b6fc9fcd6e}{cat\_ct}} ite = it-\/>second.end();}
-\DoxyCodeLine{29 }
-\DoxyCodeLine{30     \textcolor{keywordflow}{for} (\mbox{\hyperlink{Waiting__Area_8cc_a52d31adeea04f85b13aa95b6fc9fcd6e}{cat\_ct}} it2 = it-\/>second.begin(); it2 != ite; ++it2) \{}
-\DoxyCodeLine{31         \textcolor{keywordflow}{if} (it2-\/>what\_id() == proc\_id) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{32     \}}
-\DoxyCodeLine{33 }
-\DoxyCodeLine{34     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{35 \}}
+\DoxyCodeLine{63                                                                \{}
+\DoxyCodeLine{64     \mbox{\hyperlink{Waiting__Area_8cc_a52d31adeea04f85b13aa95b6fc9fcd6e}{cat\_ct}} ite = it-\/>second.end();}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{keywordflow}{for} (\mbox{\hyperlink{Waiting__Area_8cc_a52d31adeea04f85b13aa95b6fc9fcd6e}{cat\_ct}} it2 = it-\/>second.begin(); it2 != ite; ++it2) \{}
+\DoxyCodeLine{67         \textcolor{keywordflow}{if} (it2-\/>what\_id() == proc\_id) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{68     \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{71 \}}
 
 \end{DoxyCode}
 
