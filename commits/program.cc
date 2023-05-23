@@ -13,8 +13,8 @@ using namespace std;
 int main() {
 
     /**
-    This programm allows us to create a cluster (connected cpus) in a form of a binary tree. Each cpu 
-    with his proccess and his memmory. We also have a waiting area where pending processes stay till they 
+    This program allows us to create a cluster (connected cpus) in a form of a binary tree. Each cpu 
+    with its processes and its memory. We also have a waiting area where pending processes stay till they 
     are sended to the cluster.
     */
 

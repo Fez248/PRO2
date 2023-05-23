@@ -71,7 +71,7 @@ int Cpu::remove_process_cpu(int proc_id, int& back) {
         update_set_and_erase(0, b);
     }
 
-    //the same but with the spacein front of the process
+    //the same but with the space in front of the process
     if (++itf != diro.end()) {
         int e;
         e = itf->first;
@@ -95,8 +95,8 @@ int Cpu::remove_process_cpu(int proc_id, int& back) {
 }
 
 int Cpu::add_process_cpu(int identity, int memory, int time) {
-    mem_ct it = prl.lower_bound(identity);
-    if (it != prl.end() and it->first == identity) return 102;
+    mem_ct it = prl.find(identity);
+    if (it != prl.end()) return 102;
 
     dir_it it2 = es.lower_bound(memory);
     if (it2 == es.end()) return 103;
@@ -116,6 +116,9 @@ int Cpu::add_process_cpu(int identity, int memory, int time) {
         es[mem_ava - memory].insert(memory + direction);
     }
 
+    //We add the process with its id to out map of <id, Process>
+    //We also add the process to the map of used directions
+    //<direction, <id, size>>
     prl.emplace(identity, Process (identity, memory, time, direction));
     diro.emplace(direction, make_pair(identity, memory));
 
@@ -174,13 +177,12 @@ void Cpu::compactar() {
         int proc_id = it->second.first;
         int mem = it->second.second;
         int back = 0;
-        mem_it it2 = prl.lower_bound(proc_id);
+        mem_it it2 = prl.find(proc_id);
         int time = it2->second.what_time();
 
         ++it;
         remove_process_cpu(proc_id, back);
         relocate(proc_id, mem, time, back);
-        dir_it pff = es.begin();
     }
 }
 
@@ -239,9 +241,9 @@ void Cpu::write_cpu() const {
 
 int Cpu::get_memory(int mem, int identity) const {
     dir_ct it2 = es.lower_bound(mem);
-    mem_ct it = prl.lower_bound(identity);
+    mem_ct it = prl.find(identity);
 
-    if (it != prl.end() and it->first == identity) return -1;
+    if (it != prl.end()) return -1;
     if (it2 == es.end()) return -1;
     return it2->first;
 }

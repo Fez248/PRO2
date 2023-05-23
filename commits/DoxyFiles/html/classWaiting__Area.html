@@ -86,13 +86,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae61dd48170f29a4a16cb599cc1bed250"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to initialize the Waiting Area.  <a href="classWaiting__Area.html#ae61dd48170f29a4a16cb599cc1bed250">More...</a><br /></td></tr>
 <tr class="separator:ae61dd48170f29a4a16cb599cc1bed250"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac934b910ba1348f2cccda5e38e664aff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWaiting__Area.html#ac934b910ba1348f2cccda5e38e664aff">ap</a> (const string &amp;x)</td></tr>
-<tr class="memdesc:ac934b910ba1348f2cccda5e38e664aff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a priority identificator and if everything it's correct it adds the priority to the waiting area.  <a href="classWaiting__Area.html#ac934b910ba1348f2cccda5e38e664aff">More...</a><br /></td></tr>
+<tr class="memdesc:ac934b910ba1348f2cccda5e38e664aff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a priority identification and if everything it's correct it adds the priority to the waiting area.  <a href="classWaiting__Area.html#ac934b910ba1348f2cccda5e38e664aff">More...</a><br /></td></tr>
 <tr class="separator:ac934b910ba1348f2cccda5e38e664aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4cadefb192f4184ca984e2d33786edca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWaiting__Area.html#a4cadefb192f4184ca984e2d33786edca">bp</a> (const string &amp;x)</td></tr>
-<tr class="memdesc:a4cadefb192f4184ca984e2d33786edca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a priority identificator and if everything it's correct it removes this priority from the waiting area.  <a href="classWaiting__Area.html#a4cadefb192f4184ca984e2d33786edca">More...</a><br /></td></tr>
+<tr class="memdesc:a4cadefb192f4184ca984e2d33786edca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a priority identification and if everything it's correct it removes this priority from the waiting area.  <a href="classWaiting__Area.html#a4cadefb192f4184ca984e2d33786edca">More...</a><br /></td></tr>
 <tr class="separator:a4cadefb192f4184ca984e2d33786edca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c791e71342b16fe06ed31e0f7a297e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWaiting__Area.html#a4c791e71342b16fe06ed31e0f7a297e8">ape</a> (const string &amp;x, int identity, int memory, int time)</td></tr>
-<tr class="memdesc:a4c791e71342b16fe06ed31e0f7a297e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the values of a procces and a priority id and if everything goes right, adds the proccess to the waiting area with that priority id.  <a href="classWaiting__Area.html#a4c791e71342b16fe06ed31e0f7a297e8">More...</a><br /></td></tr>
+<tr class="memdesc:a4c791e71342b16fe06ed31e0f7a297e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the values of a proccess and a priority id and if everything goes right, adds the proccess to the waiting area with that priority id.  <a href="classWaiting__Area.html#a4c791e71342b16fe06ed31e0f7a297e8">More...</a><br /></td></tr>
 <tr class="separator:a4c791e71342b16fe06ed31e0f7a297e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae35218147d2e213a038ea8469b502396"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWaiting__Area.html#ae35218147d2e213a038ea8469b502396">epc</a> (int n, <a class="el" href="classCluster.html">Cluster</a> &amp;clust)</td></tr>
 <tr class="memdesc:ae35218147d2e213a038ea8469b502396"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a positive number, n and tries to send n waiting <br  />
@@ -123,7 +123,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>It represents a waiting area. </p>
-<p>Here we store the processes waiting to be sended to the cluster sorted by tehir priority. </p>
+<p>Here we store the processes waiting to be sended to the cluster sorted by their priority. </p>
 
 <p class="definition">Definition at line <a class="el" href="Waiting__Area_8hh_source.html#l00026">26</a> of file <a class="el" href="Waiting__Area_8hh_source.html">Waiting_Area.hh</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -215,9 +215,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Reads a priority identificator and if everything it's correct it adds the priority to the waiting area. </p>
-<dl class="section pre"><dt>Precondition</dt><dd>A priority identificator. </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>If the identificator already exists it returns false, if not, it adds the priority to the waiting area without pending processes and returns true. </dd></dl>
+<p>Reads a priority identification and if everything it's correct it adds the priority to the waiting area. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>A priority identification. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>If the identification already exists it returns false, if not, it adds the priority to the waiting area without pending processes and returns true. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Waiting__Area_8cc_source.html#l00094">94</a> of file <a class="el" href="Waiting__Area_8cc_source.html">Waiting_Area.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                     {</div>
@@ -271,8 +271,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Reads the values of a procces and a priority id and if everything goes right, adds the proccess to the waiting area with that priority id. </p>
-<dl class="section pre"><dt>Precondition</dt><dd>A process and a pirority identificator ready to be read. </dd></dl>
+<p>Reads the values of a proccess and a priority id and if everything goes right, adds the proccess to the waiting area with that priority id. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>A process and a priority identification ready to be read. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>If the id priority doesn't exist returns 101, if a process with that id and priority already exists it returns 102, if not it adds the process and returns 100. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Waiting__Area_8cc_source.html#l00116">116</a> of file <a class="el" href="Waiting__Area_8cc_source.html">Waiting_Area.cc</a>.</p>
@@ -304,9 +304,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Reads a priority identificator and if everything it's correct it removes this priority from the waiting area. </p>
-<dl class="section pre"><dt>Precondition</dt><dd>A priority identificator. </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>If the identificator doesn't exist returns 101, if it has pending processes it returns 102, if not, it removes this priority from the waiting area and returns 100. </dd></dl>
+<p>Reads a priority identification and if everything it's correct it removes this priority from the waiting area. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>A priority identification. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>If the identification doesn't exist returns 101, if it has pending processes it returns 102, if not, it removes this priority from the waiting area and returns 100. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Waiting__Area_8cc_source.html#l00105">105</a> of file <a class="el" href="Waiting__Area_8cc_source.html">Waiting_Area.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                    {</div>
@@ -626,7 +626,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aWaiting__Area_8cc_html_a9b486d34a6563c22490430dab5fb3d62"><div class="ttname"><a href="Waiting__Area_8cc.html#a9b486d34a6563c22490430dab5fb3d62">area_it</a></div><div class="ttdeci">map&lt; string, list&lt; Process &gt; &gt;::iterator area_it</div><div class="ttdef"><b>Definition:</b> <a href="Waiting__Area_8cc_source.html#l00016">Waiting_Area.cc:16</a></div></div>
 <div class="ttc" id="aWaiting__Area_8cc_html_a52d31adeea04f85b13aa95b6fc9fcd6e"><div class="ttname"><a href="Waiting__Area_8cc.html#a52d31adeea04f85b13aa95b6fc9fcd6e">cat_ct</a></div><div class="ttdeci">list&lt; Process &gt;::const_iterator cat_ct</div><div class="ttdef"><b>Definition:</b> <a href="Waiting__Area_8cc_source.html#l00021">Waiting_Area.cc:21</a></div></div>
 <div class="ttc" id="aWaiting__Area_8cc_html_a31bb8ebe283c7d5565da749a9e5527f3"><div class="ttname"><a href="Waiting__Area_8cc.html#a31bb8ebe283c7d5565da749a9e5527f3">siu_it</a></div><div class="ttdeci">map&lt; string, pair&lt; int, int &gt; &gt;::iterator siu_it</div><div class="ttdef"><b>Definition:</b> <a href="Waiting__Area_8cc_source.html#l00024">Waiting_Area.cc:24</a></div></div>
-<div class="ttc" id="aclassCluster_html_a93fb7b595036497a78e75a54947ae551"><div class="ttname"><a href="classCluster.html#a93fb7b595036497a78e75a54947ae551">Cluster::recive_processes</a></div><div class="ttdeci">bool recive_processes(Process a)</div><div class="ttdoc">Recives a process from the waiting area, finds the best cpu for it and if it can it adds the process ...</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00093">Cluster.cc:93</a></div></div>
+<div class="ttc" id="aclassCluster_html_a93fb7b595036497a78e75a54947ae551"><div class="ttname"><a href="classCluster.html#a93fb7b595036497a78e75a54947ae551">Cluster::recive_processes</a></div><div class="ttdeci">bool recive_processes(Process a)</div><div class="ttdoc">Receives a process from the waiting area, finds the best cpu for it, if it's possible,...</div><div class="ttdef"><b>Definition:</b> <a href="Cluster_8cc_source.html#l00093">Cluster.cc:93</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

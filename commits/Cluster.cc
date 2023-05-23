@@ -106,9 +106,9 @@ bool Cluster::recive_processes(Process a) {
 }
 
 int Cluster::mc(string x) {
-    clus_ct it = conj.lower_bound(x);
+    clus_ct it = conj.find(x);
 
-    if (it == conj.end() or it->first != x) return 101;
+    if (it == conj.end()) return 101;
     if (!it->second.active_processes()) return 102;
     if (!it->second.yn_leaf()) return 103;
 
@@ -129,9 +129,9 @@ void Cluster::write_bintree(ord_ct cluster) const {
 }
 
 bool Cluster::cmp(string x) {
-    clus_it it = conj.lower_bound(x);
+    clus_it it = conj.find(x);
 
-    if (it == conj.end() or it->first != x) return false;
+    if (it == conj.end()) return false;
     if (it->second.what_ffree() <= it->second.what_mema()) {
         it->second.compactar();
     }

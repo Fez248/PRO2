@@ -18,7 +18,7 @@ typedef clus::iterator& cit;
 
 /**
     @class Cluster
-    @brief It represents a clsuter
+    @brief It represents a cluster
 
     The cluster is a binary tree where his components are processors, cpus.
     It needs to have at least one cpu.
@@ -26,8 +26,8 @@ typedef clus::iterator& cit;
 
 class Cluster {
     private:
-    BinTree<string> cluster;
-    map<string, Cpu> conj;
+    BinTree<string> cluster; //BinTree with the id of cpus to keep order
+    map<string, Cpu> conj; //Map with the id and the cpus to access them
 
     /**
         @brief Reads a cluster and sets the leaf value of the processors.
@@ -51,7 +51,7 @@ class Cluster {
         read_bintree() and the new cluster is inserted in its' position.
 
         \pre The new cluster ready to be read on the console, a initialized
-        and garanteed that p exists, it doesn't have processes and it's
+        and guaranteed that p exists, it doesn't have processes and it's
         a leaf of the tree and p initialized.
         \post The new cluster a contains the old cluster and the new one in
         the position of p.
@@ -63,12 +63,8 @@ class Cluster {
         and id = identity. It returns an iterator pointing to the best option,
         if it doesn't fit in any cpu it returns an iterator pointing to end().
 
-        \pre The new cluster ready to be read on the console, a initialized
-        and garanteed that p exists, it doesn't have processes and it's
-        a leaf of the tree and p initialized. Ite initialized pointing
-        to end().
-        \post The new cluster a contains the old cluster and the new one in
-        the position of p.
+        \pre mem, identity, ite and can initialized.
+        \post ite points to the best cpu to add the process.
     */
     void find_best(const int mem, const int identity, cit ite, ord_ct can);
 
@@ -95,32 +91,32 @@ class Cluster {
         erases x from the map and calls reread().
 
         \pre Initialized x.
-        \post If the cpu doesn't exist it returns 101, if it has any active 
-        process it returns 102 and if it has auxiliar cpus it returns 103. 
+        \post If the cpu doesn't exist, it returns 101, if it has any active 
+        process it returns 102 and if it has auxiliary cpus it returns 103. 
         If not, it calls reread() and returns 100.
     */
     int mc(string x);
 
     /**
         @brief Takes the id of a cpu, and the values of a process, checks
-        the errors, and if evrything goes right it adds the process to the
+        the errors, and if everything goes right it adds the process to the
         cpu.
 
         \pre All variables initialized.
-        \post If the cpu doesn't exist it returns 101, if not it calls
+        \post If the cpu doesn't exist, it returns 101, if not it calls
         add_process_cpu and returns the value this function returns,
-        indicating if the process has been succesfull or not. If so,
+        indicating if the process has been successful or not. If so,
         the process has been added.
     */
     int app(const string& x, int identity, int memmory, int time);
 
     /**
         @brief Takes a cpu id (x) and the identity of a process
-        (identity). If the cpu exists and the process too it removes
+        (identity). If the cpu exists and the process too, it removes
         it from the cpu.
 
         \pre A process and a cpu id initialized.
-        \post If the cpu doesn't exist it returns 101, if it does
+        \post If the cpu doesn't exist, it returns 101, if it does
         exist, it calls remove_process_cpu() which removes the process and
         returns the a number indicating if the operation has been completed.
     */
@@ -135,10 +131,10 @@ class Cluster {
     void at(int t);
 
     /**
-        @brief Finds a cpu in the cluster and prints his processes.
+        @brief Finds a cpu in the cluster and prints its processes.
 
         \pre Initialized x.
-        \post If the cpu doesn't exist it returns false, if not, 
+        \post If the cpu doesn't exist, it returns false, if not, 
         it prints his processes with their information and returns true.
     */
     bool ipro(const string& x) const;
@@ -161,11 +157,11 @@ class Cluster {
     void iec() const;
 
     /**
-        @brief Compacts the memmory of a cpu.
+        @brief Compacts the memory of a cpu.
 
         \pre A cpu id.
-        \post If the cpu id doesn't exist it returns false, if not, it 
-        compacts it's memmory moving all the processes to the beggining of 
+        \post If the cpu id doesn't exist, it returns false, if not, it 
+        compacts its memory moving all the processes to the beginning of 
         the memory respecting the order and returns true.
     */
     bool cmp(string x);
@@ -174,13 +170,13 @@ class Cluster {
         @brief Compacts all the cpus.
 
         \pre <em>True</em>.
-        \post All the memmory moduls from all the cpus have been compacted.
+        \post All the memory modules from all the cpus have been compacted.
     */
     void cmc();
 
     /**
-        @brief Recives a process from the waiting area, finds the best cpu
-        for it and if it can it adds the process to the cluster.
+        @brief Receives a process from the waiting area, finds the best cpu
+        for it, if it's possible, it adds the process to the cluster.
 
         \pre <em>True</em>.
         \post If the process it's added it returns true, if not it

@@ -20,7 +20,7 @@ typedef map<int, pair<int, int>>::iterator& dit;
 
     The processor has a memory with limited space and it can contain 
     processes, each one with a 'delta' time needed to be completed and 
-    stored in crhonological order
+    stored in chronological order
 */
 
 class Cpu {
@@ -37,9 +37,9 @@ class Cpu {
     map<int, set<int>> es;              //key -> empty space in front 
                                         //of a process
                                         //value -> set with directions of 
-                                        //memmory with that empty space
+                                        //memory with that empty space
 
-    map<int, pair<int,int>> diro;       //key -> direction of occuped memory
+    map<int, pair<int,int>> diro;       //key -> direction of occupied memory
                                         //value -> map with
                                         //key2 -> process id
                                         //value2 -> size of the process
@@ -82,7 +82,7 @@ class Cpu {
         \pre All variables initialized, proc_id, mem and time correspond to
         the data of the process and back represents the size of free memory
         where ffree its stored on the map of free memory.
-        \post The process has been aded to the memory of the cpu.
+        \post The process has been added to the memory of the cpu.
     */
     void relocate(int proc_id, int mem, int time, int back);
 
@@ -118,7 +118,7 @@ class Cpu {
         @brief Checks if the cpu is a leaf of the cluster.
 
         \pre The variable leaf has to bee initialized, this means the cpu
-        has to be intialized too.
+        has to be initalized too.
         \post Returns the value of leaf.
     */
     bool yn_leaf() const;
@@ -129,7 +129,7 @@ class Cpu {
 
         \pre Identity, memory and time initialized.
         \post If the process already exists it returns 102, if it doesn't fit 
-        it returns 103. If nothing of this hapenns, adds the process to the
+        it returns 103. If nothing of this happens, adds the process to the
         cou and returns 100.
     */
     int add_process_cpu(int identity, int memory, int time);
@@ -155,7 +155,7 @@ class Cpu {
     void advance(int delta);
 
     /**
-        @brief Returns the memory of the cpu, occuped and free memory.
+        @brief Returns the memory of the cpu, occupied and free memory.
 
         \pre <em>True</em>.
         \post Returns mema.
@@ -189,7 +189,7 @@ class Cpu {
     bool active_processes() const;
 
     /**
-        @brief Checks the erros and if everything goes right,
+        @brief Checks the errors and if everything goes right,
         returns the lowest space of free memory equal or greater
         than the variable mem.
 

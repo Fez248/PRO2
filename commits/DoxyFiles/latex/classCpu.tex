@@ -27,7 +27,7 @@ int \mbox{\hyperlink{classCpu_afb0ed7e26fffc54cbf585744cff7cfee}{remove\+\_\+pro
 void \mbox{\hyperlink{classCpu_a96daf4708917f5d0e2cc57d6fafcf628}{advance}} (int delta)
 \begin{DoxyCompactList}\small\item\em Advances time to all the processes in delta unities. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCpu_a212bedb698bcbafd62164984840e774e}{what\+\_\+mema}} () const
-\begin{DoxyCompactList}\small\item\em Returns the memory of the cpu, occuped and free memory. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns the memory of the cpu, occupied and free memory. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCpu_a1c044199226fe7e981b51ea090442be9}{write\+\_\+cpu}} () const
 \begin{DoxyCompactList}\small\item\em Prints the cpu on the console. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCpu_a8a5089c0b316f426192da51912406a9e}{compactar}} ()
@@ -35,7 +35,7 @@ void \mbox{\hyperlink{classCpu_a8a5089c0b316f426192da51912406a9e}{compactar}} ()
 bool \mbox{\hyperlink{classCpu_aa5f2ffa91266c4cc83aabf7c7283df36}{active\+\_\+processes}} () const
 \begin{DoxyCompactList}\small\item\em Tells if the cpu has any active process or not. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCpu_a99376a5e5ca2e8f98800be1a3fe80fae}{get\+\_\+memory}} (int \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}, int identity) const
-\begin{DoxyCompactList}\small\item\em Checks the erros and if everything goes right, returns the lowest space of free memory equal or greater than the variable mem. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Checks the errors and if everything goes right, returns the lowest space of free memory equal or greater than the variable mem. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCpu_af62d530892364ea8530cab12c2ec1414}{space\+\_\+left}} () const
 \begin{DoxyCompactList}\small\item\em Returns the value of the free space left on the cpu, N\+OT consecutive space, the whole free space. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCpu_a5d1fda6b801f16dbb802feab06a3f719}{what\+\_\+ffree}} () const
@@ -73,7 +73,7 @@ map$<$ int, pair$<$ int, int $>$ $>$ \mbox{\hyperlink{classCpu_aa279093f84e550b4
 \doxysubsection{Detailed Description}
 It represents a cpu, a processor. 
 
-The processor has a memory with limited space and it can contain processes, each one with a \textquotesingle{}delta\textquotesingle{} time needed to be completed and stored in crhonological order 
+The processor has a memory with limited space and it can contain processes, each one with a \textquotesingle{}delta\textquotesingle{} time needed to be completed and stored in chronological order 
 
 Definition at line 26 of file Cpu.\+hh.
 
@@ -146,13 +146,13 @@ True if it\textquotesingle{}s empty and false if it has at least one process.
 \end{DoxyPostcond}
 
 
-Definition at line 265 of file Cpu.\+cc.
+Definition at line 258 of file Cpu.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{265                                  \{}
-\DoxyCodeLine{266     \textcolor{keywordflow}{return} \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.empty();}
-\DoxyCodeLine{267 \}}
+\DoxyCodeLine{258                                  \{}
+\DoxyCodeLine{259     \textcolor{keywordflow}{return} \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.empty();}
+\DoxyCodeLine{260 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCpu_acd4b335a98724b7ac9c3f77df6a63fa8}\label{classCpu_acd4b335a98724b7ac9c3f77df6a63fa8}} 
@@ -169,7 +169,7 @@ Checks the errors and adds the process to the cpu if everything goes right.
 Identity, memory and time initialized. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondition}
-If the process already exists it returns 102, if it doesn\textquotesingle{}t fit it returns 103. If nothing of this hapenns, adds the process to the cou and returns 100. 
+If the process already exists it returns 102, if it doesn\textquotesingle{}t fit it returns 103. If nothing of this happens, adds the process to the cou and returns 100. 
 \end{DoxyPostcond}
 
 
@@ -178,8 +178,8 @@ Definition at line 97 of file Cpu.\+cc.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{97                                                            \{}
-\DoxyCodeLine{98     \mbox{\hyperlink{Cpu_8cc_aef6f0e4a23d5816882c3da0456af9d17}{mem\_ct}} it = \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.lower\_bound(identity);}
-\DoxyCodeLine{99     \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.end() and it-\/>first == identity) \textcolor{keywordflow}{return} 102;}
+\DoxyCodeLine{98     \mbox{\hyperlink{Cpu_8cc_aef6f0e4a23d5816882c3da0456af9d17}{mem\_ct}} it = \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.find(identity);}
+\DoxyCodeLine{99     \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.end()) \textcolor{keywordflow}{return} 102;}
 \DoxyCodeLine{100 }
 \DoxyCodeLine{101     \mbox{\hyperlink{Cpu_8cc_a1b0daefe2151c1d7a94f73f54f342211}{dir\_it}} it2 = \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.lower\_bound(memory);}
 \DoxyCodeLine{102     \textcolor{keywordflow}{if} (it2 == \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.end()) \textcolor{keywordflow}{return} 103;}
@@ -199,21 +199,24 @@ Definition at line 97 of file Cpu.\+cc.
 \DoxyCodeLine{116         \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}[mem\_ava -\/ memory].insert(memory + direction);}
 \DoxyCodeLine{117     \}}
 \DoxyCodeLine{118 }
-\DoxyCodeLine{119     \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.emplace(identity, \mbox{\hyperlink{classProcess}{Process}} (identity, memory, time, direction));}
-\DoxyCodeLine{120     \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.emplace(direction, make\_pair(identity, memory));}
-\DoxyCodeLine{121 }
-\DoxyCodeLine{122     \textcolor{keywordflow}{if} (it2-\/>second.empty()) \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.erase(it2);}
-\DoxyCodeLine{123 }
-\DoxyCodeLine{124     \textcolor{keywordflow}{if} (need\_check and direction == \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}}) \{}
-\DoxyCodeLine{125         \mbox{\hyperlink{Cpu_8cc_a2c85688cf7c7dd952c981fd9f82746ef}{naio\_it}} itc = \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.upper\_bound(direction);}
-\DoxyCodeLine{126         \textcolor{keywordflow}{if} (itc == \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.end()) \{}
-\DoxyCodeLine{127             \textcolor{keywordflow}{if} (direction + memory == \mbox{\hyperlink{classCpu_adebb3064aef3263f6e4084768059ae25}{mema}}) \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}} = \mbox{\hyperlink{classCpu_adebb3064aef3263f6e4084768059ae25}{mema}} + 1;}
-\DoxyCodeLine{128             \textcolor{keywordflow}{else} \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}} = direction + memory;}
-\DoxyCodeLine{129         \}}
-\DoxyCodeLine{130         \textcolor{keywordflow}{else} \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}} = \mbox{\hyperlink{classCpu_a873e3d5fc917369b8649281e7196c824}{check\_ffree}}(itc-\/>first, itc-\/>second.second, itc);}
-\DoxyCodeLine{131     \}}
-\DoxyCodeLine{132     \textcolor{keywordflow}{return} 100;}
-\DoxyCodeLine{133 \}}
+\DoxyCodeLine{119     \textcolor{comment}{//We add the process with its id to out map of <id, Process>}}
+\DoxyCodeLine{120     \textcolor{comment}{//We also add the process to the map of used directions}}
+\DoxyCodeLine{121     \textcolor{comment}{//<direction, <id, size>>}}
+\DoxyCodeLine{122     \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.emplace(identity, \mbox{\hyperlink{classProcess}{Process}} (identity, memory, time, direction));}
+\DoxyCodeLine{123     \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.emplace(direction, make\_pair(identity, memory));}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125     \textcolor{keywordflow}{if} (it2-\/>second.empty()) \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.erase(it2);}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127     \textcolor{keywordflow}{if} (need\_check and direction == \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}}) \{}
+\DoxyCodeLine{128         \mbox{\hyperlink{Cpu_8cc_a2c85688cf7c7dd952c981fd9f82746ef}{naio\_it}} itc = \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.upper\_bound(direction);}
+\DoxyCodeLine{129         \textcolor{keywordflow}{if} (itc == \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.end()) \{}
+\DoxyCodeLine{130             \textcolor{keywordflow}{if} (direction + memory == \mbox{\hyperlink{classCpu_adebb3064aef3263f6e4084768059ae25}{mema}}) \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}} = \mbox{\hyperlink{classCpu_adebb3064aef3263f6e4084768059ae25}{mema}} + 1;}
+\DoxyCodeLine{131             \textcolor{keywordflow}{else} \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}} = direction + memory;}
+\DoxyCodeLine{132         \}}
+\DoxyCodeLine{133         \textcolor{keywordflow}{else} \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}} = \mbox{\hyperlink{classCpu_a873e3d5fc917369b8649281e7196c824}{check\_ffree}}(itc-\/>first, itc-\/>second.second, itc);}
+\DoxyCodeLine{134     \}}
+\DoxyCodeLine{135     \textcolor{keywordflow}{return} 100;}
+\DoxyCodeLine{136 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCpu_a96daf4708917f5d0e2cc57d6fafcf628}\label{classCpu_a96daf4708917f5d0e2cc57d6fafcf628}} 
@@ -234,25 +237,25 @@ All the processes of our memory have been advanced in time.
 \end{DoxyPostcond}
 
 
-Definition at line 196 of file Cpu.\+cc.
+Definition at line 189 of file Cpu.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{196                            \{}
-\DoxyCodeLine{197     \mbox{\hyperlink{Cpu_8cc_a41766767ec4e28df609e1bd5420266bf}{mem\_it}} it2 = \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.end();}
-\DoxyCodeLine{198     \mbox{\hyperlink{Cpu_8cc_a41766767ec4e28df609e1bd5420266bf}{mem\_it}} it = \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.begin();}
-\DoxyCodeLine{199     \textcolor{keywordtype}{int} back = 0;}
-\DoxyCodeLine{200 }
-\DoxyCodeLine{201     \textcolor{keywordflow}{while} (it != it2) \{}
-\DoxyCodeLine{202         \textcolor{keywordflow}{if} (!(it-\/>second.reducing(delta))) \{}
-\DoxyCodeLine{203             \mbox{\hyperlink{Cpu_8cc_a41766767ec4e28df609e1bd5420266bf}{mem\_it}} aux = it;}
-\DoxyCodeLine{204             ++aux;}
-\DoxyCodeLine{205             \mbox{\hyperlink{classCpu_afb0ed7e26fffc54cbf585744cff7cfee}{remove\_process\_cpu}}(it-\/>second.what\_id(), back);}
-\DoxyCodeLine{206             it = aux;}
-\DoxyCodeLine{207         \}}
-\DoxyCodeLine{208         \textcolor{keywordflow}{else} ++it;}
-\DoxyCodeLine{209     \} }
-\DoxyCodeLine{210 \}}
+\DoxyCodeLine{189                            \{}
+\DoxyCodeLine{190     \mbox{\hyperlink{Cpu_8cc_a41766767ec4e28df609e1bd5420266bf}{mem\_it}} it2 = \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.end();}
+\DoxyCodeLine{191     \mbox{\hyperlink{Cpu_8cc_a41766767ec4e28df609e1bd5420266bf}{mem\_it}} it = \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.begin();}
+\DoxyCodeLine{192     \textcolor{keywordtype}{int} back = 0;}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194     \textcolor{keywordflow}{while} (it != it2) \{}
+\DoxyCodeLine{195         \textcolor{keywordflow}{if} (!(it-\/>second.reducing(delta))) \{}
+\DoxyCodeLine{196             \mbox{\hyperlink{Cpu_8cc_a41766767ec4e28df609e1bd5420266bf}{mem\_it}} aux = it;}
+\DoxyCodeLine{197             ++aux;}
+\DoxyCodeLine{198             \mbox{\hyperlink{classCpu_afb0ed7e26fffc54cbf585744cff7cfee}{remove\_process\_cpu}}(it-\/>second.what\_id(), back);}
+\DoxyCodeLine{199             it = aux;}
+\DoxyCodeLine{200         \}}
+\DoxyCodeLine{201         \textcolor{keywordflow}{else} ++it;}
+\DoxyCodeLine{202     \} }
+\DoxyCodeLine{203 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCpu_a873e3d5fc917369b8649281e7196c824}\label{classCpu_a873e3d5fc917369b8649281e7196c824}} 
@@ -273,25 +276,25 @@ Ffree now has the lowest free direction of memory, in case that the cpu is full 
 \end{DoxyPostcond}
 
 
-Definition at line 212 of file Cpu.\+cc.
+Definition at line 205 of file Cpu.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{212                                                                     \{}
-\DoxyCodeLine{213     \textcolor{keywordtype}{int} aux = direction + tam;}
-\DoxyCodeLine{214     ++it;}
-\DoxyCodeLine{215     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.end()) \{}
-\DoxyCodeLine{216         \textcolor{keywordflow}{if} (aux == \mbox{\hyperlink{classCpu_adebb3064aef3263f6e4084768059ae25}{mema}}) \textcolor{keywordflow}{return} \mbox{\hyperlink{classCpu_adebb3064aef3263f6e4084768059ae25}{mema}} + 1;}
-\DoxyCodeLine{217         \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} aux;}
+\DoxyCodeLine{205                                                                     \{}
+\DoxyCodeLine{206     \textcolor{keywordtype}{int} aux = direction + tam;}
+\DoxyCodeLine{207     ++it;}
+\DoxyCodeLine{208     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.end()) \{}
+\DoxyCodeLine{209         \textcolor{keywordflow}{if} (aux == \mbox{\hyperlink{classCpu_adebb3064aef3263f6e4084768059ae25}{mema}}) \textcolor{keywordflow}{return} \mbox{\hyperlink{classCpu_adebb3064aef3263f6e4084768059ae25}{mema}} + 1;}
+\DoxyCodeLine{210         \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} aux;}
+\DoxyCodeLine{211     \}}
+\DoxyCodeLine{212     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{213         \textcolor{keywordtype}{int} newd = it-\/>first;}
+\DoxyCodeLine{214         \textcolor{keywordtype}{int} newt = it-\/>second.second;}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216         \textcolor{keywordflow}{if} (aux != newd) \textcolor{keywordflow}{return} aux;}
+\DoxyCodeLine{217         \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \mbox{\hyperlink{classCpu_a873e3d5fc917369b8649281e7196c824}{check\_ffree}}(newd, newt, it);}
 \DoxyCodeLine{218     \}}
-\DoxyCodeLine{219     \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{220         \textcolor{keywordtype}{int} newd = it-\/>first;}
-\DoxyCodeLine{221         \textcolor{keywordtype}{int} newt = it-\/>second.second;}
-\DoxyCodeLine{222 }
-\DoxyCodeLine{223         \textcolor{keywordflow}{if} (aux != newd) \textcolor{keywordflow}{return} aux;}
-\DoxyCodeLine{224         \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \mbox{\hyperlink{classCpu_a873e3d5fc917369b8649281e7196c824}{check\_ffree}}(newd, newt, it);}
-\DoxyCodeLine{225     \}}
-\DoxyCodeLine{226 \}}
+\DoxyCodeLine{219 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCpu_a8a5089c0b316f426192da51912406a9e}\label{classCpu_a8a5089c0b316f426192da51912406a9e}} 
@@ -312,36 +315,26 @@ The memory of the cpu has been compacted.
 \end{DoxyPostcond}
 
 
-Definition at line 169 of file Cpu.\+cc.
+Definition at line 172 of file Cpu.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{169                     \{}
-\DoxyCodeLine{170     \mbox{\hyperlink{Cpu_8cc_a2c85688cf7c7dd952c981fd9f82746ef}{naio\_it}} itf = \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.end();}
-\DoxyCodeLine{171     \mbox{\hyperlink{Cpu_8cc_a2c85688cf7c7dd952c981fd9f82746ef}{naio\_it}} it = \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.upper\_bound(\mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}});}
-\DoxyCodeLine{172     }
-\DoxyCodeLine{173     \textcolor{keywordflow}{while} (it != itf) \{}
-\DoxyCodeLine{174         \textcolor{keywordtype}{int} proc\_id = it-\/>second.first;}
-\DoxyCodeLine{175         \textcolor{keywordtype}{int} \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}} = it-\/>second.second;}
-\DoxyCodeLine{176         \textcolor{keywordtype}{int} back = 0;}
-\DoxyCodeLine{177         \mbox{\hyperlink{Cpu_8cc_a41766767ec4e28df609e1bd5420266bf}{mem\_it}} it2 = \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.lower\_bound(proc\_id);}
-\DoxyCodeLine{178         \textcolor{keywordtype}{int} time = it2-\/>second.what\_time();}
-\DoxyCodeLine{179 }
-\DoxyCodeLine{180         ++it;}
-\DoxyCodeLine{181         \mbox{\hyperlink{classCpu_afb0ed7e26fffc54cbf585744cff7cfee}{remove\_process\_cpu}}(proc\_id, back);}
-\DoxyCodeLine{182         \mbox{\hyperlink{classCpu_a106b8f4418820c19c0500c979e7ae818}{relocate}}(proc\_id, \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}, time, back);}
-\DoxyCodeLine{183         \mbox{\hyperlink{Cpu_8cc_a1b0daefe2151c1d7a94f73f54f342211}{dir\_it}} pff = \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.begin();}
-\DoxyCodeLine{184 }
-\DoxyCodeLine{185         \textcolor{keywordflow}{while} (pff != \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.end()) \{}
-\DoxyCodeLine{186             \textcolor{keywordflow}{if} (pff-\/>second.empty()) \{}
-\DoxyCodeLine{187                 \mbox{\hyperlink{Cpu_8cc_a1b0daefe2151c1d7a94f73f54f342211}{dir\_it}} aaa = pff;}
-\DoxyCodeLine{188                 ++pff;}
-\DoxyCodeLine{189                 \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.erase(aaa);}
-\DoxyCodeLine{190             \}}
-\DoxyCodeLine{191             \textcolor{keywordflow}{else} ++pff;}
-\DoxyCodeLine{192         \}}
-\DoxyCodeLine{193     \}}
-\DoxyCodeLine{194 \}}
+\DoxyCodeLine{172                     \{}
+\DoxyCodeLine{173     \mbox{\hyperlink{Cpu_8cc_a2c85688cf7c7dd952c981fd9f82746ef}{naio\_it}} itf = \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.end();}
+\DoxyCodeLine{174     \mbox{\hyperlink{Cpu_8cc_a2c85688cf7c7dd952c981fd9f82746ef}{naio\_it}} it = \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.upper\_bound(\mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}});}
+\DoxyCodeLine{175     }
+\DoxyCodeLine{176     \textcolor{keywordflow}{while} (it != itf) \{}
+\DoxyCodeLine{177         \textcolor{keywordtype}{int} proc\_id = it-\/>second.first;}
+\DoxyCodeLine{178         \textcolor{keywordtype}{int} \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}} = it-\/>second.second;}
+\DoxyCodeLine{179         \textcolor{keywordtype}{int} back = 0;}
+\DoxyCodeLine{180         \mbox{\hyperlink{Cpu_8cc_a41766767ec4e28df609e1bd5420266bf}{mem\_it}} it2 = \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.find(proc\_id);}
+\DoxyCodeLine{181         \textcolor{keywordtype}{int} time = it2-\/>second.what\_time();}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183         ++it;}
+\DoxyCodeLine{184         \mbox{\hyperlink{classCpu_afb0ed7e26fffc54cbf585744cff7cfee}{remove\_process\_cpu}}(proc\_id, back);}
+\DoxyCodeLine{185         \mbox{\hyperlink{classCpu_a106b8f4418820c19c0500c979e7ae818}{relocate}}(proc\_id, \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}, time, back);}
+\DoxyCodeLine{186     \}}
+\DoxyCodeLine{187 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCpu_a99376a5e5ca2e8f98800be1a3fe80fae}\label{classCpu_a99376a5e5ca2e8f98800be1a3fe80fae}} 
@@ -352,7 +345,7 @@ Definition at line 169 of file Cpu.\+cc.
 
 
 
-Checks the erros and if everything goes right, returns the lowest space of free memory equal or greater than the variable mem. 
+Checks the errors and if everything goes right, returns the lowest space of free memory equal or greater than the variable mem. 
 
 \begin{DoxyPrecond}{Precondition}
 Both variables initialized mem and identity. 
@@ -362,18 +355,18 @@ Returns -\/1 if it doesn\textquotesingle{}t fit or if it already exists a proces
 \end{DoxyPostcond}
 
 
-Definition at line 249 of file Cpu.\+cc.
+Definition at line 242 of file Cpu.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{249                                                \{}
-\DoxyCodeLine{250     \mbox{\hyperlink{Cpu_8cc_ae773180a951bf80205e6106de1d13466}{dir\_ct}} it2 = \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.lower\_bound(\mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}});}
-\DoxyCodeLine{251     \mbox{\hyperlink{Cpu_8cc_aef6f0e4a23d5816882c3da0456af9d17}{mem\_ct}} it = \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.lower\_bound(identity);}
-\DoxyCodeLine{252 }
-\DoxyCodeLine{253     \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.end() and it-\/>first == identity) \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{254     \textcolor{keywordflow}{if} (it2 == \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.end()) \textcolor{keywordflow}{return} -\/1;}
-\DoxyCodeLine{255     \textcolor{keywordflow}{return} it2-\/>first;}
-\DoxyCodeLine{256 \}}
+\DoxyCodeLine{242                                                \{}
+\DoxyCodeLine{243     \mbox{\hyperlink{Cpu_8cc_ae773180a951bf80205e6106de1d13466}{dir\_ct}} it2 = \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.lower\_bound(\mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}});}
+\DoxyCodeLine{244     \mbox{\hyperlink{Cpu_8cc_aef6f0e4a23d5816882c3da0456af9d17}{mem\_ct}} it = \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.find(identity);}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246     \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.end()) \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{247     \textcolor{keywordflow}{if} (it2 == \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.end()) \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{248     \textcolor{keywordflow}{return} it2-\/>first;}
+\DoxyCodeLine{249 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCpu_a8ec8b3e013b2bd949bb97a86e9397850}\label{classCpu_a8ec8b3e013b2bd949bb97a86e9397850}} 
@@ -394,20 +387,20 @@ The direction has been added, if the size of memory didn\textquotesingle{}t exis
 \end{DoxyPostcond}
 
 
-Definition at line 228 of file Cpu.\+cc.
+Definition at line 221 of file Cpu.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{228                                        \{}
-\DoxyCodeLine{229     \mbox{\hyperlink{Cpu_8cc_a1b0daefe2151c1d7a94f73f54f342211}{dir\_it}} ite = \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.find(value);}
-\DoxyCodeLine{230 }
-\DoxyCodeLine{231     \textcolor{keywordflow}{if} (ite != \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.end()) ite-\/>second.insert(key);}
-\DoxyCodeLine{232     \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{233         set<int> z;}
-\DoxyCodeLine{234         z.insert(key);}
-\DoxyCodeLine{235         \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.insert(make\_pair(value, z));}
-\DoxyCodeLine{236     \}}
-\DoxyCodeLine{237 \}}
+\DoxyCodeLine{221                                        \{}
+\DoxyCodeLine{222     \mbox{\hyperlink{Cpu_8cc_a1b0daefe2151c1d7a94f73f54f342211}{dir\_it}} ite = \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.find(value);}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224     \textcolor{keywordflow}{if} (ite != \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.end()) ite-\/>second.insert(key);}
+\DoxyCodeLine{225     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{226         set<int> z;}
+\DoxyCodeLine{227         z.insert(key);}
+\DoxyCodeLine{228         \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.insert(make\_pair(value, z));}
+\DoxyCodeLine{229     \}}
+\DoxyCodeLine{230 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCpu_a6a1dd46ca32574aafda8ce5b77d97be7}\label{classCpu_a6a1dd46ca32574aafda8ce5b77d97be7}} 
@@ -428,13 +421,13 @@ Leaf is set to true.
 \end{DoxyPostcond}
 
 
-Definition at line 277 of file Cpu.\+cc.
+Definition at line 270 of file Cpu.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{277                   \{}
-\DoxyCodeLine{278     \mbox{\hyperlink{classCpu_a7d2b4436d602ffaf5023a080f7974bd1}{leaf}} = \textcolor{keyword}{true};}
-\DoxyCodeLine{279 \}}
+\DoxyCodeLine{270                   \{}
+\DoxyCodeLine{271     \mbox{\hyperlink{classCpu_a7d2b4436d602ffaf5023a080f7974bd1}{leaf}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{272 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCpu_a106b8f4418820c19c0500c979e7ae818}\label{classCpu_a106b8f4418820c19c0500c979e7ae818}} 
@@ -451,47 +444,47 @@ Same functionality as \mbox{\hyperlink{classCpu_acd4b335a98724b7ac9c3f77df6a63fa
 All variables initialized, proc\+\_\+id, mem and time correspond to the data of the process and back represents the size of free memory where ffree its stored on the map of free memory. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondition}
-The process has been aded to the memory of the cpu. 
+The process has been added to the memory of the cpu. 
 \end{DoxyPostcond}
 
 
-Definition at line 135 of file Cpu.\+cc.
+Definition at line 138 of file Cpu.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{135                                                            \{}
-\DoxyCodeLine{136     \textcolor{comment}{//this function that does the same as add\_process\_cpu() but here we know}}
-\DoxyCodeLine{137     \textcolor{comment}{//from before where are we going to put the process, ffree and the size}}
-\DoxyCodeLine{138     \textcolor{comment}{//we are going to use (back), even if we don't use all of the space}}
-\DoxyCodeLine{139     \mbox{\hyperlink{classCpu_aac2aadcb8ae5b0e5b337f1f886164e45}{max}} -\/= \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}};}
-\DoxyCodeLine{140     \textcolor{keywordtype}{int} direction = \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}};}
-\DoxyCodeLine{141     \mbox{\hyperlink{Cpu_8cc_a1b0daefe2151c1d7a94f73f54f342211}{dir\_it}} it2 = \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.find(back);}
-\DoxyCodeLine{142     it2-\/>second.erase(\mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}});}
-\DoxyCodeLine{143 }
-\DoxyCodeLine{144     \textcolor{keywordtype}{bool} need\_check = \textcolor{keyword}{true};}
-\DoxyCodeLine{145 }
-\DoxyCodeLine{146     \textcolor{keywordflow}{if} (back > \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}) \{}
-\DoxyCodeLine{147         \textcolor{keywordflow}{if} (direction == \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}}) \{}
-\DoxyCodeLine{148             need\_check = \textcolor{keyword}{false};}
-\DoxyCodeLine{149             \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}} = \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}} + direction;}
-\DoxyCodeLine{150         \}}
-\DoxyCodeLine{151         \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}[back -\/ \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}].insert(\mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}} + direction);}
-\DoxyCodeLine{152     \}}
-\DoxyCodeLine{153 }
-\DoxyCodeLine{154     \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.emplace(proc\_id, \mbox{\hyperlink{classProcess}{Process}} (proc\_id, \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}, time, direction));}
-\DoxyCodeLine{155     \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.emplace(direction, make\_pair(proc\_id, \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}));}
+\DoxyCodeLine{138                                                            \{}
+\DoxyCodeLine{139     \textcolor{comment}{//this function that does the same as add\_process\_cpu() but here we know}}
+\DoxyCodeLine{140     \textcolor{comment}{//from before where are we going to put the process, ffree and the size}}
+\DoxyCodeLine{141     \textcolor{comment}{//we are going to use (back), even if we don't use all of the space}}
+\DoxyCodeLine{142     \mbox{\hyperlink{classCpu_aac2aadcb8ae5b0e5b337f1f886164e45}{max}} -\/= \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}};}
+\DoxyCodeLine{143     \textcolor{keywordtype}{int} direction = \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}};}
+\DoxyCodeLine{144     \mbox{\hyperlink{Cpu_8cc_a1b0daefe2151c1d7a94f73f54f342211}{dir\_it}} it2 = \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.find(back);}
+\DoxyCodeLine{145     it2-\/>second.erase(\mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}});}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     \textcolor{keywordtype}{bool} need\_check = \textcolor{keyword}{true};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149     \textcolor{keywordflow}{if} (back > \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}) \{}
+\DoxyCodeLine{150         \textcolor{keywordflow}{if} (direction == \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}}) \{}
+\DoxyCodeLine{151             need\_check = \textcolor{keyword}{false};}
+\DoxyCodeLine{152             \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}} = \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}} + direction;}
+\DoxyCodeLine{153         \}}
+\DoxyCodeLine{154         \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}[back -\/ \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}].insert(\mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}} + direction);}
+\DoxyCodeLine{155     \}}
 \DoxyCodeLine{156 }
-\DoxyCodeLine{157     \textcolor{keywordflow}{if} (it2-\/>second.empty()) \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.erase(it2);}
-\DoxyCodeLine{158 }
-\DoxyCodeLine{159     \textcolor{keywordflow}{if} (need\_check and direction == \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}}) \{}
-\DoxyCodeLine{160         \mbox{\hyperlink{Cpu_8cc_a2c85688cf7c7dd952c981fd9f82746ef}{naio\_it}} itc = \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.upper\_bound(direction);}
-\DoxyCodeLine{161         \textcolor{keywordflow}{if} (itc == \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.end()) \{}
-\DoxyCodeLine{162             \textcolor{keywordflow}{if} (direction + \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}} == \mbox{\hyperlink{classCpu_adebb3064aef3263f6e4084768059ae25}{mema}}) \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}} = \mbox{\hyperlink{classCpu_adebb3064aef3263f6e4084768059ae25}{mema}} + 1;}
-\DoxyCodeLine{163             \textcolor{keywordflow}{else} \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}} = direction + \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}};}
-\DoxyCodeLine{164         \}}
-\DoxyCodeLine{165         \textcolor{keywordflow}{else} \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}} = \mbox{\hyperlink{classCpu_a873e3d5fc917369b8649281e7196c824}{check\_ffree}}(itc-\/>first, itc-\/>second.second, itc);}
-\DoxyCodeLine{166     \}}
-\DoxyCodeLine{167 \}}
+\DoxyCodeLine{157     \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.emplace(proc\_id, \mbox{\hyperlink{classProcess}{Process}} (proc\_id, \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}, time, direction));}
+\DoxyCodeLine{158     \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.emplace(direction, make\_pair(proc\_id, \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}}));}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     \textcolor{keywordflow}{if} (it2-\/>second.empty()) \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.erase(it2);}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162     \textcolor{keywordflow}{if} (need\_check and direction == \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}}) \{}
+\DoxyCodeLine{163         \mbox{\hyperlink{Cpu_8cc_a2c85688cf7c7dd952c981fd9f82746ef}{naio\_it}} itc = \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.upper\_bound(direction);}
+\DoxyCodeLine{164         \textcolor{keywordflow}{if} (itc == \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.end()) \{}
+\DoxyCodeLine{165             \textcolor{keywordflow}{if} (direction + \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}} == \mbox{\hyperlink{classCpu_adebb3064aef3263f6e4084768059ae25}{mema}}) \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}} = \mbox{\hyperlink{classCpu_adebb3064aef3263f6e4084768059ae25}{mema}} + 1;}
+\DoxyCodeLine{166             \textcolor{keywordflow}{else} \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}} = direction + \mbox{\hyperlink{Cpu_8cc_a6249481818bd0eaba64860eec50ca613}{mem}};}
+\DoxyCodeLine{167         \}}
+\DoxyCodeLine{168         \textcolor{keywordflow}{else} \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}} = \mbox{\hyperlink{classCpu_a873e3d5fc917369b8649281e7196c824}{check\_ffree}}(itc-\/>first, itc-\/>second.second, itc);}
+\DoxyCodeLine{169     \}}
+\DoxyCodeLine{170 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCpu_afb0ed7e26fffc54cbf585744cff7cfee}\label{classCpu_afb0ed7e26fffc54cbf585744cff7cfee}} 
@@ -556,7 +549,7 @@ Definition at line 34 of file Cpu.\+cc.
 \DoxyCodeLine{71         \mbox{\hyperlink{classCpu_a5c0eace532c8655a72e44ad06896fc07}{update\_set\_and\_erase}}(0, b);}
 \DoxyCodeLine{72     \}}
 \DoxyCodeLine{73 }
-\DoxyCodeLine{74     \textcolor{comment}{//the same but with the spacein front of the process}}
+\DoxyCodeLine{74     \textcolor{comment}{//the same but with the space in front of the process}}
 \DoxyCodeLine{75     \textcolor{keywordflow}{if} (++itf != \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.end()) \{}
 \DoxyCodeLine{76         \textcolor{keywordtype}{int} e;}
 \DoxyCodeLine{77         e = itf-\/>first;}
@@ -598,13 +591,13 @@ Returns max.
 \end{DoxyPostcond}
 
 
-Definition at line 269 of file Cpu.\+cc.
+Definition at line 262 of file Cpu.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{269                           \{}
-\DoxyCodeLine{270     \textcolor{keywordflow}{return} \mbox{\hyperlink{classCpu_aac2aadcb8ae5b0e5b337f1f886164e45}{max}};}
-\DoxyCodeLine{271 \}}
+\DoxyCodeLine{262                           \{}
+\DoxyCodeLine{263     \textcolor{keywordflow}{return} \mbox{\hyperlink{classCpu_aac2aadcb8ae5b0e5b337f1f886164e45}{max}};}
+\DoxyCodeLine{264 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCpu_a5c0eace532c8655a72e44ad06896fc07}\label{classCpu_a5c0eace532c8655a72e44ad06896fc07}} 
@@ -625,16 +618,16 @@ The direction has been removed, if size turns to be empty it\textquotesingle{}s 
 \end{DoxyPostcond}
 
 
-Definition at line 258 of file Cpu.\+cc.
+Definition at line 251 of file Cpu.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{258                                                  \{}
-\DoxyCodeLine{259     \mbox{\hyperlink{Cpu_8cc_a1b0daefe2151c1d7a94f73f54f342211}{dir\_it}} ite = \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.find(key);}
-\DoxyCodeLine{260     ite-\/>second.erase(diff);}
-\DoxyCodeLine{261 }
-\DoxyCodeLine{262     \textcolor{keywordflow}{if} (ite-\/>second.empty()) \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.erase(ite);}
-\DoxyCodeLine{263 \}}
+\DoxyCodeLine{251                                                  \{}
+\DoxyCodeLine{252     \mbox{\hyperlink{Cpu_8cc_a1b0daefe2151c1d7a94f73f54f342211}{dir\_it}} ite = \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.find(key);}
+\DoxyCodeLine{253     ite-\/>second.erase(diff);}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255     \textcolor{keywordflow}{if} (ite-\/>second.empty()) \mbox{\hyperlink{classCpu_a974e1abc9d6c02aed31bdef24afafda9}{es}}.erase(ite);}
+\DoxyCodeLine{256 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCpu_a5d1fda6b801f16dbb802feab06a3f719}\label{classCpu_a5d1fda6b801f16dbb802feab06a3f719}} 
@@ -655,13 +648,13 @@ Returns ffree.
 \end{DoxyPostcond}
 
 
-Definition at line 273 of file Cpu.\+cc.
+Definition at line 266 of file Cpu.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{273                           \{}
-\DoxyCodeLine{274     \textcolor{keywordflow}{return} \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}};}
-\DoxyCodeLine{275 \}}
+\DoxyCodeLine{266                           \{}
+\DoxyCodeLine{267     \textcolor{keywordflow}{return} \mbox{\hyperlink{classCpu_a3e06b4afd52f1b64f8f75f4cf2decb11}{ffree}};}
+\DoxyCodeLine{268 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCpu_a212bedb698bcbafd62164984840e774e}\label{classCpu_a212bedb698bcbafd62164984840e774e}} 
@@ -672,7 +665,7 @@ Definition at line 273 of file Cpu.\+cc.
 
 
 
-Returns the memory of the cpu, occuped and free memory. 
+Returns the memory of the cpu, occupied and free memory. 
 
 \begin{DoxyPrecond}{Precondition}
 {\itshape True}. 
@@ -682,13 +675,13 @@ Returns mema.
 \end{DoxyPostcond}
 
 
-Definition at line 285 of file Cpu.\+cc.
+Definition at line 278 of file Cpu.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{285                          \{}
-\DoxyCodeLine{286     \textcolor{keywordflow}{return} \mbox{\hyperlink{classCpu_adebb3064aef3263f6e4084768059ae25}{mema}};}
-\DoxyCodeLine{287 \}}
+\DoxyCodeLine{278                          \{}
+\DoxyCodeLine{279     \textcolor{keywordflow}{return} \mbox{\hyperlink{classCpu_adebb3064aef3263f6e4084768059ae25}{mema}};}
+\DoxyCodeLine{280 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCpu_a1c044199226fe7e981b51ea090442be9}\label{classCpu_a1c044199226fe7e981b51ea090442be9}} 
@@ -709,19 +702,19 @@ The cpu has been printed.
 \end{DoxyPostcond}
 
 
-Definition at line 239 of file Cpu.\+cc.
+Definition at line 232 of file Cpu.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{239                           \{}
-\DoxyCodeLine{240     \mbox{\hyperlink{Cpu_8cc_a0914957812c8e80fbf6b0f1ef43723ed}{naio\_ct}} itf = \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.end();}
-\DoxyCodeLine{241 }
-\DoxyCodeLine{242     \textcolor{keywordflow}{for} (\mbox{\hyperlink{Cpu_8cc_a0914957812c8e80fbf6b0f1ef43723ed}{naio\_ct}} it = \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.begin(); it != itf; ++it) \{}
-\DoxyCodeLine{243         \textcolor{keywordtype}{int} a = it-\/>second.first;}
-\DoxyCodeLine{244         \mbox{\hyperlink{Cpu_8cc_aef6f0e4a23d5816882c3da0456af9d17}{mem\_ct}} ita = \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.find(a);}
-\DoxyCodeLine{245         ita-\/>second.wr\_process();}
-\DoxyCodeLine{246     \}}
-\DoxyCodeLine{247 \}}
+\DoxyCodeLine{232                           \{}
+\DoxyCodeLine{233     \mbox{\hyperlink{Cpu_8cc_a0914957812c8e80fbf6b0f1ef43723ed}{naio\_ct}} itf = \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.end();}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235     \textcolor{keywordflow}{for} (\mbox{\hyperlink{Cpu_8cc_a0914957812c8e80fbf6b0f1ef43723ed}{naio\_ct}} it = \mbox{\hyperlink{classCpu_aa279093f84e550b4453addec33669709}{diro}}.begin(); it != itf; ++it) \{}
+\DoxyCodeLine{236         \textcolor{keywordtype}{int} a = it-\/>second.first;}
+\DoxyCodeLine{237         \mbox{\hyperlink{Cpu_8cc_aef6f0e4a23d5816882c3da0456af9d17}{mem\_ct}} ita = \mbox{\hyperlink{classCpu_a4e2ef25b9aecf49a9c2b6dbd702bebc0}{prl}}.find(a);}
+\DoxyCodeLine{238         ita-\/>second.wr\_process();}
+\DoxyCodeLine{239     \}}
+\DoxyCodeLine{240 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classCpu_a18cbf0e70ebe01d4cd2e57f65a5a588d}\label{classCpu_a18cbf0e70ebe01d4cd2e57f65a5a588d}} 
@@ -735,20 +728,20 @@ Definition at line 239 of file Cpu.\+cc.
 Checks if the cpu is a leaf of the cluster. 
 
 \begin{DoxyPrecond}{Precondition}
-The variable leaf has to bee initialized, this means the cpu has to be intialized too. 
+The variable leaf has to bee initialized, this means the cpu has to be initalized too. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondition}
 Returns the value of leaf. 
 \end{DoxyPostcond}
 
 
-Definition at line 281 of file Cpu.\+cc.
+Definition at line 274 of file Cpu.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{281                         \{}
-\DoxyCodeLine{282     \textcolor{keywordflow}{return} \mbox{\hyperlink{classCpu_a7d2b4436d602ffaf5023a080f7974bd1}{leaf}};}
-\DoxyCodeLine{283 \}}
+\DoxyCodeLine{274                         \{}
+\DoxyCodeLine{275     \textcolor{keywordflow}{return} \mbox{\hyperlink{classCpu_a7d2b4436d602ffaf5023a080f7974bd1}{leaf}};}
+\DoxyCodeLine{276 \}}
 
 \end{DoxyCode}
 

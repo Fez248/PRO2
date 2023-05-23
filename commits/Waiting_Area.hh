@@ -20,12 +20,12 @@ typedef list<Process> category;
     @brief It represents a waiting area
 
     Here we store the processes waiting to be sended to the cluster sorted 
-    by tehir priority.
+    by their priority.
 */
 
 class Waiting_Area {
     private:
-    map<string, list<Process>> wa;
+    map<string, list<Process>> wa; //priorities with a list of processes
     map<string, pair<int, int>> sera; //sended processes and rejected
 
     /**
@@ -64,33 +64,33 @@ class Waiting_Area {
     void read_waiting_area();
 
     /**
-        @brief Reads a priority identificator and if everything it's correct 
+        @brief Reads a priority identification and if everything it's correct 
         it adds the priority to the waiting area.
 
-        \pre A priority identificator.
-        \post If the identificator already exists it returns false, if not, 
+        \pre A priority identification.
+        \post If the identification already exists it returns false, if not, 
         it adds the priority to the waiting area without pending processes 
         and returns true.
     */
     bool ap(const string& x);
 
     /**
-        @brief Reads a priority identificator and if everything it's correct 
+        @brief Reads a priority identification and if everything it's correct 
         it removes this priority from the waiting area.
 
-        \pre A priority identificator.
-        \post If the identificator doesn't exist returns 101, if it has 
+        \pre A priority identification.
+        \post If the identification doesn't exist returns 101, if it has 
         pending processes it returns 102, if not, it removes this priority 
         from the waiting area and returns 100.
     */
     int bp(const string& x);
 
     /**
-        @brief Reads the values of a procces and a priority id and if 
+        @brief Reads the values of a proccess and a priority id and if 
         everything goes right, adds the proccess to the waiting area 
         with that priority id.
 
-        \pre A process and a pirority identificator ready to be read.
+        \pre A process and a priority identification ready to be read.
         \post If the id priority doesn't exist returns 101, if a process with
         that id and priority already exists it returns 102, if not it adds 
         the process and returns 100.

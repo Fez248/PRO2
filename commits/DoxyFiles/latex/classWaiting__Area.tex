@@ -17,11 +17,11 @@ It represents a waiting area.
 void \mbox{\hyperlink{classWaiting__Area_ae61dd48170f29a4a16cb599cc1bed250}{read\+\_\+waiting\+\_\+area}} ()
 \begin{DoxyCompactList}\small\item\em Used to initialize the Waiting Area. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classWaiting__Area_ac934b910ba1348f2cccda5e38e664aff}{ap}} (const string \&x)
-\begin{DoxyCompactList}\small\item\em Reads a priority identificator and if everything it\textquotesingle{}s correct it adds the priority to the waiting area. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Reads a priority identification and if everything it\textquotesingle{}s correct it adds the priority to the waiting area. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classWaiting__Area_a4cadefb192f4184ca984e2d33786edca}{bp}} (const string \&x)
-\begin{DoxyCompactList}\small\item\em Reads a priority identificator and if everything it\textquotesingle{}s correct it removes this priority from the waiting area. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Reads a priority identification and if everything it\textquotesingle{}s correct it removes this priority from the waiting area. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classWaiting__Area_a4c791e71342b16fe06ed31e0f7a297e8}{ape}} (const string \&x, int identity, int memory, int time)
-\begin{DoxyCompactList}\small\item\em Reads the values of a procces and a priority id and if everything goes right, adds the proccess to the waiting area with that priority id. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Reads the values of a proccess and a priority id and if everything goes right, adds the proccess to the waiting area with that priority id. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classWaiting__Area_ae35218147d2e213a038ea8469b502396}{epc}} (int n, \mbox{\hyperlink{classCluster}{Cluster}} \&clust)
 \begin{DoxyCompactList}\small\item\em Reads a positive number, n and tries to send n waiting ~\newline
  processes to the cluster by priority and by the time they have been waiting. They are send to the best spot, if a process can not be send to the cluster it comes back as a new process to the waiting area. \end{DoxyCompactList}\item 
@@ -48,7 +48,7 @@ map$<$ string, pair$<$ int, int $>$ $>$ \mbox{\hyperlink{classWaiting__Area_af83
 \doxysubsection{Detailed Description}
 It represents a waiting area. 
 
-Here we store the processes waiting to be sended to the cluster sorted by tehir priority. 
+Here we store the processes waiting to be sended to the cluster sorted by their priority. 
 
 Definition at line 26 of file Waiting\+\_\+\+Area.\+hh.
 
@@ -120,13 +120,13 @@ Definition at line 88 of file Waiting\+\_\+\+Area.\+cc.
 
 
 
-Reads a priority identificator and if everything it\textquotesingle{}s correct it adds the priority to the waiting area. 
+Reads a priority identification and if everything it\textquotesingle{}s correct it adds the priority to the waiting area. 
 
 \begin{DoxyPrecond}{Precondition}
-A priority identificator. 
+A priority identification. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondition}
-If the identificator already exists it returns false, if not, it adds the priority to the waiting area without pending processes and returns true. 
+If the identification already exists it returns false, if not, it adds the priority to the waiting area without pending processes and returns true. 
 \end{DoxyPostcond}
 
 
@@ -154,10 +154,10 @@ Definition at line 94 of file Waiting\+\_\+\+Area.\+cc.
 
 
 
-Reads the values of a procces and a priority id and if everything goes right, adds the proccess to the waiting area with that priority id. 
+Reads the values of a proccess and a priority id and if everything goes right, adds the proccess to the waiting area with that priority id. 
 
 \begin{DoxyPrecond}{Precondition}
-A process and a pirority identificator ready to be read. 
+A process and a priority identification ready to be read. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondition}
 If the id priority doesn\textquotesingle{}t exist returns 101, if a process with that id and priority already exists it returns 102, if not it adds the process and returns 100. 
@@ -187,13 +187,13 @@ Definition at line 116 of file Waiting\+\_\+\+Area.\+cc.
 
 
 
-Reads a priority identificator and if everything it\textquotesingle{}s correct it removes this priority from the waiting area. 
+Reads a priority identification and if everything it\textquotesingle{}s correct it removes this priority from the waiting area. 
 
 \begin{DoxyPrecond}{Precondition}
-A priority identificator. 
+A priority identification. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondition}
-If the identificator doesn\textquotesingle{}t exist returns 101, if it has pending processes it returns 102, if not, it removes this priority from the waiting area and returns 100. 
+If the identification doesn\textquotesingle{}t exist returns 101, if it has pending processes it returns 102, if not, it removes this priority from the waiting area and returns 100. 
 \end{DoxyPostcond}
 
 

@@ -20,7 +20,7 @@ using namespace std;
 
 class Process {
     private:
-    int dir, ide, memo, time;
+    int dir, ide, memo, time; //information of the process
 
     public:
 
